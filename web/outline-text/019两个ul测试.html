@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		body{
+			position: relative;
+		}
+		li{
+			float: left;
+			width: 100px;
+			height: 100px;
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+			border: 1px solid #000;
+		}
+		.box1{
+			z-index: 5;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.box1 li{
+			
+			background-color: red;
+		}
+		.box2{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.box2 li{
+			z-index: 0;
+			opacity: 0;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box1">
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+		<li>444</li>
+		<li>555</li>
+	</ul>
+	<ul class="box2">
+		<li>9991</li>
+		<li>9992</li>
+		<li>9993</li>
+		<li>9994</li>
+		<li>9995</li>
+	</ul>
+</body>
+<script>
+	var oBox1 = document.querySelector('.box1')
+	var oBox2 = document.querySelector('.box2')
+	var aLi1 = document.querySelectorAll('.box1 li')
+	var aLi2 = document.querySelectorAll('.box2 li')
+	console.log(aLi1)
+	console.log(aLi2)
+	for(var i=0;i<aLi1.length;i++){
+		aLi1[i].index = i
+		aLi1[i].onmouseenter = function(){
+			for(var j=0;j<aLi1.length;j++){
+				aLi1[j].style.opacity = 1;
+				aLi2[j].style.opacity = 0;
+			}
+			this.style.opacity = 0;
+			aLi2[this.index].style.zIndex = 10;
+			aLi2[this.index].style.opacity = 1;
+		}
+	}
+</script>
+</html>

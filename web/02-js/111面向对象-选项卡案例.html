@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>111面向对象-选项卡案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.bt1{
+			width: 400px;
+			height: 50px;
+			margin-bottom: 50px;
+		}
+		.bt1 li{
+			width: 25%;
+			float: left;
+			font-size: 25px;
+			text-align: center;
+			line-height: 50px;
+		}
+		.bt2 li{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			display: block;
+			font-size: 30px;
+			line-height: 400px;
+			text-align: center;
+			display: none;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="bt1" class="bt1">
+		<li class="active">电脑</li>
+		<li>电视</li>
+		<li>冰箱</li>
+		<li>手机</li>
+	</ul>
+	<ul id="bt2" class="bt2">
+		<li style='display: block'>我是电脑</li>
+		<li>我是电视</li>
+		<li>我是冰箱</li>
+		<li>我是手机</li>
+	</ul>
+		<ul id="bt1-list2" class="bt1">
+		<li class="active">电脑</li>
+		<li>电视</li>
+		<li>冰箱</li>
+		<li>手机</li>
+	</ul>
+	<ul id="bt2-list2" class="bt2">
+		<li style='display: block'>我是电脑</li>
+		<li>我是电视</li>
+		<li>我是冰箱</li>
+		<li>我是手机</li>
+	</ul>
+		<ul id="bt1-list3" class="bt1">
+		<li class="active">电脑</li>
+		<li>电视</li>
+		<li>冰箱</li>
+		<li>手机</li>
+	</ul>
+	<ul id="bt2-list3" class="bt2">
+		<li style='display: block'>我是电脑</li>
+		<li>我是电视</li>
+		<li>我是冰箱</li>
+		<li>我是手机</li>
+	</ul>
+</body>
+<script>
+	/*
+	var oBt1 = document.querySelectorAll('#bt1 li');
+	var oBt2 = document.querySelectorAll('#bt2 li');
+	for(var i=0;i<oBt1.length;i++){
+		oBt1[i].index = i;
+		oBt1[i].onclick = function(){
+			for(var j=0;j<oBt1.length;j++){
+				oBt1[j].className = '';
+				console.log(oBt1[j])
+				oBt2[j].style.display = 'none';
+			}
+			this.className = 'active';
+			oBt2[this.index].style.display = 'block';
+		}
+	}
+	*/
+	function tab(bt1list,bt2list){
+		this.aBt1 = document.querySelectorAll(bt1list);
+		this.aBt2 = document.querySelectorAll(bt2list);
+		console.log(this)//tab
+		this.bindEvent();
+	}
+	tab.prototype.bindEvent = function(){
+		var _this = this;
+		for(var i=0;i<this.aBt1.length;i++){
+			this.aBt1[i].index = i;
+			this.aBt1[i].onclick = function(){
+				_this.fnClick(this);
+			}
+		}
+	}
+	tab.prototype.fnClick = function(oBtn){
+		for(var i=0;i<this.aBt1.length;i++){
+			this.aBt1[i].className = '';
+			this.aBt2[i].style.display = 'none';
+		}
+		oBtn.className = 'active';
+		this.aBt2[oBtn.index].style.display = 'block'
+
+	}
+	new tab('#bt1 li','#bt2 li');
+	new tab('#bt1-list2 li','#bt2-list2 li');
+	new tab('#bt1-list3 li','#bt2-list3 li');
+</script>
+</html>

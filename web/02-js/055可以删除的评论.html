@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>055可以删除的评论.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#box{
+			width: 400px;
+			margin: 100px auto;
+		}
+		a{
+			text-decoration: none;
+			float: right;
+		}
+		li{
+			border-bottom: 1px dashed #000;
+			height: 40px;
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<textarea id="txt" cols="30" rows="10"></textarea>
+		<input type="button" id="btn" value="评论">
+		<ul id="ul1">
+		</ul>
+	</div>
+</body>
+<script src="util01.js"></script>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl1 = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		var oA = document.createElement('a');
+		var val = oTxt.value;
+		oLi.innerHTML = val;
+		oLi.style.height = 0
+		oLi.style.width = 300
+		oLi.style.opacity = 0;
+		oA.innerHTML = '删除';
+		oA.href = 'javascript:;';		
+		animation(oLi,{height:40},true,function(){
+			animation(oLi,{opacity:100})
+		})
+		oLi.appendChild(oA);
+		oA.onclick = function(){
+			oUl1.removeChild(oLi)
+		}
+		oUl1.insertBefore(oLi,oUl1.firstChild);
+		oTxt.value = '';
+	}
+</script>
+</html>

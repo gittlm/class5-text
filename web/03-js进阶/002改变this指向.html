@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002改变this指向.html</title>
+	<script>
+		function show(n1,n2){
+			console.log(this,n1,n2)
+		}
+		show(1,2);
+		window.show(1,2)
+		show.call((name = "jery"),1,2)
+		show.call(window,1,2)
+		show.apply((name = "jery"),[1,2])
+		show.apply(window,[1,2])
+		show.bind(name = "jery")(1,2)
+		show.bind(window)(1,2)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>044列表高亮移入还原移出.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var aLi = oUl.children;
+	var oColor = null;
+	// console.log(aLi)
+	for(i=0;i<aLi.length;i++){
+		if(i%2 == 0){
+			aLi[i].style.backgroundColor = 'yellow';
+		}else if(i%2 == 1){
+			aLi[i].style.backgroundColor = 'pink';
+		}
+		aLi[i].onmouseover=function(){
+			oColor = this.style.backgroundColor;
+			//定义oColor元素为背景色，在移入时定义
+			this.style.backgroundColor = 'green';
+		}
+		aLi[i].onmouseout=function(){
+			this.style.backgroundColor = oColor;
+		}
+
+	}
+</script>
+</html>

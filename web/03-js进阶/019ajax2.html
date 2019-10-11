@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">提交</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	oBtn.onclick = function(){
+		// document.body.style.backgroundColor = 'blue'
+		// 从ajax上获取数据的步骤：
+		//第一步,定义oAjax获取数据（拿到电话）
+		var oAjax = new XMLHttpRequest();
+		console.log(oAjax)
+		//第二步，拿到数据（开始拨号）
+		oAjax.open('GET','http://127.0.0.1:3000',true);
+		//第三步，开始传输数据（拨出号码）
+		oAjax.send();
+		//第四步，等待回应（接通电话回应）
+		oAjax.onreadystatechange = function(){
+			console.log('000000002')
+		}
+	}
+</script>
+</html>

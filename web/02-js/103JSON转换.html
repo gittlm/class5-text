@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>103JSON转换.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+		name:'tom',
+		friends:['001','002','003'],
+		age:18,
+		sayHi:function(){
+			console.log('my name is' + this.name,'my age is' +this.age)
+		}
+	}
+	// var json = {"name":"tom1","age"=18,"sayHi":function(){}}
+	var json2 = JSON.stringify(obj)
+	//函数在JSON转换中直接忽略掉了，JSON中的函数不能转换
+	// var obj2 = JSON.parse(json)
+	var obj2 = JSON.parse(json2)
+	console.log('json2',json2)
+	console.log('obj2',obj2)
+
+</script>
+</html>

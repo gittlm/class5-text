@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017操作位置scroll.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			overflow: auto;
+		}
+		.son{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<button>点击显示距离</button>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			//需要设置在父元素上才能显示子元素的移动距离
+			// alert($('.father').scrollTop());
+			// alert($('.father').scrollLeft());
+
+
+			$('.father').scrollTop(1200);
+			$('.father').scrollLeft(1200);
+		})
+	})
+</script>
+</html>

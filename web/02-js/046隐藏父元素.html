@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046隐藏父元素.html</title>
+</head>
+<body>
+	<ul id="father">
+		<li id="son">1<a href="javascript:;">链接</a></li>
+		<li id="son">2<a href="javascript:;">链接</a></li>
+		<li id="son">3<a href="javascript:;">链接</a></li>
+		<li id="son">4<a href="javascript:;">链接</a></li>
+		<li id="son">5<a href="javascript:;">链接</a></li>
+		<li id="son">6<a href="javascript:;">链接</a></li>
+		<li id="son">7<a href="javascript:;">链接</a></li>
+		<li id="son">8<a href="javascript:;">链接</a></li>
+		<li id="son">9<a href="javascript:;">链接</a></li>
+	</ul>
+</body>
+<script>
+	var aA = document.getElementsByTagName('a');
+	console.log(aA)
+	for(var i=0;i<aA.length;i++){
+		aA[i].onclick=function(){
+			var aLi = this.parentNode;
+			aLi.style.display = 'none';
+		}
+	}
+</script>
+</html>

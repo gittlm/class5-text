@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0016数组去重.html</title>
+	<script>
+		var attr = [9,6,8,3,2,1,9,8,7,,3,2,1]
+		var a = attr.sort(function(n1,n2){
+			return n1-n2;
+		})
+		//排序
+		console.log(a)
+		function b(a){
+			var c = [];
+			var obj = {};
+			for(var i=0;i<a.length;i++){
+				obj[a[i]] = '';
+			}
+			for(var d in obj){
+				c.push(d-0);
+			}
+			return c;
+		}
+		//去重排序
+		console.log(b(a))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

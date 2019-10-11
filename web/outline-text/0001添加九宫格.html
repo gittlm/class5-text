@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0001添加九宫格.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="复制">
+	<div id="box">
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	var oBox = document.getElementById('box')
+	var aDiv = document.getElementsByClassName('son')
+	var iHeight = 100;
+	var iWidth = 100;
+	var iMargin = 20;
+	var allCol = 3;
+	console.log(aDiv)
+	oBtn.onclick = function(){
+		var oDiv = aDiv[0].cloneNode();
+		oBox.appendChild(oDiv)
+		for(var i=0;i<aDiv.length;i++){
+			var iRow = i % allCol;
+			var iCol = parseInt(i/allCol);
+			aDiv[i].style.top = iCol*(iMargin+iHeight)+'px';
+			aDiv[i].style.left = iRow*(iWidth+iMargin)+'px';
+		}
+	}
+</script>
+</html>

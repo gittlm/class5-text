@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>083多个物体同时跟随鼠标移动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background-color: red;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+<script src="util.js"></script>
+<script>
+	var aDiv = document.getElementsByTagName('div')
+	console.log(aDiv)
+	document.addEventListener('mousemove',function(event){
+		aDiv[0].style.top = event.clientY -30 + getScrollTop()+ 'px';
+		aDiv[0].style.left = event.clientX -30 + getScrollLeft()+ 'px';
+
+		for(var i=aDiv.length-1;i>0;i--){
+			aDiv[i].style.top = aDiv[i-1].offsetTop + 'px';
+			aDiv[i].style.left = aDiv[i-1].offsetLeft + 'px';
+		}
+		
+	},false)
+</script>
+</html>

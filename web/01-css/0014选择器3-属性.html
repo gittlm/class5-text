@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0014选择器3-属性.html</title>
+	<style>
+		/*[title]{color: green;}*/
+		/*属性名称*/
+		/*[title="练习.002"]{color: red}*/
+		/*属性值*/
+		/*[title^=练习]{color: blue;}*/
+		/*属性值的开始*/
+		/*[title$=t003]{color: blue;}*/
+		/*属性值的结尾*/
+		/*[title*=t002]{color: red;}*/
+		/*属性值的内容,属性值后面不能直接是数字，要-和字母才行*/
+		/**{color: orange}*/
+		/*     *为通用选择器     */
+/*		a:link{color: blue;}
+		a:visited{color: red;}
+		a:hover{color: orange;}
+		a:active{color: black;}*/
+		/*伪类选择器*/
+		p:before{content: '想不想学习？';}
+		p:after{content: '，不想';}
+		[type="text"]:focus{outline-color: blue}
+		[type="checkbox"]:checked{width: 50px;height: 50px}
+		 /*伪类选择器*/
+	</style>
+</head>
+<body>
+<!-- 	<div>
+		<p title="练习001">title="练习001</p>
+		<p title="练习.t002">title="练习.t002</p>
+		<p title="练习-t002">title="练习-t002</p>
+		<p title="练习.t003">title="练习.t003</p>
+		<p title="练习-t003">title="练习-t003</p>
+	</div> -->
+		<p>好好学习</p>
+		<input type="text">
+		<input type="checkbox">
+	<!-- <a href="#" title="练习001">title="练习001</a><br> -->
+<!-- 	<a href="#" title="练习.t002">title="练习.t002</a><br>
+	<a href="#" title="练习-t002">title="练习-t002</a><br>
+	<a href="#" title="练习.t003">title="练习.t003</a><br>
+	<a href="#" title="练习-t003">title="练习-t003</a><br> -->
+</body>
+</html>

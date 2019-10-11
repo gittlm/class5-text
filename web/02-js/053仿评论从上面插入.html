@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>053仿评论从上面插入.html</title>
+</head>
+<body>
+	<textarea id="txt" cols="30" rows="10"></textarea>
+	<input type="button" id="btn" value="评论">
+	<ul id="ul1">
+		<li>我是第一个</li>
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl1 = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var aLi = document.createElement('li');
+		var val = oTxt.value;
+		aLi.innerHTML = val;
+		oUl1.insertBefore(aLi,oUl1.firstElementChild);
+		oTxt.value = '';
+	}
+</script>
+</html>

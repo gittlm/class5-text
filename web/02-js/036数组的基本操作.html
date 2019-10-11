@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>036数组的基本操作.html</title>
+	<script>
+		var ap1 = [0,1,2,3,9,8,7,6,5,4,10]
+		// console.log(ap1)
+		var ap2 = ap1.push(11)
+		console.log(ap1)
+		console.log(ap2)
+		// 在数组末尾添加元素,返回添加后数组的长度
+		var ap3 = ap1.pop()
+		console.log(ap1)
+		console.log(ap3)
+		// 删除数组的末尾元素,返回删除的元素
+		var ap4 = ap1.shift()
+		console.log(ap1)
+		console.log(ap4)
+		// 删除数组的第一个元素,返回删除的元素
+		var ap5 = ap1.unshift('aa')
+		console.log(ap1)
+		console.log(ap5)
+		// 把元素添加到数组的头部,返回添加后数组的长度
+		var ap6 = ap1.splice(3,3,'bb','cc')
+		console.log(ap1)
+		console.log(ap6)
+		// 返回从原数组中删除项的新数组,如果没有删除则返回空数组
+		var ap7 = ap1.join('+')
+		console.log(ap1)
+		console.log(ap7)
+		// 用指定的字符把数组的每一项连接成字符串并返回,原数组不变
+		var ap8 = ap1.concat(ap2)
+		console.log(ap1)
+		console.log(ap8)
+		// 把数组1和数组2合并生成一个新的数组并返回,原数组不变
+		var ap9 = ap1.slice(3,7)
+		console.log(ap1)
+		console.log(ap9)
+		// 基于当前数组创建一个新数组(包含起始数据,不包含结束数据 )并返回,原数组不变
+		var ap10 = ap1.indexOf(10,7)
+		console.log(ap1)
+		console.log(ap10)
+		//  从数组头部开始向后查找,返回查找到全等匹配的数组的下标,如果没有找到返回-1
+		var ap11 = ap1.lastIndexOf(7)
+		console.log(ap1)
+		console.log(ap11)
+		 //从数组未部开始向前查找,返回查找到全等匹配的数组的下标,如果没有找到返回-1
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

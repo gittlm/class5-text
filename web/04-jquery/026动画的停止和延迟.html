@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026动画的停止和延迟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>点击变化</button>
+	<button>点击停止</button>
+	<button>点击延迟</button>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// delay放在哪个前面就给哪个延迟，只能有一个有效果
+		$('button').eq(2).on('click',function(){
+			$('div').animate({width:200},1000).delay(1000)
+			.animate({height:200},1000)
+			.animate({borderRadius:100},1000)
+		})
+		//stop停止动画有两个参数，参数不一样结果不一样
+		$('button').eq(1).on('click',function(){
+			$('div').stop(false,false)
+		})
+	})
+</script>
+</html>

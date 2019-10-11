@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028内部插入对象.html</title>
+</head>
+<body>
+	<button>点击插入</button>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			//插入到后面
+			// $('ul').append($('<li>新来的</li>'))
+			// $('<li>新来的-后面</li>').appendTo($('ul'))
+
+			//插入到前面
+			// $('ul').prepend($('<li>新来的-前面</li>'))
+			$('<li>新来的-前面</li>').prependTo($('ul'))
+
+		})
+	})
+</script>
+</html>

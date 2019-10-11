@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003$的冲突解决.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	window.$ = function(){
+		alert('window...')
+	}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>')
+</script>
+<script>
+	// 第一种方法(取消之前的$的定义)
+	jQuery.noConflict();
+	$(function(){
+		alert('jquery...')
+	})
+	//第二种方法（给jquery重新赋值）
+	var tlm = jQuery.noConflict();
+	$(function(){
+		alert('window...')
+	})
+	tlm(function(){
+		alert('jquery')
+	})
+</script>
+</html>

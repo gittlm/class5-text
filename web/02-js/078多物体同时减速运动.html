@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>078多物体同时运动1.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 500px;
+			/*height: 500px;*/
+			margin: 100px auto;
+			overflow: hidden;
+		}
+		#son1{
+			width: 100px;
+			height: 100px;
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+			background-color: red;
+			/*opacity: 0.3*/
+			/*margin-bottom:10px;*/
+		}
+		#son2{
+			width: 100px;
+			height: 100px;
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+			background-color: red;
+			/*opacity: 0.3*/
+			margin-top:20px;
+		}
+		#son3{
+			width: 100px;
+			height: 100px;
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+			background-color: red;
+			margin-top:20px;
+			opacity: 0.3	
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="son1">变宽</div>
+		<div id="son2">变高</div>
+		<div id="son3">变色</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	var oSon1 = document.getElementById('son1')
+	var oSon2 = document.getElementById('son2')
+	var oSon3 = document.getElementById('son3')
+	oSon1.onmouseover = function(){
+		clearInterval(oSon1.timer);
+		var iSpeed = 0;
+		oSon1.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oSon1,false)['width']);
+			if(current < 400){
+				iSpeed = Math.ceil(400-current)/10
+			}
+			if(Math.abs(400 - current) < Math.abs(iSpeed)){
+				oSon1.style.width = '400px';
+				clearInterval(oSon1.timer);
+			}else{
+					oSon1.style.width = current + iSpeed + 'px'		
+			}
+		},30)			
+	}
+	oSon2.onmouseover = function(){
+		clearInterval(oSon2.timer);
+		var iSpeed = 0;
+		oSon2.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oSon2,false)['height'])
+			
+			if(current<400){
+				iSpeed =Math.ceil(400-current)/10;
+			}
+			if(400-current<iSpeed){
+				oSon2.style.height = '400px';
+				clearInterval(oSon2.timer);
+			}else{
+				oSon2.style.height = current+iSpeed+'px';
+			}console.log(current)	
+		},30)
+	}
+	oSon3.onmouseover = function(){
+		clearInterval(oSon3.timer);
+		var iSpeed = 0;
+		oSon3.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oSon3,false)['opacity'])
+			current = current*100;
+			console.log(current)
+			if(current<100){
+				iSpeed =Math.ceil(100-current)/10;
+			}
+			if(100-current<iSpeed){
+				oSon3.style.opacity = 1;
+				clearInterval(oSon3.timer);
+			}else{
+				oSon3.style.opacity = (current+iSpeed)/100;
+			}	
+		},30)
+	}
+</script>
+</html>

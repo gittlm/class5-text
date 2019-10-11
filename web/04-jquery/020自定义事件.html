@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020自定义事件.html</title>
+</head>
+<body>
+	<div>0000000000000000000</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// $('div').on('click',function(){
+		// 	alert('000111')
+		// })
+
+
+		//不传event是一个事件对象，是错的
+		// $('div').on('text',function(agr1){
+		// 	alert('000022222'+agr1)
+		// })
+
+
+		//自定义
+		$('div').on('text',function(event,agr1){
+			alert('000022222'+agr1)
+		})
+		//调用
+		$('div').trigger('text','003333333')
+	})
+</script>
+</html>

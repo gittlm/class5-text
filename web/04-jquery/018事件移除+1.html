@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018事件移除+1.html</title>
+</head>
+<body>
+	<div class="box">0001</div>
+	<div class="box">00022</div>
+	<div class="box">000333</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		function fn(){
+			alert('function....')
+		}
+
+		//方法一（一部分没办法用这个实现）
+		$('.box').eq(0).click(function(){
+			alert('click0001...')
+		})
+		// $('.box').eq(0).mouseover(function(){
+		// 	alert('mouseover0001...')
+		// })
+
+		//方法二（可以实现所有的事件）
+		$('.box').eq(1).on('click',fn)
+		// $('.box').eq(1).on('mouseover',function(){
+		// 	alert('mouseover00022...')
+		// })
+		//两个方法都不能覆盖，都是所有的元素迭代选择
+		//用one是事件只能触发一次
+		// $('.box').eq(2).one('click',function(){
+		// 	alert('click000333...')
+		// })
+
+		//移除所有的事件
+		// $('.box').off();
+
+		//移除所有事件名对应的事件
+		// $('.box').off('mouseover');
+
+		//移除事件名对应的函数名的相关事件
+		$('.box').eq(1).off('click',fn);
+	})
+</script>
+</html>

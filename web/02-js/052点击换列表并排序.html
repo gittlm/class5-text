@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>052点击换列表并排序.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>5</li>
+		<li>6</li>
+		<li>4</li>
+		<li>9</li>
+		<li>1</li>
+		<li>7</li>
+		<li>2</li>
+		<li>8</li>
+	</ul>
+	<input type="button" id="btn" value="点击排序">
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var oBtn = document.getElementById('btn');
+	var result = [];
+	var aLi = oUl.children;
+	// console.log(aLi)
+	for(var i=0;i<aLi.length;i++){
+		result.push(aLi[i])
+	}
+	// console.log(result)
+	oBtn.onclick = function(){
+		result.sort(function(oLi1,oLi2){
+			// console.log(oLi2.innerHTML)
+			return oLi1.innerHTML - oLi2.innerHTML;
+		})
+		for(var j=0;j<result.length;j++){
+			oUl.appendChild(result[j])
+		}
+	}
+</script>
+</html>

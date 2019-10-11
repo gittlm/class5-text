@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>060定时器.html</title>
+</head>
+<body>
+	<button id="btn">停止</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	var timer = setInterval("alert('aaaaa')",4000)
+	// var timer = function sayHi(){
+	// 	console.log('aaa');
+	// }
+	// setTimeout(sayHi,2000);
+	// setTimeout("console.log('bbbbb')",3000)
+	oBtn.onclick = function(){
+		clearInterval(timer)
+	}
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0019正方体练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			margin: 100px auto;
+			transform-style: preserve-3d;
+			transform: rotateX(45deg) rotateY(45deg);
+			perspective: 800px;
+		}
+		.down{
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.up{
+			width: 100px;
+			height: 100px;
+			margin-top: 100px;
+			margin-left: 100px;
+			background-color: green;
+			transform: translateZ(100px);
+		}
+		.left{
+			position: absolute;
+			left: 0px;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			transform-origin: 100px 150px;
+			transform: rotateY(90deg);
+		}
+		.right{
+			position: absolute;
+			left: 200px;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			transform-origin: 0px 150px;
+			transform: rotateY(-90deg);
+		}
+		.front{
+			position: absolute;
+			left: 100px;
+			top: 200px;
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			transform-origin: 150px 0px;
+			transform: rotateX(90deg);
+		}
+		.back{position: absolute;
+			left: 100px;
+			top: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+			transform-origin: 150px 100px;
+			transform: rotateX(-90deg);
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="down">down</div>
+		<div class="up">up</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+		<div class="front">front</div>
+		<div class="back">back</div>
+	</div>
+</body>
+</html>

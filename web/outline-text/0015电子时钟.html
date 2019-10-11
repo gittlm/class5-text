@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015电子时钟.html</title>
+	
+</head>
+<body>
+	<h1 id="date"></h1>
+	<span id="msg" style="font-size:30px;background-color: pink;"></span>
+</body>
+<script>
+		var oDate = document.getElementById('date')
+		var oMsg = document.getElementById('msg')
+		function timer(){
+			function to2(s){
+				return s<10 ? '0'+s : ''+s
+			}
+			var sweek = new Array("日","一","二","三","四","五","六")
+			var today = new Date();
+			var iY = today.getFullYear();
+			var iMo = today.getMonth()+1;
+			var iD = today.getDate();
+			var iW = sweek[today.getDay()];
+			oDate.innerHTML = (iY+'年'+iMo+'月'+iD+'日'+'星期'+iW)
+			var iH = today.getHours();
+			var iM = today.getMinutes();
+			var iS = today.getSeconds();
+			oMsg.innerHTML = (to2(iH)+'时'+to2(iM)+'分'+to2(iS)+'秒')
+			setInterval('timer()',1000);
+			
+		}
+		timer()
+</script>
+</html>

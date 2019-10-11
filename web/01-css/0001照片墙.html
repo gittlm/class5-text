@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0001照片墙.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 100%;
+			height: 400px;
+			margin: 100px auto;
+			background-color: skyblue;
+			text-align: center;
+		}
+		ul:hover li{
+			opacity: 0.6;
+		}
+		li{
+			position: relative;
+			width: 200px;
+			height: 300px;
+			margin-top: 50px;
+			margin-right: 50px;
+			display: inline-block;
+		}
+		.pt1{
+			transform: rotate(15deg);
+		}
+		.pt2{
+			transform: rotate(-20deg);
+		}
+		.pt3{
+			transform: rotate(25deg);
+		}
+		.pt4{
+			transform: rotate(35deg);
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		ul .ph:hover{
+			z-index: 9;
+			/*z-index属性要在有定位属性的标准流环境中才能起作用*/
+			opacity: 1;
+			transform: rotate(0deg);
+			transition: transform 2s;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li class="pt1 ph">
+			<img src="../img/text/p1.jpg" alt="">
+		</li>
+		<li class="pt2 ph">
+			<img src="../img/text/p2.jpg" alt="">
+		</li>
+		<li class="pt3 ph">
+			<img src="../img/text/p3.jpg" alt="">
+		</li>
+		<li class="pt4 ph">
+			<img src="../img/text/p4.jpg" alt="">
+		</li>
+	</ul>
+</body>
+</html>

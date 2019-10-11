@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>108new+工厂函数创建对象.html</title>
+	<script>
+		function person(name,age){
+			this.name = name;
+			this.age = age;
+			this.sayName =function(){
+				console.log('I am  ' + this.name)
+			}
+			this.sayAge = function(){
+				console.log('I am '+this.age +' years old')
+			}
+		}
+		var person1 = new person('tom',22)
+		console.log(person1)
+		person1.sayAge();
+		person1.sayName();
+		var person2 = new person('jery',33)
+		console.log(person2)
+		person2.sayAge();
+		person2.sayName();
+		console.log(person1.sayName == person2.sayName)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

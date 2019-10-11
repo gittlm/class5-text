@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0010CSS3基础过渡.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: blue;	
+			transition-property: width,height,border;
+			transition-duration: 2s,5s;
+			transition-delay: 1s;
+			transition-timing-function: ease-out;
+			/*取值还有ease,ease-in,ease-out,ease-in-out*/
+		}
+		div:hover{
+			width: 500px;
+			height: 500px;	
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

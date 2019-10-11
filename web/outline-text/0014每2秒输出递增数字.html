@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0014每2秒输出递增数字.html</title>
+	<script>
+		var a = 0;
+		clearInterval(time)
+		var time = setInterval(function(){
+			a++;
+			document.write(a+',')
+		},1000)
+		console.log(typeof a)
+		if(a==20){
+			clearInterval(time)
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

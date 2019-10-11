@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>062图片时钟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#time1{
+			width: 400px;
+			/*height: 60px;*/
+			font-size: 70px;
+			margin: 300px auto;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="time1">
+		<img src="../img/text/0.png" alt="">
+		<img src="../img/text/0.png" alt="">
+		:
+		<img src="../img/text/0.png" alt="">
+		<img src="../img/text/0.png" alt="">
+		:
+		<img src="../img/text/0.png" alt="">
+		<img src="../img/text/0.png" alt="">
+	</div>
+</body>
+<script>
+	function time2(num){
+		return num<10 ? '0'+num : ''+num;
+	}
+	var oImg = document.getElementsByTagName('img')
+	var oTime1 = document.getElementById('time1');
+	function time3(){
+		var today = new Date();
+		var iH = today.getHours();
+		var iM = today.getMinutes();
+		var iS = today.getSeconds();
+		var allTime = time2(iH)+time2(iM)+time2(iS);
+		for(i=0;i<oImg.length;i++){
+			oImg[i].src = "../img/text/"+allTime[i]+".png"
+		}
+	}
+	setInterval(time3,1000)
+	time3();
+	
+</script>
+</html>

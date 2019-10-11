@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0029盒子重叠问题.html</title>
+	<link rel="stylesheet" href="reset.css">
+	<!-- 所有默认样式重置 -->
+	<style>
+		/**{
+			margin: 0;
+			padding: 0;
+		}*/
+		/*内外边框重置*/
+		.div1{width: 500px;
+			height: 500px;
+			background-color: gray;
+			/*overflow: hidden;*/
+			border-top: 1px solid black}
+		.p1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin-top: 50px;
+			}
+		/*.p2{width: 100px;
+			height: 100px;
+			background-color: green;
+			margin-top: 100px;
+			margin-left: 400px;
+			}*/
+		.p2{width: 100px;
+			height: 100px;
+			background-color: black;
+			/*margin-left: 400px;*/
+			margin-top: 400px;
+			}
+	</style>
+</head>
+<body>
+	<div class="div1">
+		<div class="p1"></div>
+		<div class="p2"></div>
+		<div class="p3"></div>
+	</div>
+</body>
+</html>

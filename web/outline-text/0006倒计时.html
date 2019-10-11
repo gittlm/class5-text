@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0006倒计时.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#timer{
+			width: 500px;
+			color: #fff;
+			font-size: 30px;
+			margin: 100px auto;
+		}
+		body{
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer"></div>
+</body>
+<script>
+	function time2(num){
+		if(num<10){
+			num='0'+num
+		}else{
+			num=''+num
+		}
+		return num;
+	}
+	
+	// var aAllTime = parseInt((aEndTime - aNowTime)/1000)
+	// var iH = parseInt(aAllTime/3600)
+	// var iM = parseInt((aAllTime%3600)/60)
+	// var iS = (aAllTime%60)%60
+	// console.log(time1(iH))
+	// oBox.innerHTML ="距离明天还有"+time1(iH)+"时"+time1(iM)+"分"+time1(iS)+"秒";
+	function time3(){
+		var allTime = parseInt((endTime - Date.now())/1000)
+		
+		if(allTime<=0){
+			allTime=0;
+			clearInterval(time3)
+		}
+		var iH = parseInt(allTime/3600)
+		var iM = parseInt((allTime%3600)/60)
+		var iS = (allTime%60)%60
+		oTimer.innerHTML ="距离明天还有"+time2(iH)+"时"+time2(iM)+"分"+time2(iS)+"秒";
+		console.log(oTimer)
+	}
+	var oTimer = document.getElementById('timer')
+	var endDate = new Date('2019/08/22 12:00:00:')
+	var endTime = endDate.getTime()
+	var timer = 0
+
+	timer = setInterval(time3,1000);
+	time3();
+</script>
+</html>

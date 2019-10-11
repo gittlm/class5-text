@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030删除节点.html</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		000001
+		<p>0002</p>
+		<a href="">00003333</a>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			alert('click.....')
+		})
+
+		//remove删除jQuery对象中的节点同时删除事件
+		// var dom1 = $('div').remove();
+		// $('body').append(dom1)
+
+		//empty删除jQuery对象中的内容，不删除事件
+		// var dom2 = $('div').empty();
+		// $('body').append(dom2)	
+
+		//detach删除jQuery对象中的节点，不删除事件
+		var dom3 = $('div').detach();
+		$('body').append(dom3)	
+	})
+</script>
+</html>

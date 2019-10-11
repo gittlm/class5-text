@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012操作class.html</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+		}
+		.box2{
+			text-align: center;
+			color: red;
+			line-height: 100px;
+		}
+		.box3{
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 box2 box3">我是001</div>
+	<div class="box1 box2 box3">我是002</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+
+		//添加用addClass
+		// $('div').addClass('box1')
+		// $('div').addClass('box1 box2')
+		// $('div').addClass('box1 box2 box3')
+
+
+		//删除用removeClass
+		// $('div').removeClass('box1 box2')
+
+
+		//切换用toggleClass，有变无，无变有
+		// $('div').toggleClass('box3')
+		$('div').toggleClass('box3 box2')
+	})
+</script>
+</html>

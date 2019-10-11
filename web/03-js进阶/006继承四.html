@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011继承四.html</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.sayName = function(){
+			console.log('I am '+this.name)
+		}
+		Person.prototype.sayAge = function(){
+			console.log('I am '+this.age)
+		}
+		Person.prototype.legs = 2;
+		var P1 = new Person('tlm',33);
+		P1.sayName()
+		Object.defineProperty(Person.prototype,'eyes',{
+			value:2
+		})
+		console.log('Person.prototype',Person.prototype)
+
+		
+		
+		function Student(name,age,){
+			Person.call(this,name,age);
+		}
+		var obj1 = Object.create(null)
+		console.log('null',obj1)
+		var obj2 = Object.create({})
+		console.log('{}',obj2)
+		var obj3 = Object.create(Person.prototype)
+		console.log('Person.prototype',obj3)
+
+
+
+		Student.prototype = Object.create(Person.prototype)
+
+		console.log('Student.prototype',Student.prototype)
+		var s1 =new Student('jery',22,'en')
+		s1.sayName();
+		s1.sayAge()
+		console.log(s1.eyes)
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

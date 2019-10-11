@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120前瞻.html</title>
+	<script>
+		var str = 'a1 b2 c$ d& 5! 6# c7 e8 t5'
+		var reg1 = /[a-z](?=\d)/g;
+		var reg2 = /[a-z](?!\d)/g;
+		var reg3 = /[0-9](?!\w)/g;
+		console.log(str.replace(reg1,'*'))
+		console.log(str.replace(reg2,'*'))
+		console.log(str.replace(reg3,'*'))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

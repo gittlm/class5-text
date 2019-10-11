@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>101字面量创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+		name:'tom',
+		friends:['001','002','003'],
+		age:'18',
+		sayHi:function(){
+			console.log('my name is' + this.name,'my age is' +this.age)
+		}
+	}
+	console.log(obj);
+	// console.log(obj.name);
+	// console.log(obj.friends);
+	obj.sayHi();
+	// obj.name = 'abc';
+	// console.log(obj);
+	// obj.friends = '001';
+	// console.log(obj);
+
+</script>
+</html>

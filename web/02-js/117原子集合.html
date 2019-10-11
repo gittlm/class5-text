@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>117原子集合.html</title>
+	<script>
+		var str = 'dioe	ADi39DFD3j_kfk38	DF97DF485FDFltkje*&%$#  dfgFDdf# df%'
+		var reg1 = /[0-9]/g;//数字
+		var reg2 = /\d/g;//数字
+		var reg3 = /\D/g;//非数字
+		var reg4 = /\w/g;//字母数字下划线
+		var reg5 = /\W/g;//非字母数字下划线
+		var reg6 = /\s/g;//空格、空白符
+		var reg7 = /\S/g;//非空白符
+		var reg8 = /./g;//除了换行和回车外所有字符
+		var reg9 = /[A-Z]/g;//区分大小写
+
+		console.log(str.replace(reg1,'*'))
+		console.log(str.replace(reg2,'*'))
+		console.log(str.replace(reg3,'*'))
+		console.log(str.replace(reg4,'*'))
+		console.log(str.replace(reg5,'*'))
+		console.log(str.replace(reg6,'*'))
+		console.log(str.replace(reg7,'*'))
+		console.log(str.replace(reg8,'*'))
+		console.log(str.replace(reg9,'*'))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

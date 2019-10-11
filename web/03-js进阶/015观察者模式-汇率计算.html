@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015汇率计算.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+		function Local(name){
+			this.name = name;
+			this.oInput = null;
+			this.init(name);
+			this.foreigns = [];
+			this.bindEvent();
+		}
+		Local.prototype = {
+			constructor:Local,
+			init:function(name){
+				var oP = document.createElement('p')
+				this.oInput = document.createElement('input')
+				oP.innerHTML = this.name+'  :  ';
+				document.body.appendChild(oP)
+				oP.appendChild(this.oInput)
+			},
+			register:function(foreign){
+				this.foreigns.push(foreign);
+			},
+			publish:function(val){
+				for(var i=0;i<this.foreigns.length;i++){
+					this.foreigns[i].listen(val);
+				}
+			},
+			bindEvent:function(){
+				this.oInput.oninput = function(){
+					var sVal = this.oInput.value;
+					this.publish(sVal)
+				}.bind(this)
+			}
+		}
+		w.Local = Local;
+	})(window);
+
+
+
+
+	(function(w){
+		function Foreign(name,rate,local){
+			this.name = name;
+			this.oSpan = null;
+			this.rate = rate;
+			this.init(name);
+			local.register(this);
+		}
+		Foreign.prototype = {
+			constructor:Foreign,
+			init:function(name){
+				var oP = document.createElement('p');
+				this.oSpan = document.createElement('span');
+				oP.innerHTML = name+'  :  ';
+				document.body.appendChild(oP);
+				oP.appendChild(this.oSpan)
+			},
+			listen:function(val){
+				//四舍五入取整
+				this.oSpan.innerHTML =Math.round(val / this.rate)+'.'+this.name;
+			}
+		}
+		w.Foreign = Foreign;
+	})(window);
+
+
+	var cny = new Local('人民币');
+	var usd = new Foreign('美元',7.1187,cny)
+	var usd = new Foreign('日元',0.0663,cny)
+	var usd = new Foreign('欧元',7.8598,cny)
+	var usd = new Foreign('英镑',8.7831,cny)
+	var usd = new Foreign('韩元',0.0059,cny)
+	var usd = new Foreign('港元',0.9079,cny)
+	var usd = new Foreign('澳元',4.8777,cny)
+	var usd = new Foreign('加元',5.4032,cny)
+</script>
+</html>

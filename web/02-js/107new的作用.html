@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107new的作用.html</title>
+	<script>
+		function sum(){
+			console.log(this);
+			this.name = 'tom';
+			this.age = 60;
+			this.sayHi = function(){
+				console.log('Hi.....')
+			}
+			return this;
+			// return {a:1,b:3,c:5};
+		}
+		sum();
+		window.sayHi();
+		console.log(sum())
+		var abc = new sum();
+		console.log(abc);
+		abc.sayHi();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

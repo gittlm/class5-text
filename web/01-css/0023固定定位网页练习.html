@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0023固定定位网页练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.conter{
+			width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		header.conter{
+			position: fixed;
+			top: 40px;
+			left: 50%;
+			margin-left: -400px; 
+			height: 60px;
+			background-color: gray;
+			z-index: 99;
+		}
+		header li{
+			float: left;
+			width: 20%;
+			line-height: 60px;
+			text-align: center;
+			cursor: pointer;
+		}
+		header ul .item{
+			background-color: red;
+			position: relative;
+		}
+		/*???为什么不能用类选择器直接选？*/
+		header ul .item img{
+			position: absolute;
+			left: 62px;
+			top: -19px;
+		}
+		.carousel{
+			position: relative;
+			height: 400px;
+			margin-top: 120px;
+			margin-bottom: 20px;
+			background-color: pink;
+		}
+		.carousel img{
+			width: 800px;
+			height: 400px;
+		}
+		.carousel ul{
+			position: absolute;
+			right: 10px;
+			bottom: 20px;
+		}
+		.carousel ul li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background-color: gray;
+			margin-right: 5px;
+			text-align: center;
+			line-height: 20px;
+			border-radius: 50%;
+		}
+		.btn{
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+			width: 50px;
+			height: 100px;
+			background-color: rgba(0,0,0,0.6);
+			font-size: 50px;
+			color: white;
+			cursor: pointer;
+		}
+		.btn:hover{
+			background-color: rgba(0,0,0,0.8);
+		}
+		.carousel .gt{
+			right: 0;
+		}
+		.content{
+			height: 1500px;
+			background-color: blue; 
+		}
+		.side{
+			position: fixed;
+			top: 50%;
+			margin-top: -100px;
+			background-color: red;
+			width: 50px;
+			height: 200px;
+			cursor: pointer;
+		}
+		.left{
+			left: 0;
+		}
+		.right{
+			right:0;
+		}
+		.side a{
+			text-decoration: none;
+			font-size: 30px;
+		}
+		.top{
+			position: fixed;
+			bottom: 0;
+			right:0;
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			text-align: center;
+			line-height: 100px;
+			cursor: pointer;
+		}
+		a{
+			text-decoration: none;
+			font-size: 25px;
+			color: black;			
+		}
+	</style>
+</head>
+<body>
+	<header class="conter">
+		<ul>
+			<li>导航1</li>
+			<li>导航2</li>
+			<li class="item">导航3
+				<img src="../img/text/tmall.jpg" alt="">
+			</li>
+			<li>导航4</li>
+			<li>导航5</li>
+		</ul>
+	</header>
+	<section class="carousel conter">
+		<img src="../img/text/ad1.jpg" alt="">
+		<button class="lt btn">&lt;</button>
+		<button class="gt btn">&gt;</button>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</section>
+	<section class="content conter">
+		
+	</section>
+	<div class="left side"><a href="#">我是广告</a></div>
+	<div class="right side"><a href="#">我是广告</a></div>
+	<div class="top">
+		<a href="#">返回顶部</a>
+	</div>
+</body>
+</html>

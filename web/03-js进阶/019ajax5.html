@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">GET提交</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	oBtn.onclick = function(){
+
+		var oAjax = new XMLHttpRequest();
+		
+		
+		//post方法在地址后面不用加具体的文件名，在send里面传内容；get方法要在地址后面加具体文件，文件后加？表示发送请求，send里面为空
+		oAjax.open('GET','http://127.0.0.1:3000/?name=tom',true);
+		//设置请求头
+		// oAjax.setRequestHeader('Access-Control-Allow-Methods','GET')
+
+		oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+
+
+
+		oAjax.send();
+
+
+		
+		oAjax.onreadystatechange = function(data){
+			if(oAjax.readyState == 4 ){
+				if(oAjax.status == 200){
+					// console.log('000000002')
+					//得到对象，为字符串
+					// console.log(oAjax.responseText)
+					//用JSON把字符串转化为数组,就可以从数组上获取数据
+					var obj = JSON.parse(oAjax.responseText)
+					console.log(obj)
+					// console.log(obj.name)
+					// console.log(obj.age)
+				}
+			}
+		}
+	}
+</script>
+</html>

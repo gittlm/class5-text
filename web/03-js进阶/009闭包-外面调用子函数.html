@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005闭包-外面调用子函数.html</title>
+	<script>
+		function fn(){
+			var a=1;
+			add = function(){
+				a++;
+			}
+			// console.log(a)
+			return function (){
+				console.log(a)
+			}
+		}
+		fn();
+		var result = fn()
+		result();//第一次调用
+		add();
+		result();//第二次调用
+		add();
+		result();//第三次调用
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

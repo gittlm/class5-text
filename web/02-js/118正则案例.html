@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>118正则案例.html</title>
+</head>
+<body>
+	<textarea id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn1">请输入年份</button>
+	<textarea id="txt2" cols="30" rows="10"></textarea>
+	<button id="btn2">请输入手机号</button>
+	<textarea id="txt3" cols="30" rows="10"></textarea>
+	<button id="btn3">请输入密码</button>
+	<textarea id="txt4" cols="30" rows="10"></textarea>
+	<button id="btn4">请输入邮箱</button>
+	<textarea id="txt5" cols="30" rows="10"></textarea>
+	<button id="btn5">请输入网址</button>
+	<!-- <textarea id="txt6" cols="30" rows="10"></textarea>
+	<button id="btn6">请输入密码</button> -->
+</body>
+<script>
+	var oTxt1 = document.getElementById('txt1')
+	var oTxt2 = document.getElementById('txt2')
+	var oTxt3 = document.getElementById('txt3')
+	var oTxt3 = document.getElementById('txt4')
+	var oTxt3 = document.getElementById('txt5')
+	// var oTxt3 = document.getElementById('txt6')
+	var oBtn1 = document.getElementById('btn1')
+	var oBtn2 = document.getElementById('btn2')
+	var oBtn3 = document.getElementById('btn3')
+	var oBtn3 = document.getElementById('btn4')
+	var oBtn3 = document.getElementById('btn5')
+	// var oBtn3 = document.getElementById('btn6')
+	oBtn1.onclick = function(){
+		var val1 = oTxt1.value
+		var reg = /^[12]\d{3}$/g;
+		if(reg.test(val1)){
+			alert('合法')
+		}else {
+			alert('不合法')
+		}
+	}
+	oBtn2.onclick = function(){
+		var val2 = oTxt2.value
+		var reg = /^1[3578]\d{9}$/g;
+		if(reg.test(val2)){
+			alert('合法')
+		}else {
+			alert('不合法')
+		}
+	}
+	oBtn3.onclick = function(){
+		var val3 = oTxt3.value
+		var reg = /^[a-zA-Z]\w{5,11}$/g;
+		if(reg.test(val3)){
+			alert('合法')
+		}else {
+			alert('不合法')
+		}
+	}
+	oBtn4.onclick = function(){
+		var val4 = oTxt4.value
+		var reg = /^\w+@\w+{2,6}\.[a-z]{2,5}$/g;
+		if(reg.test(val4)){
+			alert('合法')
+		}else {
+			alert('不合法')
+		}
+	}
+	oBtn5.onclick = function(){
+		var val5 = oTxt5.value
+		var reg = /^\w{4,5}:\/\/\w{3}\.\w+$/g;
+		if(reg.test(val5)){
+			alert('合法')
+		}else {
+			alert('不合法')
+		}
+	}
+
+</script>
+</html>

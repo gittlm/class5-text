@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>102用对象无序唯一去重.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var attr = [1,9,6,4,8,3,5,7,2,6,4,8]
+	function aque(attr){
+		var result = [];
+		var obj = {};
+		for(i=0;i<attr.length;i++){
+			obj[attr[i]] = '';
+		}
+		for(var a in obj){
+			result.push(a-0);
+		}
+		return result;
+	}
+	console.log(aque(attr))
+</script>
+</html>

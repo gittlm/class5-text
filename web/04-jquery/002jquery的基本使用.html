@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002jquery的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>')
+</script>
+<script>
+	//方法一(最长的)
+	jQuery(document).ready(function(){
+		console.log('hello001')
+	})
+	jQuery(document).ready(function(){
+		console.log('hello002')
+	})
+	//方法二（中等长度）
+	$(document).ready(function(){
+		console.log('hello001...')
+	})
+	$(document).ready(function(){
+		console.log('hello002...')
+	})
+	//最便捷的，也是最常用的
+	$(function(){
+		console.log('hello1...')
+	})
+	$(function(){
+		console.log('hello2...')
+	})
+</script>
+</html>

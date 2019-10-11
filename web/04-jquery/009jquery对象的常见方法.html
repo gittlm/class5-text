@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009jquery对象的常见方法.html</title>
+</head>
+<body>
+	<div id="box1" data-key="tlm">001div</div>
+	<div class="box1">002div</div>
+	<div id="box">003div</div>
+	<p class="box">001p</p>
+	<span id="box2">001span</span>
+</body>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		//查找对应的I值
+		console.log($('div').index($('.box1')))
+
+		//遍历伪数组或者数组
+		$('div').each(function(index,ele){
+				console.log(index,ele)
+				console.log(this)
+			})
+
+		//给DOM加数据
+		console.log($('div').data())
+		$('div').data('key1',"lmy")
+		console.log($('div').data())
+
+		//检测jquery里是不是有匹配的元素
+		console.log($('div').is('.box1'))
+	})
+</script>
+</html>

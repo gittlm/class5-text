@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0002克隆.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="button" id="btn1" value="点我复制">
+		<input type="button" id="btn2" value="点我复制">
+		<div id="son">我是字体</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	var oBtn1 = document.getElementById('btn1')
+	var oBtn2 = document.getElementById('btn2')
+	var oSon = document.getElementById('son')
+	oBtn1.onclick = function(){
+		var oDiv = oSon.cloneNode();
+		oBox.appendChild(oDiv);
+	}
+	oBtn2.onclick = function(){
+		var oDiv = oSon.cloneNode(true);
+		oBox.appendChild(oDiv);
+	}
+</script>
+</html>

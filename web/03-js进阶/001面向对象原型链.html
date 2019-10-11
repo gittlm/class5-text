@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001面向对象原型链.html</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		
+		Person.prototype.sayName = function(){
+			console.log('I am '+this.name)
+		}
+		Person.prototype.sayAge = function(){
+			console.log('I am '+this.age)
+		}
+		var P1 = new Person('tlm',33);
+		// delete P1.name;
+		Object.defineProperty(P1,'hand',{
+			value:2,
+			enumerable:false,
+			writable:true,
+			configurable:true
+		})
+		Object.defineProperty(P1,'foot',{
+			value:2,
+			enumerable:false,
+			writable:false,
+			configurable:false
+		})
+		Person.prototype.legs = 2;
+		P1.eyes = 2;
+		P1.legs = 4;
+		P1.foot = 3;	
+		// for(var attr in P1){
+		// 	console.log(attr,P1[attr])
+		// }
+		console.log(P1)
+		// console.log(P1.foot)
+		// console.log(P1.name)
+		// console.log(P1.hand)
+		
+		// P1.sayName();
+		// P1.sayAge();
+		// console.log(P1.eyes)
+		// console.log(P1.legs)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

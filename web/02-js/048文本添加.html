@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>048文本添加.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="点击上传">
+	<textarea name="" id="text" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oText = document.getElementById('text');
+	oBtn.onclick=function(){
+		// var val = oTxt.value;
+		// oText.value = val;
+		// 用.属性设置
+		var val = oTxt['value'];
+		oText['value'] = val;
+		//用['']定义
+		// var val = oTxt.getAttribute('value');
+		// oText['value'] = val;
+		// getAttribute只用于固定的value值的情况下
+	}
+</script>
+</html>

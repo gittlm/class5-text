@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013操作文本代码和值.html</title>
+</head>
+<body>
+	<div> 
+		我是文本01
+		<p>我是代码中的文本01</p>
+	</div>
+	<div> 
+		我是文本02
+		<p>我是代码中的文本02</p>
+	</div>
+	<div> 
+		我是文本03
+		<p>我是代码中的文本03</p>
+	</div>
+	<input type="text" value="我是值ad001">
+	<input type="text" value="我是值ad002">
+</body>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		//获取HTML内容包括HTML标签和文本,相当于innerHTML，默认只选第一个元素
+		console.log($('div').html())
+		//设置带有标签的HTML内容,标签会起作用,会设置所有的符合条件的元素
+		$('div').html('<h1>我是文本</h1>')
+
+
+
+		//获取文本内容只有标签里面的文本,相当于innerText，获取所有符合的内容
+		// console.log($('div').text())
+		//设置带有标签的文本内容，标签会被当做文本来显示，会设置所有的符合条件的元素
+		// $('div').text('<h1>我是文本</h1>')
+
+
+
+		//设置或获取元素value属性的值,默认只选第一个元素
+		// console.log($('input').val())
+		//设置元素value属性的值,会设置所有的符合条件的元素
+		// $('input').val('0003')
+	})
+</script>
+</html>

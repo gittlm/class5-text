@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>088模仿桌面图标拖拽.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	var disX = 0,disY = 0;
+	oBox.onmousedown = function(ev){
+		disY = ev.clientY -oBox.offsetTop;
+		disX = ev.clientX -oBox.offsetLeft;
+		var oClone = document.createElement('div')
+		
+		oClone.style.position = 'absolute';
+		oClone.style.width = oBox.offsetWidth+'px';
+		oClone.style.height = oBox.offsetHeight+'px';
+		oClone.style.top = oBox.offsetTop +'px';
+		oClone.style.left = oBox.offsetLeft +'px';
+		oClone.style.backgroundColor = 'rgba(0,0,255,0.5)';
+		document.body.appendChild(oClone)
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY - disY;
+			if(l<0){
+				l=0;
+			}else if(l>(window.innerWidth-oClone.offsetWidth)){
+				l=(window.innerWidth-oClone.offsetWidth)
+			}
+			if(t<0){
+				t=0;
+			}else if(t>(window.innerHeight-oClone.offsetHeight)){
+				t=(window.innerHeight-oClone.offsetHeight)
+			}
+			oClone.style.top = t +'px';
+			oClone.style.left = l +'px';
+		}
+		document.onmouseup = function(){
+			oBox.style.top = oClone.offsetTop +'px';
+			oBox.style.left = oClone.offsetLeft +'px';
+			document.body.removeChild(oClone);
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>069伸缩菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: -700px;
+			width: 700px;
+			height: 500px;
+			background-color: green;
+			/*border: 1px solid #000;*/
+		}
+		#son{
+			position: absolute;
+			top: 0px;
+			right: -100px;
+			width: 100px;
+			height: 500px;
+			background-color: blue;
+			/*border: 1px solid #000;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	var timer = 0;
+	oBox.onmouseover = function(){
+		clearInterval(timer);
+		var iSpeed = 0;
+		if(oBox.offsetLeft<0){
+			iSpeed = 10
+		}else{
+			iSpeed = -10
+		}
+		timer = setInterval(function(){
+			// if(oBox.offsetLeft == 400){
+			if(Math.abs(0-oBox.offsetLeft)<Math.abs(iSpeed)){
+				oBox.style.left = '0px';
+				clearInterval(timer);
+			}
+			else{
+			oBox.style.left = oBox.offsetLeft+ iSpeed +'px';
+			}
+		},10)
+	}
+	oBox.onmouseout = function(){
+		clearInterval(timer);
+		var iSpeed = 0;
+		if(oBox.offsetLeft<-700){
+			iSpeed = 10
+		}else{
+			iSpeed = -10
+		}
+		timer = setInterval(function(){
+			// if(oBox.offsetLeft == 400){
+			if(Math.abs(-700-oBox.offsetLeft)<Math.abs(iSpeed)){
+				oBox.style.left = '-700px';
+				clearInterval(timer);
+			}
+			else{
+			oBox.style.left = oBox.offsetLeft+ iSpeed +'px';
+			}
+		},10)
+	}
+</script>
+</html>

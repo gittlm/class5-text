@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>034变量的作用域.html</title>
+	<script>
+		var a = 1;
+		function fn1(){
+			//var a;
+			console.log('fn1',a);//第二个显示，本身有定义变量的话就在本身找，在下面时相当于在上面有一个未定义的a
+			var a = 2;
+			function fn2(){
+				console.log('fn2',a)//第三个显示
+			}
+			fn2();
+		}
+		console.log(a)//第一个显示
+		fn1();
+		console.log(a)//第四个显示
+		
+
+
+
+		function fn3(){
+			var b = 5;
+			function fn4(){
+				b = 3;
+				console.log('fn4',b);//1-3
+				function fn5(){
+					console.log('fb5',b)//2-3
+				}
+				fn5();
+			}
+			fn4();
+			console.log('fn3',b)//3-3
+		}
+		fn3();
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

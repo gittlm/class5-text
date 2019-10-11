@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019事件自动触发.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.gf{
+			width: 500px;
+			height: 500px;
+			background-color: red;
+		}
+		.f{
+			width: 300px;
+			height: 300px;
+			background-color: green;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+	</style>
+</head>
+<body>
+	<div class="gf">
+		<div class="f">
+			<div class="son"></div>
+		</div>
+	</div>
+	<a href="http://www.kuazhu.com"><span>点击进入</span></a>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.f').on('click',function(){
+			alert('f....')
+		})
+		$('.gf').on('click',function(){
+			alert('gf....')
+		})
+		$('.son').on('click',function(){
+			alert('son....')
+		})
+		//trigger不阻止事件冒泡和默认行为的事件触发
+		//a标签用trigger不阻止事件冒泡,但是会阻止默认行为,如果需要发生默认行为需要触发a标签的子元素
+		// $('.son').trigger('click')
+
+		//triggerHandler阻止事件冒泡和默认行为的事件触发
+		// $('.son').triggerHandler('click')
+		// $('a').triggerHandler('click')
+		$('a').triggerHandler('click')
+		//可以跳转页面
+		// $('span').trigger('click')
+
+	})
+</script>
+</html>

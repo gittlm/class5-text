@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025自定义动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>点击变化</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			//自定义动画主要是针对属性上的变化
+
+
+
+			//第一种
+			// $('div').animate({
+			// 	width:200,
+			// 	height:200
+			// },1000)
+
+			//第二种
+			$('div').animate({
+				width:'+=50',
+				height:'+=50',
+				borderRadius:100
+			},1000)
+
+			
+			//下面三种都是列队动画，第五种是经常用的，最简单的
+
+			//第三种
+			// $('div').animate({width:200},1000)
+			// $('div').animate({height:200},1000)
+			// $('div').animate({borderRadius:100},1000)
+
+			// //第四种
+			// $('div').animate({width:200},1000,function(){
+			// 	$('div').animate({height:200},1000,function(){
+			// 		$('div').animate({borderRadius:100},1000)
+			// 	})
+			// })
+
+			//第五种
+			// $('div').animate({width:200},1000).animate({height:200},1000).animate({borderRadius:100},1000)
+		})
+	})
+</script>
+</html>

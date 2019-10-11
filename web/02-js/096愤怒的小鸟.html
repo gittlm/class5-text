@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>096愤怒的小鸟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position: relative;
+			width: 800px;
+			height: 600px;
+			border: 1px solid #000;
+			margin-top: 50px;
+			margin-left: 200px;
+		}
+		#gameover{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -50px;
+			margin-left: -150px;
+			width: 300px;
+			height: 100px;
+			display: none;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+			border: 5px solid red;
+			background-color: gray;
+			z-index: 99;
+			/*box-sizing: border-box;*/
+		}
+		#bird{
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -20px;
+			width: 40px;
+			height: 40px;
+
+		}
+		#bird img{
+			width: 100%;
+			height: 100%;
+		}
+		.topline{
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			width: 30px;
+			background-color: green;
+		}
+		.bottomline{
+			position: absolute;
+			bottom: 0px;
+			left: 100%;
+			width: 30px;
+			background-color: green;
+		}
+		#btn{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<button id="btn">开始游戏</button>
+		<div id="bird">
+			<img src="../img/text/bird.jpg" alt="">
+		</div>
+		<div id="gameover">GAME&nbsp;&nbsp;OVER</div>
+	</div>
+</body>
+<script>
+	function checkBump(obj1,obj2){
+		if((obj1.offsetLeft+obj1.offsetWidth)>obj2.offsetLeft
+			&&(obj1.offsetTop+obj1.offsetHeight)>obj2.offsetTop
+			&&(obj2.offsetTop+obj2.offsetHeight)>obj1.offsetTop
+			&&(obj2.offsetLeft+obj2.offsetWidth)>obj1.offsetLeft)
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function getRandom(min,max){
+		return Math.round(min+(max-min)*Math.random())
+	}
+
+	var oBtn = document.getElementById('btn');
+	var oGameover = document.getElementById('gameover');
+	var oWrap = document.getElementById('wrap');
+	var oWrap = document.getElementById('wrap');
+	var oBird = document.getElementById('bird');
+	var oBirdtimer = 0,oLineaddtimer = 0,oLinemovetimer = 0;
+	var iSpeed = 0;
+	var space = 200;
+	var isDie = false;
+
+
+	oBtn.onclick = function(){
+		
+	}
+
+
+
+
+	clearInterval(oBirdtimer);
+	oBirdtimer = setInterval(function(){
+		iSpeed += 1;
+		var t = oBird.offsetTop + iSpeed;
+		
+		if(t<0){
+			t=0;
+			die();
+		}else if(t>(oWrap.offsetHeight-2-oBird.offsetHeight)){
+			t=(oWrap.offsetHeight-2-oBird.offsetHeight);
+			die();
+		}
+		oBird.style.top = t + 'px';
+	},30)
+
+
+
+	function addLine(){
+		var topline = document.createElement('div')
+		var bottomline = document.createElement('div')
+		topline.className = 'topline';
+		bottomline.className = 'bottomline';
+		topline.leftDate = 100;
+		var h = getRandom(100,300)
+		topline.style.height = h + 'px';
+		bottomline.style.height = oWrap.offsetHeight - h-space + 'px';
+		oWrap.appendChild(topline)
+		oWrap.appendChild(bottomline)
+	}
+
+
+	clearInterval(oLineaddtimer);
+	oLineaddtimer = setInterval(addLine,800);
+
+
+
+	clearInterval(oLinemovetimer);
+	oLinemovetimer = setInterval(function(){
+		var aTopline = document.querySelectorAll('.topline');
+		var aBottomline = document.querySelectorAll('.bottomline');
+		for(var i = 0;i<aTopline.length;i++){
+			aTopline[i].style.left = aTopline[i].leftDate -1 + '%';
+			aBottomline[i].style.left = aTopline[i].leftDate -1 + '%';
+			aTopline[i].leftDate = aTopline[i].leftDate -1;
+			if(checkBump(oBird,aTopline[i]) || checkBump(oBird,aBottomline[i])){
+				die();
+			}
+			if(aTopline[i].leftDate<-10){
+				oWrap.removeChild(aTopline[i]);
+				oWrap.removeChild(aBottomline[i]);
+			}
+		}
+	},50)
+
+
+
+	function die(){
+		clearInterval(oBirdtimer);
+		clearInterval(oLinemovetimer);
+		clearInterval(oLineaddtimer);
+		isDie = true;
+		oGameover.style.display = 'block';
+	}
+		
+	document.onkeydown = function(ev){
+		if(isDie){
+			return false;
+		}
+		iSpeed -= 10;
+	}
+</script>
+</html>

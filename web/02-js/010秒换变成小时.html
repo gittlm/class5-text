@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010秒换变成小时.html</title>
+	<script>
+		var iSecond = 84654;
+		var iH = parseInt(iSecond/3600);
+		console.log(iH)
+		var iM = parseInt(iSecond%3600)%60;
+		console.log(iM)
+		var iF = (iSecond%3600)%60;
+		console.log(iF)
+		if (iH<10){
+			iH = '0'+iH
+		}
+		if (iM<10){
+			iM = '0'+iM
+		}
+		if (iF<10){
+			iF = '0'+iF
+		}
+		var time = iH+':'+iM+':'+iF;
+		alert(time)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

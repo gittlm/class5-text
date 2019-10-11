@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001jquery兼容处理.html</title>
+</head>
+<body>
+	
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>')
+</script>
+<script>
+	jQuery(document).ready(function(){
+		console.log('hello001')
+	})
+	jQuery(document).ready(function(){
+		console.log('hello002')
+	})
+	//jQuery可以显示全部的多个
+	window.onload = function(){
+		console.log('hi001')
+	}
+	window.onload = function(){
+		console.log('hi002')
+	}
+	//onload会覆盖掉前面的，只能显示一个
+</script>
+</html>

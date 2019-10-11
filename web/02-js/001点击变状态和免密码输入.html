@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001点击变状态和免密码输入.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			border: 1px solid #000;
+		}
+		.box1{
+			width: 200px;
+			height: 30px;
+			background-color: blue;
+			color: white;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" onclick="this.style.background='blue'"></div>
+	<!-- <input type="checked" onmouseover="box1.style.display='block'" 
+	onmouseout="box1.style.display='none'">免密码登录 -->
+	<input type="checked" 
+	onmouseover="document.getElementById('box1').style.display='block'" 
+	onmouseout="document.getElementById('box1').style.display='none'">免密码登录
+	<div class="box1" id="box1">7日内免密码登录</div>
+	
+</body>
+</html>

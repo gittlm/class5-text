@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0033长方体练习.html</title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			width: 400px;
+			height: 400px;
+			border: 1px solid black;
+			margin: 200px auto;
+			transform-style: preserve-3d;
+			transform: rotateX(45deg) rotateY(45deg);
+			perspective: 800px;
+		}
+		.father .dif{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+		}
+		.father .same{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 400px;
+			height: 200px;
+		}
+		.down{
+			background-color: red;
+			transform: translateZ(-100px);
+		}
+		.up{
+			background-color: purple;
+			transform: translateZ(100px);
+		}
+		.left{
+			background-color: green;
+			transform: rotateY(90deg) translateZ(-100px);
+		}
+		.right{
+			background-color: blue;
+			transform: rotateY(-90deg) translateZ(-300px);
+		}
+		.front{
+			background-color: pink;
+			transform: rotateX(-90deg) translateZ(100PX);
+		}
+		.back{
+			background-color: yellow;
+			transform: rotateX(90deg) translateZ(100PX);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="down same">down</div>
+		<div class="up same">up</div>
+		<div class="left dif">left</div>
+		<div class="right dif">right</div>
+		<div class="front same">front</div>
+		<div class="back same">back</div>
+	</div>
+</body>
+</html>

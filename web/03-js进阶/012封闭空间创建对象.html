@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012封闭空间创建对象.html</title>
+	<script>
+		(function(w){
+			
+			function Person(name,age){
+				this.name = name;
+				this.age = age;
+			}
+
+
+			Person.prototype = {
+				constructor:Person,
+				sayName: function(){
+					console.log('I am '+this.name);
+				},
+				sayAge: function(){
+					console.log('I am '+this.age)
+				},
+				LEGS:2
+			}
+
+
+			w.Person = Person;
+		})(window);
+
+
+
+		var p1 = new Person('tom',20)
+		console.log(p1)
+		p1.sayName()
+		p1.sayAge()
+		console.log(p1.LEGS)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

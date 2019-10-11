@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008加法运算.html</title>
+</head>
+<body>
+	<input type="text" id="txt1">+
+	<input type="text" id="txt2">
+	<input type="button" value="求和" id="btn">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oTxt1 = document.getElementById('txt1');
+		var oTxt2 = document.getElementById('txt2');
+		// var oNum1 = parseFloat (txt1.value);
+		// var oNum2 = parseFloat (txt2.value);
+		// 第一种
+		// var oNum1 = txt1.value -0;
+		// var oNum2 = txt2.value -0;
+		// 第二种
+		var oNum1 = Number (txt1.value);
+		var oNum2 = Number (txt2.value);
+		// 第三种
+		if(isNaN(oNum1)) {
+			alert('第一个输入错误')
+		}else if(isNaN(oNum2)){
+			alert('第二个输入错误')
+		}else {
+			alert(oNum1+oNum2);
+		}
+		
+
+
+		console.log(oNum1)
+		console.log(typeof oNum1)
+		console.log(oNum2)
+		console.log(typeof oNum2)
+	}
+</script>
+</html>

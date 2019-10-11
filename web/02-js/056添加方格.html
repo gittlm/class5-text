@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>056添加方格.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="复制">
+	<div id="box">	
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box')
+	var aDiv = document.getElementsByClassName('son')
+	var oBtn = document.getElementById('btn')
+	var iWidth = 100;
+	var iHeight = 100;
+	var iMargin = 15;
+	var allCol = 5;
+	oBtn.onclick = function(){
+		var oDiv = aDiv[0].cloneNode();
+		oBox.appendChild(oDiv)
+		for(var i=0;i<aDiv.length;i++){
+				var iRow = parseInt(i/allCol);
+				var iCol = i % allCol;	
+				aDiv[i].style.top = iRow * (iHeight+iMargin)+'px';
+				aDiv[i].style.left = iCol * (iWidth+iMargin)+'px';
+			}
+	}
+	
+</script>
+</html>

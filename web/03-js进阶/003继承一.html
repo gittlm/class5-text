@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003继承.html</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.sayName = function(){
+			console.log('I am '+this.name)
+		}
+		Person.prototype.sayAge = function(){
+			console.log('I am '+this.age)
+		}
+		Person.prototype.legs = 2;
+		var P1 = new Person('tlm',33);
+		P1.sayAge()
+
+
+
+		
+		
+		function Student(name,age,){
+			Person.call(this,name,age);
+			// this.major = major;
+		}
+		Student.prototype = Person.prototype;
+		// Student.prototype.sayMajor = function(){
+		// 	console.log('i an from '+this.major)
+		// };
+		var s1 =new Student('jery',22,'en')
+		s1.sayName();
+		s1.sayAge()
+		// s1.sayMajor()
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

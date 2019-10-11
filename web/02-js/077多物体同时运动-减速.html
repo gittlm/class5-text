@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>077多物体同时运动-减速.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 400px;
+			margin: 100px auto;
+		}
+		.container div{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			background-color: #f00;
+			margin-top: 10px;
+			opacity: 0.3;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="div1">变宽</div>
+		<div id="div2">变高</div>
+		<div id="div3">变红</div>
+	</div>
+</body>
+<script src="util.js"></script>
+<script>
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	var oDiv3 = document.getElementById('div3');
+	oDiv1.onmouseover = function(){
+		animate1(oDiv1,'width',300)		
+	}
+	oDiv2.onmouseover = function(){
+		animate1(oDiv2,'height',300)		
+	}
+	oDiv3.onmouseover = function(){
+		animate1(oDiv3,'opacity',100)	
+	}	
+	oDiv1.onmouseout = function(){
+		animate1(oDiv1,'width',100)		
+	}
+	oDiv2.onmouseout = function(){
+		animate1(oDiv2,'height',100)		
+	}
+	oDiv3.onmouseout = function(){
+		animate1(oDiv3,'opacity',30)	
+	}
+</script>
+</html>

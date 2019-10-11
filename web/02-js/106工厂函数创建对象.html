@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>106工厂函数创建对象.html</title>
+	<script>
+		function person(name,age){
+			var obj = new Object()
+			obj.name = name;
+			obj.age = age;
+			obj.sayHello = function(){
+				console.log('I am '+this.name,'I am '+this.age+'years old')
+			}
+			return obj;
+		}
+
+		var person1 = person('tom',20);
+		var person2 = person('mike',25);
+		console.log(person2)
+		console.log(person1)
+		// person.sayHello();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

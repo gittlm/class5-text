@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018事件绑定.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			margin: 100px auto;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//方法一（一部分没办法用这个实现）
+		// $('.box').click(function(){
+		// 	alert('click...')
+		// })
+
+		//方法二（可以实现所有的事件）
+		// $('.box').on('click',function(){
+		// 	alert('click...')
+		// })
+		//两个方法都不能覆盖，都是所有的元素迭代选择
+		//用one是事件只能触发一次
+		// $('.box').one('click',function(){
+		// 	alert('click...')
+		// })
+
+		
+		$('.box').hover(function(){
+			alert('mouseover...')
+		})
+
+		//鼠标移入触发执行函数，移出时也会触发函数,有两次
+		// $('.box').hover(function(){
+		// 	alert('mouseover')
+		// },function(){
+		// 	alert('mouseout')
+		// })
+	})
+</script>
+</html>

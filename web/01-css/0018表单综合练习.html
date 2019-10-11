@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0018表单综合练习.html</title>
+</head>
+<body>
+	
+	<form action="http://www.kuazhu.com/" method="POST">
+		<p>
+			<h3>输入界面</h3>
+			<label for="username">用户名</label>
+			<input type="text" name="username" id="username" autocomplete="off" placeholder="请输入名称">
+		</p><p>
+			<label for="shoujihao">手机号</label>
+			<input type="number" name="shoujihao" id="shoujihao" autocomplete="off" placeholder="请输入十一位数字">
+		</p>
+		<p>
+			<label for="password">密码</label>
+			<input type="password" name="password" id="password" autocomplete="off" placeholder="请输入密码">
+		</p>
+		<p>
+			选项：<input type="radio" name="number" checked>1
+			<input type="radio" name="number">2
+			<input type="radio" name="number">3
+			<input type="radio" name="number">4
+		</p>
+
+		<p>
+			位置：<input type="checkbox" name="place" checked>北京
+			<input type="checkbox" name="place">上海
+			<input type="checkbox" name="place">广州
+			<input type="checkbox" name="place">深圳
+			<input type="checkbox" name="place">许昌
+		</p>
+		<p>
+			喜欢的颜色：<input type="color" value="color">
+		</p>
+		<p>
+			打开文件：<input type="file" value="file">
+		</p>
+		<p>
+			<h4>或点击下方图片进入</h4><input type="image" src="../img/other/dou tu/003.jpg" value="mage">
+		</p>
+		<p>
+			<label for="mail">邮箱</label>
+			<input type="email" name="mail" id="mail">
+		</p>
+		<p>
+			日期：<input type="date" name="date">
+		</p>
+	    <p>
+	    	<select name="日期" id="">
+	    	<optgroup label="上半月">
+	    		<option value="1" name="1">01</option>
+	    		<option value="2" name="2">02</option>
+	    		<option value="3" name="3">03</option>
+	    		<option value="4" name="4">04</option>
+	    		<option value="5" name="5">05</option>
+	    		<option value="6" name="6">06</option>
+	    		<option value="7" name="7">07</option>
+	    		<option value="8" name="8">08</option>
+	    		<option value="9" name="9">09</option>
+	    		<option value="10" name="10">10</option>
+	    		<option value="11" name="11">11</option>
+	    		<option value="12" name="12">12</option>
+	    		<option value="13" name="13">13</option>
+	    		<option value="14" name="14">14</option>
+	    		<option value="15" name="15">15</option>
+	    	</optgroup>
+	    	</select>
+		<p>
+			<input type="button" value="检查">
+			<input type="submit" value="提交">
+			<input type="reset" name="reset">
+		</p>
+	</form>
+</body>
+</html>

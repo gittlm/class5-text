@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010过滤器.html</title>
+	<style>
+		.box{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div></div>
+	<div></div>
+	<div class="box1">1111111111</div>
+	<div><p class="box2">222222222</p></div>
+	<div class="box3">33333</div>
+	<a href=""></a>	
+	<a href="">44444444</a></br>
+	<a href=""><span>55555555</span></a>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//选择器,所有方法都最后返回jquery对象
+		// console.log($('div'))
+
+		//基本过滤器(eq可以是负数，负数是倒数的第几个)
+		// console.log($('div').eq(-1))
+
+	//内容过滤器
+		//empty选择的元素中没有文本内容和子元素的
+		// console.log($('a:empty'))
+
+		//parent选择的元素中有文本内容或者子元素的
+		// console.log($('a:parent'))
+
+		//contains选择的元素中有文本内容或者子元素的
+		// console.log($('a:contains(5)'))
+
+		//has选择的元素中有指定的子元素选择器的
+		// console.log($('div:has(.box2)'))
+
+	//过滤方法
+		//选择索引对应的DOM元素
+		// console.log($('div').eq(1))
+
+		//对象中包含元素之外的兄弟元素
+		// console.log($('div').eq(1).siblings())
+
+	//可见性过滤
+		//匹配所有不可见元素
+		console.log($('div:hidden'))
+
+		//匹配所有可见元素
+		console.log($('div:visible'))
+	//查找jQuery对象中DOM元素的后代中符合选择器规则的元素
+		console.log($('div').find('p'))
+	})
+</script>
+</html>

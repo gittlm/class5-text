@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>124获取表单</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="txt" name="txt">
+		<input type="password" id="password" name="password">
+		<input type="button" id="btn" name="button" value="提交">
+		<input type="radio" name="sex">男
+		<input type="radio" name="sex">女
+	</form>
+</body>
+<script>
+	var oForm = document.forms[0]
+	console.log(oForm)//元素集合
+	console.log(oForm.elements[0])//通过下标
+	console.log(oForm.elements['password'])//通过NAME
+	console.log(oForm.elements.button)//
+	console.log(oForm.sex)
+	console.log(oForm.button.form)
+
+</script>
+</html>

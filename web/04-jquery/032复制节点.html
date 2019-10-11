@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032复制节点.html</title>
+</head>
+<body>
+	<div>
+		<p>01</p>
+		<p>02</p>
+		<p>03</p>
+		<p>04</p>
+		<div>05</div>
+		<div>06</div>
+		<div>07</div>
+		<div>08</div>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').on('click',function(){
+			alert('pppppppp')
+		})
+
+		// var cl01 = $('p').clone()
+		// $('body').append(cl01)
+
+		//true会复制事件
+		var cl02 = $('p').clone(true)
+		$('body').append(cl02)
+
+		//默认是false不会复制事件
+		// var cl02 = $('p').clone(false)
+		// $('body').append(cl02)
+	})
+</script>
+</html>

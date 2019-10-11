@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007函数防抖.html</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	function throttle(fn,delay){
+		var time = 0;
+		return function(){
+			clearTimeout(time);
+			time = setTimeout(fn,500)
+		}
+	}
+	var a = 1;
+	window.onscroll = throttle(function(){
+		a++;
+		console.log(a)
+	},500)
+</script>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨淘.html</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+</head>
+<body>
+<!--top1-->
+	<div class="top1">
+		<div class="container">
+			<ul class="top1-left fl">
+				<li class="fl"><a href="#" class="login">亲，请登录</a></li>
+				<li class="fl"><a href="#" class="link">免费注册</a></li>
+				<li class="fl"><a href="#" class="link">手机逛跨淘</a></li>
+			</ul>
+			<ul class="top1-right fr">
+				<li class="dropdown fl" data-active="menu">
+					<a href="#" class="dropdown-toggle link">
+						我的跨淘
+						<i class="fa dropdown-arrow transition">&#xf107;</i>
+					</a>
+					<ul class="dropdown-layer">
+						<li class="menu-item"><a href="#">已买到的宝贝</a></li>
+						<li class="menu-item"><a href="#">我的足迹</a></li>
+					</ul>
+				</li>
+				<li class="dropdown fl" data-active="menu" data-url="data/top1-data/center.json">
+					<a href="#" class="dropdown-toggle link">
+						卖家中心
+						<i class="fa dropdown-arrow transition">&#xf107;</i>
+					</a>
+					<ul class="dropdown-layer">
+						<!-- <li class="menu-item"><a href="#">已买到的宝贝</a></li>
+						<li class="menu-item"><a href="#">我的足迹</a></li> -->
+						<img src="img/loading.gif" class="dropdown-load" alt="">
+					</ul>
+				</li>
+				<li class="dropdown fl" data-active="menu">
+					<a href="#" class="dropdown-toggle link">
+						商品分类
+					</a>
+				</li>
+				<li class="dropdown fl" data-active="menu">
+					<a href="#" class="dropdown-toggle link">
+						网站导航
+						<i class="fa dropdown-arrow transition">&#xf107;</i>
+					</a>
+					<ul class="dropdown-layer">
+						<li class="menu-item"><a href="#">已买到的宝贝</a></li>
+						<li class="menu-item"><a href="#">我的足迹</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+<!--top2-->
+	<div class="top2">
+		<div class="container">
+			<h1 class="fl">
+				<a href="#" class="top2-logo"></a>
+			</h1>
+			<div class="search fl">
+				<form action="https://s.taobao.com/search" class="search-form">
+					<input type="text" class="search-input fl" autocomplete="off" name="q">
+					<input type="submit" class="search-btn">
+				</form>
+				<ul class="search-layer">
+					<!-- <li class="search-item">我是评论</li>
+					<li class="search-item">我是评论</li>
+					<li class="search-item">我是评论</li>
+					<li class="search-item">我是评论</li>
+					<li class="search-item">我是评论</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+<!--top3-->
+	<div class="nav-mian">
+		<div class="container">
+			<a href="#" class="link">秒杀</a>
+			<a href="#" class="link">拍卖</a>
+			<a href="#" class="link">京东服饰</a>
+			<a href="#" class="link">京东超市</a>
+			<a href="#" class="link">生鲜</a>
+			<a href="#" class="link">京东金融</a>
+		</div>
+	</div>
+<!--top4-->
+	<div class="focus">
+		<div class="container">
+			<div class="category fl">
+				<a href="#" class="category-title">
+					<i class="fas icon">&#xf00a;</i>全部分类
+				</a>
+				<ul class="category-list">
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-1.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<!--  
+							<dl class="category-details">
+								<dt class="category-details-title fl">
+									<a href="#" class="category-details-title-link">电视</a>
+								</dt>
+								<dd class="category-details-item fl">
+									<a href="#" class="link">曲面电视</a>
+									<a href="#" class="link">超薄电视</a>
+								</dd>
+							</dl>
+							-->
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-2.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-3.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-4.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-5.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-6.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-7.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-8.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-9.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-10.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-11.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-12.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-13.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+					<li class="dropdown" data-active="category" data-url="data/category/category-detail-14.json">
+						<div class="dropdown-toggle">
+							<a href="javascript:;" class="dropdown-link">家用电器</a>
+							<i class="dropdown-icon">&gt;</i>
+						</div>
+						<div class="dropdown-layer">
+							<img src="img/loading.gif" class="dropdown-loading" alt="">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="carousel fl">
+				<div class="carousel-wrap">
+					<ul class="imgs">
+						<li class="carousel-item">
+							<a href="#">
+								<img class="carousel-img" src="img/focus-carousel/1.png" alt="">
+							</a>
+						</li>
+						<li class="carousel-item">
+							<a href="#">
+								<img class="carousel-img" src="img/focus-carousel/2.png" alt="">
+							</a>
+						</li>
+						<li class="carousel-item">
+							<a href="#">
+								<img class="carousel-img" src="img/focus-carousel/3.png" alt="">
+							</a>
+						</li>
+						<li class="carousel-item">
+							<a href="#">
+								<img class="carousel-img" src="img/focus-carousel/4.png" alt="">
+							</a>
+						</li>															
+					</ul>
+					<ul class="btns">
+						<li class="btn-item"></li>
+						<li class="btn-item"></li>
+						<li class="btn-item"></li>
+						<li class="btn-item"></li>
+					</ul>
+					<span class="control control-left">&lt;</span>
+					<span class="control control-right">&gt;</span>
+				</div>			
+			</div>
+			<div class="sidebar fr">
+	            <div class="focus-news">
+	                <div class="focus-news-head">
+	                    <h2 class="focus-news-title fl">快报</h2>
+	                    <a href="#" target="_blank" class="link fr">更多 &gt;</a>
+	                </div>
+	                <div class="focus-news-body">
+	                    <p class="text-ellipsis">
+	                        <a href="#" target="_blank" class="link"><strong>[特惠]</strong> 精选图书每满150减50</a>
+	                    </p>
+	                    <p class="text-ellipsis">
+	                        <a href="#" target="_blank" class="link"><strong>[公告]</strong> 因武汉图书仓搬仓升级配送延迟</a>
+	                    </p>
+	                    <p class="text-ellipsis">
+	                        <a href="#" target="_blank" class="link"><strong>[特惠]</strong> 爆款手机12期免息</a>
+	                    </p>
+	                    <p class="text-ellipsis">
+	                        <a href="#" target="_blank" class="link"><strong>[公告]</strong> 河南受暴雨影响配送延迟</a>
+	                    </p>
+	                    <p class="text-ellipsis">
+	                        <a href="#" target="_blank" class="link"><strong>[特惠]</strong> 小龙虾领券满1399减880</a>
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="focus-service clearfix">
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-phone focus-service-icon"></i>
+	                    <span class="focus-service-text">话费</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-plane focus-service-icon"></i>
+	                    <span class="focus-service-text">机票</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-film focus-service-icon"></i>
+	                    <span class="focus-service-text">电影票</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-gamepad focus-service-icon"></i>
+	                    <span class="focus-service-text">游戏</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-hand-holding-usd focus-service-icon"></i>
+	                    <span class="focus-service-text">彩票</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-car focus-service-icon"></i>
+	                    <span class="focus-service-text">加油卡</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-building focus-service-icon"></i>
+	                    <span class="focus-service-text">酒店</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-train focus-service-icon"></i>
+	                    <span class="focus-service-text">火车票</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-users focus-service-icon"></i>
+	                    <span class="focus-service-text">众筹</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-dollar-sign focus-service-icon"></i>
+	                    <span class="focus-service-text">理财</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-box focus-service-icon"></i>
+	                    <span class="focus-service-text">礼品卡</span>
+	                </a>
+	                <a href="#" target="_blank" class="focus-service-item fl">
+	                    <i class="fa fa-file focus-service-icon"></i>
+	                    <span class="focus-service-text">白条</span>
+	                </a>
+	            </div>
+	            <div class="focus-ad"></div>				
+			</div>
+		</div>
+	</div>
+
+<!--todays-->
+	<div class="todays">
+		<div class="container"></div>
+	</div>
+<!--floor1-->
+	<div class="floor1 floor">
+		<div class="container"></div>
+	</div>
+<!--floor2-->
+	<div class="floor2 floor">
+		<div class="container"></div>
+	</div>
+<!--floor3-->
+	<div class="floor3 floor">
+		<div class="container"></div>
+	</div>
+<!--floor4-->
+	<div class="floor4 floor">
+		<div class="container"></div>
+	</div>
+<!--floor5-->
+	<div class="floor5 floor">
+		<div class="container"></div>
+	</div>
+<!--footer-->
+	<div class="footer">
+		<div class="container"></div>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/showHide.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/move.js"></script>
+<script src="js/carousel.js"></script>
+
+<script src="js/index.js"></script>
+</html>

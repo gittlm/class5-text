@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029外部插入对象.html</title>
+</head>
+<body>
+	<button>点击插入</button>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			//插入到指定子元素后面
+			// $('li').eq(1).after($('<li>新来的</li>'))
+
+
+			//插入到指定子元素前面
+			$('li').eq(3).before($('<li>新来的</li>'))
+			
+
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021事件委托.html</title>
+</head>
+<body>
+	<button>添加</button>
+	<ul>
+		<li>01</li>
+		<li>02</li>
+		<li>03</li>
+		<li>04</li>
+		<li>05</li>
+	</ul>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+		$('button').on('click',function(){
+			var oLi = document.createElement('li')
+			oLi.innerHTML = '我是添加进来的'
+			$('ul')[0].appendChild(oLi)
+		})
+		//事件委托是指把子元素的变化添加在父元素的身上实现变化
+
+		
+		//第一种
+		// $('ul').delegate('li','click',function(){
+		// 	alert('aaaaaaaa')
+		// })
+
+
+		//第二种，常用的是这个
+		$('ul').on('click','li',function(){
+			alert('aaaaaaaa')
+			console.log(this)
+		})
+	})
+</script>
+</html>

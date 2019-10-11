@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0004评论.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+			float: right;
+		}
+		li{
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px dashed #000;
+		}
+		.box{
+			width: 500px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<textarea id="txt" cols="30" rows="10"></textarea>
+		<input type="button" id="btn" value="点击评论">
+		<ul id="ul1">
+			<!-- <li>我是第一个评论的<a href="javascript:;">删除</a></li> -->
+		</ul>
+	</div>
+</body>
+<script>
+	var oTxt = document.getElementById('txt')
+	var oBtn = document.getElementById('btn')
+	var oUl = document.getElementById('ul1')
+	oBtn.onclick = function(){
+		var val = oTxt.value
+		var oLi = document.createElement('li')
+		var aA = document.createElement('a')
+		aA.href = 'javascript:;'
+		aA.innerHTML = '删除';
+		oLi.innerHTML = val
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oLi.appendChild(aA)
+		oTxt.value = '';
+		aA.onclick = function(){
+			oUl.removeChild(oLi)
+		}
+	}
+</script>
+</html>

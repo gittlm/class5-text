@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026月历.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#box{
+			width: 380px;
+			margin: 50px auto;
+			background-color: #ccc;
+
+		}
+		#box ul{
+			overflow: hidden;
+		}
+		#box li{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background-color: #000;
+			color: #fff;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+			margin-left: 20px;
+			margin-top: 20px;
+			cursor: pointer;
+		}
+		#box ul .act{
+			color: black;
+			background-color: white;
+		}
+		#plan{
+			margin: 20px 0px 20px 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li class="act">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+	<div id="plan" class="content">
+		
+	</div>
+	</div>
+	
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	var aContent = document.getElementById('plan');
+	var aPlan = ['睡觉1','睡觉2','睡觉3','睡觉4','睡觉5','睡觉6','睡觉7','睡觉8','睡觉9','睡觉10','睡觉11','睡觉12'];
+	aContent.innerHTML = '<h2>一月</h2><p>睡觉1</p>';
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for(var j=0;j<aLi.length;j++){
+				aLi[j].className='';
+			}
+			this.className='act';
+			aContent.innerHTML = '<h2>'+(this.index+1)+'月</h2><p>'+aPlan[this.index]+'</p>';
+		}
+	}
+</script>
+</html>

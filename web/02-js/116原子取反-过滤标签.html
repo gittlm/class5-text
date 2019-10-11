@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>116原子取反-过滤标签.html</title>
+</head>
+<body>
+	<p></p>
+	<textarea id="txt1" cols="30" rows="10"></textarea>
+	<button id="btn">过滤标签</button>
+	<textarea id="txt2" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt1 = document.getElementById('txt1')
+	var oTxt2 = document.getElementById('txt2')
+	var oBtn = document.getElementById('btn')
+	oBtn.onclick = function(){
+		var reg = /<[^<>]+>/g;//有+表示可以有多个，没有+表示只能选中<>内有一个字符的
+		oTxt2.innerHTML = oTxt1.value.replace(reg,'*');
+	}
+</script>
+</html>

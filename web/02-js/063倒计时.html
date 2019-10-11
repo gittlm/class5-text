@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>063倒计时.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			color: #fff;
+			text-align: center;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer"></div>
+</body>
+<script>
+	function time2(num){
+		return num<10 ? '0'+num : ''+num;
+	}
+	
+	
+	function time3(){
+		var allTime = parseInt((endDate - Date.now())/1000)
+		if(allTime<=0){
+			allTime = 0;
+			clearInterval(time3)
+		}
+		var iH = parseInt(allTime/3600)
+		var iM = parseInt((allTime%3600)/60)
+		var iS = parseInt((allTime%3600)%60)
+		oTimer.innerHTML = '下课还有'+time2(iH)+'时'+time2(iM)+'分'+time2(iS)+'秒';
+	}
+	var oTimer = document.getElementById('timer')
+	var endDate = new Date('2019-08-22 00:00:00');
+	var endTime = endDate.getTime()
+	var timer = 0;
+	timer = setInterval(time3,1000);
+	time3();
+</script>
+</html>

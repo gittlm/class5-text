@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>119修正模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'abc Abc AKB abdegbas'
+	var reg1 = /a/;
+	var reg2 = /a/g;//全局
+	var reg3 = /a/ig;//等于/a|A/g;不区分大小写
+	console.log(str.replace(reg1,'*'))
+	console.log(str.replace(reg2,'*'))
+	console.log(str.replace(reg3,'*'))
+</script>
+</html>

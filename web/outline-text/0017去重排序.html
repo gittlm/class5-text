@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0017去重排序.html</title>
+	<script>
+		var attr = [9,6,3,6,5,8,4,2,1,9,7,6,1,5,4]
+		function num(attr){
+			var result = [];
+			var obj = {};
+			for(var i =0;i<attr.length;i++){
+				obj[attr[i]] = '';
+			}
+			for(var a in obj){
+				result.push(a-0)
+			}
+			return result;
+		}
+		console.log(num(attr))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>122正则的exec方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+		var reg1 = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g;
+		var reg2 = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+		var str = 'ahj2018-05-10bdf';
+		console.log(reg1.lastIndex);//0
+		console.log(reg1.exec(str));//["2018-05-10", "2018", "05", "10", index: 3, input: "ahj2018-05-10bdf", groups: {year: "2018", month: "05", day: "10"}]
+		console.log(reg1.lastIndex);//13
+		console.log(reg1.exec(str));//null
+		console.log(reg2.lastIndex);//0
+		console.log(reg2.exec(str));//["2018-05-10", "2018", "05", "10", index: 3, input: "ahj2018-05-10bdf", groups: {year: "2018", month: "05", day: "10"}]
+		console.log(reg2.lastIndex);//0
+		console.log(reg2.exec(str));//["2018-05-10", "2018", "05", "10", index: 3, input: "ahj2018-05-10bdf", groups: {year: "2018", month: "05", day: "10"}]
+</script>
+</html>

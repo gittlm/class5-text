@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040去重函数.html</title>
+	<script>
+		// var arr = [1,6,9,7,3,5,4,6,9,7,2,8,4];
+		var arr3 = [1,6,9,7,3,5,4,6,9,7,2,8,4];
+		function Array(arr1){
+			// console.log('aaa')
+			var em = [];
+			//定义空数组，用来第二个循环的查询。
+			for(i=0;i<arr1.length;i++){
+				var ch = false;
+				//定义ch为false，为下面判断定义
+				for(j=0;j<em.length;j++){
+					//空数组的循环，判断去重
+					if(arr1[i] == em[j]){
+						//如果相等，则ch是真的，就终止循环
+						//arr1[i] == em[j]是和ch一样的假的
+						ch = true;
+						break;
+					}
+				}
+				if(!ch){
+					//如果是真的，ch为假，非ch为真，真的就继续执行
+					em.push(arr1[i]);
+				}
+
+			}
+			return em;
+			console.log(em)
+		}
+		var arr = Array(arr3);
+		
+		console.log(arr)
+		//有函数就要有调用，调用的是函数之前的数组。
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

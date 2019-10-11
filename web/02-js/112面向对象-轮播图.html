@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>112面向对象-轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+</body>
+<script>
+	function Carousel(id,aImg){
+		this.oBox = document.getElementById(id)
+		this.aImg = aImg;
+		this.init();
+	}
+	Carousel.prototype.init = function(){
+		// console.log(this)
+		this.oBox.style.position = 'relative'
+		var oUl = document.createElement('ul')
+		for(var i=0;i<this.aImg.length;i++){
+			var oLi = document.createElement('li');
+			var oImg = document.createElement('img');
+			oImg.src = this.aImg[i]
+			oLi.style.position = 'absolute'
+			oLi.style.top = 0;
+			oLi.style.left = 0;
+			oLi.appendChild(oImg)
+			oUl.appendChild(oLi);
+		}
+		
+
+		this.oBox.appendChild(oUl)
+		oUl.style.width = 600
+	}
+	new Carousel('box',['../img/text/ad1.jpg','../img/text/ad2.jpg','../img/text/ad3.jpg']);
+</script>
+</html>

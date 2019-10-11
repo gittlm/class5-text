@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>045获取父节点.html</title>
+	<style>
+		#father{
+			width: 400px;
+			height: 400px;
+			margin: 50px auto;
+			border: 1px solid #000;
+			position: relative;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oSon = document.getElementById('son');
+	var oParent = oSon.parentNode;
+	//直接找到父元素
+	// var oParent = oSon.offsetParent;
+	// 没有定义的话会找到BODY里面
+	oParent.style.backgroundColor = 'green';
+</script>
+</html>

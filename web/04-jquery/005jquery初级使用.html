@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005jquery初级使用.html</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+</body>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+	$('div').css({
+		color:'red'
+	})
+	var aDiv = document.querySelectorAll('div')
+	//jquery转换为DOM元素
+	console.log($('div')[0])
+	console.log($('div').get(2))
+	$(aDiv[2]).css({
+		color:'green'
+	})
+	//DOM转换为jquery元素
+	console.log($(aDiv)[0])
+</script>
+</html>

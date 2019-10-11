@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040原理解析-extend方法.html</title>
+</head>
+<body>
+	<div>div</div>
+</body>
+<!-- <script src="js/kquery.js"></script> -->
+<script>
+	function kquery(){
+
+	}
+	kquery.prototype = {
+		constructor:kquery,
+		// extend:function(options){
+		// 	// console.log(options)
+		// 	for(attr in options){
+		// 		// console.log(this)
+		// 		// console.log(options[attr])
+		// 		this[attr] = options[attr]
+		// 	}
+		// }
+	}
+
+	//添加到js上应用
+	kquery.prototype.extend = kquery.extend = function(options){
+		for(attr in options){
+			this[attr] = options[attr]
+		}
+	}
+
+	$ = kquery;
+</script>
+<script>
+	// console.log($.prototype)
+	$.prototype.extend({
+		test:function(){
+			console.log('test...')
+		}
+	})
+	$.extend({
+		test1:function(){
+			console.log('test00111...')
+		}
+	})
+	var kz = new kquery();
+	kz.test();
+	kquery.test1();
+</script>
+</html>

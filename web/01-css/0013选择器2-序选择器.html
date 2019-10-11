@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0013选择器2-序选择器.html</title>
+	<style>
+		/*p:last-child{color: red;}*/
+		/*p:nth-child(4){color: red;}*/
+		p:nth-child(odd){color: blue;}
+		/*odd是奇数,下一个类型的奇数也会变属性*/
+		/*p:nth-last-child(2){color: red;}*/
+		/*p:only-child{color: blue;}*/
+		/*同级别不区分类型*/
+		/*p:first-of-type{color: red;}*/
+		/*p:nth-of-type(2){color: red;}*/
+		/*p:nth-of-type(even){color: red;}*/
+		/*even是偶数*/
+		/*p:nth-last-of-type(2){color: red;}*/
+		/*p:only-of-type{color: red;}*/
+		/*同级别区分类型，下一个类型的奇数也会变属性*/
+	</style>
+</head>
+<body>
+		<h2>0000</h2>
+		<p>1111</p>
+		<p>2222</p>
+		<p>3333</p>
+		<p>4444</p>
+		<p>5555</p>
+		<p>6666</p>
+	<div>
+		<p>7777</p>
+	</div>
+
+</body>
+</html>

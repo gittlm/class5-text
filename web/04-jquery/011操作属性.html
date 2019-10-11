@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011操作属性.html</title>
+</head>
+<body>
+	<input type="text" value="aaa" name="a01">
+	<input type="text" value="bbb" name="b01">
+	<input type="checkbox" checked="checked">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//获取属性(只能第一个)
+		// console.log($('input').attr('name'))
+		// console.log($('input').prop('name'))
+
+
+		//操作属性（改变所有符合的属性）
+		// $('input').attr('name','cccc')
+		// $('input').prop('name','cccc')
+
+
+		//删除属性（删除所有符合的属性）
+		// $('input').removeAttr('name')
+		//removeProp会把符合的元素改变成undefined
+		// $('input').removeProp('name')
+
+
+		//特殊的（checked,selected,disabled）属性节点的值具有true和false时
+		//没有时attr返回的是undefined
+		// console.log($('input').eq(2).attr('checked'))
+		//prop返回的是布尔值
+		console.log($('input').eq(2).prop('checked'))
+	})
+</script>
+</html>

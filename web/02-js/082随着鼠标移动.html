@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>082随着鼠标移动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="util.js"></script>
+<script>
+	var oBox = document.getElementById('box')
+	document.addEventListener('mousemove',function(event){
+		console.log(event)
+		oBox.style.top = event.clientY +getScrollTop()+ 'px';
+		oBox.style.left = event.clientX +getScrollLeft()+ 'px';
+	},false)
+</script>
+</html>

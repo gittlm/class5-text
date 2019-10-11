@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011显示隐藏-插件封装.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		button{
+			width: 70px;
+			height: 30px;
+		}
+		div{
+			display: none;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/showHide.js"></script>
+<script>
+
+
+	var $elem = $('div') 
+	//初始化插件
+	$elem.showHide({js:true,mode:'slideLeftOpacity'});
+
+
+
+	$elem.on('show shown hide hidden',function(ev){
+		if(ev.type == 'show'){
+			console.log('show...')
+		}else if(ev.type == 'shown'){
+			console.log('shown...')
+		}else if(ev.type == 'hide'){
+			console.log('hide...')
+		}else if(ev.type == 'hidden'){
+			console.log('hidden...')
+		}
+	})
+
+	//设置显示隐藏的调用
+	$('button').eq(0).on('click',function(){
+		$elem.showHide('show');
+	})
+	$('button').eq(1).on('click',function(){
+		$elem.showHide('hide');
+	})
+
+</script>
+</html>

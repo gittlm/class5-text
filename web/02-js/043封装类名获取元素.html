@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>043封装类名获取元素.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li class="li1">1</li>
+		<li>2</li>
+		<li class="li1">3</li>
+		<li class="li1">4</li>
+		<li>5</li>
+		<li class="li1">6</li>
+		<li>7</li>
+		<li class="li1">8</li>
+		<li class="li1">9</li>
+		<li>10</li>
+	</ul>
+</body>
+<script>
+	function getElementByClass(oParent,oClass){
+		var oLis = oParent.children;
+		var result = [];
+		for(i=0;i<oLis.length;i++){
+			if(oLis[i].className == oClass){
+				result.push(oLis[i]);
+			}
+		}
+		return result;
+	}
+	var oUl = document.getElementById('ul1');
+	console.log(getElementByClass(oUl,'li1'))
+	
+	// var oLi = oUl.getElementsByClassName('li1');
+	
+	// console.log(oUl)
+	// console.log(oLi)
+</script>
+</html>

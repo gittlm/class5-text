@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>113正则创建对象.html</title>
+	<script>
+		var str = 'abc ack bcl acfe labc'
+		
+		
+		//换一个
+		var reg1 = new RegExp('a')
+		console.log(str.replace(reg1,'*'))
+		//换全部
+		var reg1 = new RegExp('a','g')
+		console.log(str.replace(reg1,'*'))
+		//换一个
+		var reg2 = /a/;
+		console.log(str.replace(reg2,'*'))
+		//换全部
+		var reg2 = /a/g;
+		console.log(str.replace(reg2,'*'))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

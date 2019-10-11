@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0008平面位移基础.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 800px;
+			margin: 100px auto;
+			border: 1px solid black;
+		}
+		li{
+			width: 200px;
+			height: 100px;
+			margin: 100px auto;
+			background-color: red;
+		}
+		li:first-child{
+			transform: rotate(45deg);
+		}
+		li:nth-child(2){
+			transform: rotate(-30deg);
+		}
+		li:nth-child(3){
+			transform: translate(100px,100px);
+		}
+		li:nth-child(4){
+			transform: translate(-150px,-100px);
+		}
+		li:nth-child(5){
+			transform: scale(0.5,0.5);
+		}
+		li:nth-child(6){
+			transform: scale(2,2);
+		}
+		li:nth-child(7){
+			transform:rotate(45deg) scale(0.5,0.5) translate(100px,100px);}
+			/*三个属性可以随意换位置，旋转过后会以旋转后的坐标再位移和缩放。*/
+		.box{
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			margin: 100px auto;
+			position: relative;		
+		}
+		.box1{
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			/*transform-origin: 0px 0px;*/
+			/*transform-origin: 100% 0%;*/
+			transform-origin: center center;
+		}
+		.son1{
+			background-color: red;
+			transform: rotate(20deg);
+		}
+		.son2{
+			background-color: green;
+			transform: rotate(40deg);
+		}
+		.son3{
+			background-color: blue;
+			transform: rotate(60deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>12345</li>
+		<li>12345</li>
+		<li>12345</li>
+		<li>12345</li>
+		<li>12345</li>
+		<li>12345</li>
+		<li>12345</li>
+	</ul>
+	<div class="box">
+		<div class="box1 son1"></div>
+		<div class="box1 son2"></div>
+		<div class="box1 son3"></div>
+	</div>
+</body>
+</html>

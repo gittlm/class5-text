@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 500px;
+			height: 800px;
+		}
+		li{
+			width: 300px;
+			height: 80px;
+			font-size: 30px;
+			line-height: 80px;
+			margin-bottom: 10px;
+			margin-left: 20px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">获取数据-简单应用</button>
+</body>
+<script>
+	function ajax(method,url,data,fnSucc,fnFail){
+		var oAjax = new XMLHttpRequest();
+		if(method.toUpperCase() == 'POST'){
+			oAjax.open(method,url,true);
+			oAjax.send(data);
+		}else if(method.toUpperCase() == 'GET'){
+			if(data){
+				url += '?' + data;
+			}
+			oAjax.open(method,url,true);
+			oAjax.send();
+		}
+		oAjax.onreadystatechange = function(){
+			if(oAjax.readyState == 4 ){//数据完全返回
+				console.log(oAjax.getResponseHeader('Date'))
+				console.log(oAjax.getResponseHeader('Connection'))
+				console.log(oAjax.getResponseHeader('Content-Type'))
+				try{
+					if(oAjax.status == 200){//数据完全返回并正确
+						var obj = JSON.parse(oAjax.responseText)
+						typeof fnSucc == 'function' && fnSucc(obj);
+					}
+				}catch(e){
+					typeof fnFail == 'function' && fnFail(e);
+				}	
+			}
+			oAjax.onerror = function(){
+				console.log('onerror.....')
+			}
+		}
+	}
+	var oBtn = document.getElementById('btn')
+	oBtn.onclick = function(){
+		ajax('get',
+			'http://127.0.0.1:3001/019data.json',
+			'',
+			function(arr){
+				var oUl = document.createElement('ul')
+				for(var i=0;i<arr.length;i++){
+					var oLi = document.createElement('li')
+					oLi.innerHTML = '姓名：'+arr[i].name+'年龄：'+arr[i].age;
+					oUl.appendChild(oLi)
+				}
+				document.body.appendChild(oUl)
+			},
+			function(err){
+				console.log(err)
+			})
+	}
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>105Object对象创建对象.html</title>
+	<script>
+		var obj = new Object()
+		var obj1 = new Object()
+		console.log(obj)
+		obj.name = 'mike00';
+		obj.age = 23;
+		obj.sayHello = function(){
+			console.log('hi001....')
+		}
+		// obj.sort 
+		console.log(obj)
+		obj.sayHello()
+		obj1.name = 'mike';
+		obj1.age = 23;
+		obj1.sayHello = function(){
+			console.log('hi....')
+		}
+		console.log(obj1)
+		obj1.sayHello();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

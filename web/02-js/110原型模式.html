@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>110原型模式.html</title>
+	<script>
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+			if(!this.sayAge){
+				Person.prototype.sayAge = function(){
+					console.log('I am '+this.age+' years old')
+				}
+			}
+			if(!this.sayName){
+				Person.prototype.sayName = function(){
+					console.log('I am '+this.name)
+				}
+			}	
+		}
+
+		// Person.prototype.sayName = function(){
+		// 	console.log('I am '+this.name)
+		// }
+		// Person.prototype.sayAge = function(){
+		// 	console.log('I am '+this.age+' years old')
+		// }
+
+		var person1 = new Person('tom',22);
+		console.log(person1)
+		person1.sayName()
+		person1.sayAge()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

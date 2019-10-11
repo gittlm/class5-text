@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>041去重函数简单版.html</title>
+	<script>
+		var arr = [1,6,9,7,3,5,4,6,9,7,2,8,4];
+		function Array(ap){
+			//ap为参数，没有具体的意义，函数内使用，函数外可替换为其他数组
+			var em = [];
+			for(i=0;i<arr.length;i++){
+				if(em.indexOf(arr[i],0) == -1){
+					em.push(arr[i])
+					//空数组在循环内属于定义，使用的是原数组的名字和内容
+				}
+			}
+			return em;
+			//返回已经改变的空数组，先返回下面再定义调用
+		}
+		var arr1 = Array(arr);
+		//定义返回的数组并调用，才能显示出来
+		console.log(arr);
+		console.log(arr1);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

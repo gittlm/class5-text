@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>031替换节点.html</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div>000000000000</div>
+	<div>000000000000</div>
+	<div>000000000000</div>
+	<div>000000000000</div>
+	<div>000000000000</div>
+	<div>
+		000001
+		<p>0002</p>
+		<a href="">00003333</a>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').eq(-1).on('click',function(){
+			alert('click.....')
+		})
+		//replaceWith用jQuery对象2中的节点替换jQuery对象1中的节点
+		// $('div').eq(0).replaceWith($('div').eq(1))
+
+		//replaceAll用jQuery对象1中节点替换掉所有选中的节点,对象1上有事件的话会给它前面的节点都复制上事件，对于它后面的不会加上对象1的事件
+		$('div').eq(-1).replaceAll('div')
+	})
+</script>
+</html>

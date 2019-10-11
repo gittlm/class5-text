@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>058窗口打开和关闭.html</title>
+</head>
+<body>
+	<textarea id="txt" cols="30" rows="10"></textarea>
+	<input type="button" id="btn1" value="打开">
+	<input type="button" id="btn2" value="关闭">
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1')
+	var oBtn2 = document.getElementById('btn2')
+	var oTxt = document.getElementById('txt')
+	oBtn1.onclick = function(){
+		var val = oTxt.value
+		var newW = window.open()
+		// var newW = window.location.assign('http://www.baidu.com')
+		// var newW = window.location.href = 'http://www.baidu.com'
+		// var newW = window.location = 'http://www.baidu.com'
+		//四种方法都可以打开页面
+		newW.document.write(val)
+	}
+	//在输入窗口把059程序放进去可以关闭打开的窗口
+	oBtn2.onclick = function(){
+		var newC = window.close()
+	}
+</script>
+</html>

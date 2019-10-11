@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002元素类标签中引用js.html</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			border: 10px solid #000;
+			background-color: red;
+			margin-left: 150px;
+		}
+		#box3{
+			width: 200px;
+			height: 200px;
+			border: 20px solid #000;
+			margin-left: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="button" value="点击" onclick="document.getElementById('box1').className='box2'">
+	<div id="box1"></div>
+	<input type="button" value="点击2" onclick="document.getElementById('box3').style.borderTopColor='blue'">
+	<div id="box3"></div>
+</body>
+</html>

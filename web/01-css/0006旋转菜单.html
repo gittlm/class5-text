@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0006旋转菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		div{
+			width: 400px;
+			height: 600px;
+			background-color: rgb(247,174,0);
+			margin: 50px auto;
+		}
+		.ul1{
+			width: 100%h;
+			height: 50px;
+			background-color: skyblue;
+		}
+		.ul1>li{
+			width: 100px;
+			height: 50px;
+			float: left;
+			line-height: 50px;
+			margin-left: 25px;
+			text-align: center;
+			background-color: yellow;
+		}
+		.ul1>li>p:hover~.ul2 li{
+			/*两个同级用兄弟选择器触发HOVER属性*/
+			opacity: 1;
+			transform: rotateY(0deg);
+		}
+		.ul2>li{
+			width: 100px;
+			height: 40px;
+			background-color: red;
+			opacity: 0;
+			transition: all 1s;
+			transform: rotateY(180deg);
+		}
+		.ul2 li:nth-child(1){
+			transition-delay: 0ms;
+		}
+		.ul2 li:nth-child(2){
+			transition-delay: 200ms;
+		}
+		.ul2 li:nth-child(3){
+			transition-delay: 400ms;
+		}
+		.ul2 li:nth-child(4){
+			transition-delay: 600ms;
+		}
+		.ul2 li:nth-child(5){
+			transition-delay: 800ms;
+		}
+		.content{
+			font-size: 22px;
+			color: red;
+		}
+	</style>
+}
+</head>
+<body>
+	<div class="box">
+		<ul class="ul1">
+			<li class="li1">
+				<p>招牌菜1</p>
+				<ul class="ul2">
+					<li>鸡爪脱骨卖</li>
+					<li>风声水起捞面</li>
+					<li>手撕大白菜</li>
+					<li>老怪酥鱼</li>
+					<li>酱香佛手爪</li>
+				</ul>
+			</li>
+			<li class="li2">
+				<p>招牌菜2</p>
+				<ul class="ul2">
+					<li>乡村菠菜根</li>
+					<li>红枣开口笑</li>
+					<li>炝汁大丰收</li>
+					<li>老怪白切鸭</li>
+					<li>秘制虾尾</li>
+				</ul>
+			</li>
+			<li class="li3">
+				<p>凉菜</p>
+				<ul class="ul2">
+					<li>海蜇花</li>
+					<li>青麦仁</li>
+					<li>开胃黄瓜</li>
+					<li>老怪瓜丝</li>
+					<li>好吃土豆片</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="content">
+			厨老怪！！！<br>
+			满满陕北风情的民俗餐厅<br>
+			享受了一番视觉和美味的盛宴<br>
+			穿越一千多公里将陕北风味搬来许昌<br>
+			这种味道你一直会念念不忘<br>
+			这就是家的味道<br>
+			初入店内，浓浓的陕北风情扑面而来<br>
+			草席编制的吊顶以及那红彤彤的腰鼓<br>
+			象征传统文化的灯笼挂顶，温馨淡雅<br>
+			仿佛穿越到70年代！<br>
+			有故事的乡里菜<br>
+			儿时的记忆 童年的味道<br>
+			老板的用心表现在店内的每一个细节里<br>
+			厨老怪是自带回忆感的菜馆<br>
+			菜品展示窗口，展示着陕北人的豪迈洒脱<br>
+			清楚的看到每一道美食的制作过程<br>
+			有一种与其他餐厅不同的体验！<br>
+
+
+		</p>
+	</div>
+</body>
+</html>

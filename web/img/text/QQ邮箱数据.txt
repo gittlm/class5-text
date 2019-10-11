@@ -1,0 +1,18 @@
+logo背景色#eff4fa
+高63px,1px边框#d6dfea
+from left:36px
+from top:12px
+   
+
+
+中间左侧#fff,左505px,top135px,
+
+中右right500px,right72px/
+
+denglu..#5a98de
+qqdenglu;;#f9fbfe
+w336xh389
+
+foot  ,height37px
+color..#eff4fa
+border#d6dfea
