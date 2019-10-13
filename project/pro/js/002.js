@@ -1,8 +1,11 @@
 ;(function($){
-	function Search($elem){
+	function Search($elem,options){
 		this.$elem = $elem;
+		this.options = options;
 		this.$txt = $elem.find('.txt');
 		this.$btn = $elem.find('.btn');
+		this.dataUrl = this.options.src + this.getValue();
+
 
 		this.init();
 	}
@@ -14,23 +17,28 @@
 		submit:function(){
 			var val = this.getValue();
 			if(val == ''){
-				console.log('none...')
+				return false;
 			}
 			this.$elem.submit();
 		},
 		getValue:function(){
 			return this.$txt.val();
+		},
+		getData:function(){
+			this.$txt.on('input',function(){
+				var dataUrl = this.$txt.data('src')+this.getValue();
+			})
 		}
 	}
-
-	// Search.defaults = {
-	// 	name:'tanglimin'
-	// }
-
+	Search.DEFAULTS = {
+		autocomplete:true,
+		src:'https://suggest.taobao.com/sug?q='
+	}
 	$.fn.extend({
-		search:function(){
+		search:function(options){
 			var $elem = $('.search');
-			var search = new Search($elem);
+			options = $.extend({},Search.DEFAULTS,options);
+			var search = new Search($elem,options);
 		}
 	});
 })(jQuery);

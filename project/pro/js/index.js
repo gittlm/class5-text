@@ -10,8 +10,6 @@
 					$(this).find('.dropdown-layer').slideDown(500);
 					$(this).find('i').addClass('transform');
 
-
-
 					var dataUrl = $(this).data('url');
 					if($(this).data('isLoaded')) return;
 					var _this = this 
@@ -28,8 +26,6 @@
 						});
 					}
 
-
-
 				}.bind(this),300)
 			},function(){
 				clearTimeout(timer)
@@ -42,6 +38,7 @@
 	navDropDown();
 	function handleSearch(){
 		$('.search').search();
+		// $('.search').search('name:tanglimin');
 	}
 	handleSearch();
 })(jQuery);
