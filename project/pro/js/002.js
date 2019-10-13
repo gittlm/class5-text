@@ -1,22 +1,25 @@
 ;(function($){
-	function Search($elem,options){
+	function Search($elem){
+		this.$elem = $elem;
+		this.$txt = $elem.find('.txt');
+		this.$btn = $elem.find('.btn');
 
-		
-		// console.log(options)
-		console.log(this)
-		// init();
+		this.init();
 	}
 	Search.prototype = {
 		constructor:Search,
 		init:function(){
-			console.log('init')
+			this.$btn.on('click',$.proxy(this.submit,this));
 		},
 		submit:function(){
-			console.log('submit')
+			var val = this.getValue();
+			if(val == ''){
+				console.log('none...')
+			}
+			this.$elem.submit();
 		},
 		getValue:function(){
-			console.log('value')
-			// return this.val();
+			return this.$txt.val();
 		}
 	}
 
@@ -25,10 +28,9 @@
 	// }
 
 	$.fn.extend({
-		search:function(options){
-			// console.log(this)
-			var $elem = $(this);
-			var search = new Search($elem,options);
+		search:function(){
+			var $elem = $('.search');
+			var search = new Search($elem);
 		}
 	});
 })(jQuery);
