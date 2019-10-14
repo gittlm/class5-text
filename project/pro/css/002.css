@@ -19,6 +19,7 @@
 .header .search .txt{
 	height: 40px;
 	width: 400px;
+	padding-left: 15px;
 	box-sizing:border-box;
 }
 .header .search .btn{
@@ -36,12 +37,20 @@
 	top: 75px;
 	left: 448px;
 	z-index: 5;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	/*display: none;*/
+}
+.header .content .layer-ul{
 	display: none;
 }
 .layer li{
 	height: 30px;
 	width: 500px;
-	background-color: pink;
+	background-color: #fff;
+}
+.layer li:hover{
+	background-color: #ccc;
 }
 .layer a{
 	color: #424242;
@@ -49,4 +58,7 @@
 	line-height: 30px;
 	padding-left: 15px;
 	box-sizing: border-box;
+}
+.layer a:hover{
+	color: #ff6700;
 }

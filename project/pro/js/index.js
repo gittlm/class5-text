@@ -37,8 +37,7 @@
 	}
 	navDropDown();
 	function handleSearch(){
-		// $('.search').search();
-		$('.search').search('name:tanglimin');
+		$('.search').search();
 	}
 	handleSearch();
 })(jQuery);

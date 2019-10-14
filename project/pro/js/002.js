@@ -4,10 +4,14 @@
 		this.options = options;
 		this.$txt = $elem.find('.txt');
 		this.$btn = $elem.find('.btn');
-		this.dataUrl = this.options.src + this.getValue();
-
+		this.$layer = $('.layer-ul');
+		this.$li = $('.layer-ul li');
+		this.isLoaded = false;
 
 		this.init();
+		if(this.options.autocomplete){
+			this.autocomplete();
+		}
 	}
 	Search.prototype = {
 		constructor:Search,
@@ -22,17 +26,53 @@
 			this.$elem.submit();
 		},
 		getValue:function(){
-			return this.$txt.val();
+			return $.trim(this.$txt.val());
+		},
+		autocomplete:function(){
+			this.showLayer();
+			this.$txt.on('input',$.proxy(this.getData,this));
+			$(document).on('click',$.proxy(this.hideLayer,this));
+			this.$txt.on('focus',$.proxy(this.showLayer,this));
+			this.$txt.on('click',function(ev){
+				ev.stopPropagation();
+			})
 		},
 		getData:function(){
-			this.$txt.on('input',function(){
-				var dataUrl = this.$txt.data('src')+this.getValue();
+			if(this.getValue() == ''){
+				this.addHtml('');
+				// this.hideLayer();
+				return;
+			};
+			$.ajax({
+				url:this.options.url + this.getValue(),
+				dataType: 'jsonp',
+				jsonp: 'callback'
 			})
+			.done(function(data){
+				var html = '';
+				for(var i=0;i<data.result.length;i++){
+					html += '<li><a href="#">'+data.result[i][0]+'</a></li>';
+				}
+				this.addHtml(html);
+				this.showLayer();
+
+			}.bind(this))
+		},
+		hideLayer:function(){
+			this.$layer.hide();
+		},
+		showLayer:function(){
+			// if(!this.isLoaded) return;
+			this.$layer.show();
+		},
+		addHtml:function(html){
+			// this.isLoaded == !!html;
+			this.$layer.html(html);
 		}
 	}
 	Search.DEFAULTS = {
 		autocomplete:true,
-		src:'https://suggest.taobao.com/sug?q='
+		url:'https://suggest.taobao.com/sug?q='
 	}
 	$.fn.extend({
 		search:function(options){
