@@ -34,17 +34,20 @@
     function getCookie(name){
         var str = document.cookie;
         var arr1 = str.split(";");
-        var result = "";
+        // var result = "";
         for(var i=0;i<arr1.length;i++){
             var arr2 = arr1[i].split("=");
-            if(arr2[0].trim() == name.trim()){
-                result = arr2[1];
-                break;
+            for(var j=0;j<arr2.length;j++){
+                if(arr2[0].trim() == name.trim()){
+                    result = arr2[1];
+                    break;
+                }
             }
+            
         }
         return result;
     }
-    console.log(getCookie('name3'))
+    console.log(getCookie('name1'))
 
 
     function removeCookie(name){

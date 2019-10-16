@@ -5,9 +5,7 @@
 		this.$txt = $elem.find('.txt');
 		this.$btn = $elem.find('.btn');
 		this.$layer = $('.layer-ul');
-		this.$li = $('.layer-ul li');
 		this.isLoaded = false;
-
 		this.init();
 		if(this.options.autocomplete){
 			this.autocomplete();
@@ -55,6 +53,21 @@
 				}
 				this.addHtml(html);
 				this.showLayer();
+				// var $li = $('.layer-ul li');
+				// $li.each(function(index,val){
+				// 	var $liInner = $(val)
+				// 	// console.log($liInner)
+				// 	for (var i=0; i<$liInner.length;i++) {
+				// 		// console.log($liInner[i].innerText)
+				// 		$liInner[i].on('click',function(){
+				// 			var inVal=$liInner[i].innerText;
+				// 			console.log(inVal)
+				// 		}.bind(this))
+				// 	}
+				// })
+				// $li.on('click',function(){
+				// 	console.log($li[])
+				// })
 
 			}.bind(this))
 		},

@@ -40,4 +40,8 @@
 		$('.search').search();
 	}
 	handleSearch();
+	// function handleMain(){
+	// 	$('.main-box').main();
+	// }
+	// handleMain();
 })(jQuery);
