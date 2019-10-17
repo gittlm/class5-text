@@ -1,11 +1,26 @@
 ;(function($){
+	var cache={
+		data:{},
+		count:0,
+		addData:function(key,val){
+			this.data[key] = val;
+			this.count++;
+		},
+		getData:function(){
+			return this.data[key];
+		}
+	}
+	
 	function Search($elem,options){
 		this.$elem = $elem;
 		this.options = options;
 		this.$txt = $elem.find('.txt');
 		this.$btn = $elem.find('.btn');
 		this.$layer = $('.layer-ul');
-		this.isLoaded = false;
+		this.$layerLi = $('.layer-li');
+		this.jqXHR = null;
+		// this.isLoaded = false;
+		this.timerIn = 0;
 		this.init();
 		if(this.options.autocomplete){
 			this.autocomplete();
@@ -28,20 +43,46 @@
 		},
 		autocomplete:function(){
 			this.showLayer();
-			this.$txt.on('input',$.proxy(this.getData,this));
+			// this.$txt.on('input',$.proxy(this.getData,this));
+			this.$txt.on('input',function(){
+				if(this.options.delay){
+					clearTimeout(this.timerIn);
+					this.timerIn = setTimeout(function(){
+						this.getData();
+					}.bind(this),this.options.delay);
+				}else{
+					this.getData();
+				}
+				// clearTimeout(timerIn)
+			}.bind(this));
 			$(document).on('click',$.proxy(this.hideLayer,this));
 			this.$txt.on('focus',$.proxy(this.showLayer,this));
 			this.$txt.on('click',function(ev){
 				ev.stopPropagation();
 			})
+			var _this = this;
+			this.$layer.on('click','.layer-li',function(){
+				var $li = $(this);
+				console.log($li.text())
+				_this.$txt.val($li.text());
+				// _this.$elem.submit();
+			})
 		},
 		getData:function(){
-			if(this.getValue() == ''){
+			var inputVal = this.getValue();
+			if(inputVal == ''){
 				this.addHtml('');
 				// this.hideLayer();
 				return;
 			};
-			$.ajax({
+			if(this.jqXHR){
+				this.jqXHR.abord();
+			}
+			if(cache.data[this.getValue()]){
+				return;
+			}
+			console.log('00001')
+			this.jqXHR = $.ajax({
 				url:this.options.url + this.getValue(),
 				dataType: 'jsonp',
 				jsonp: 'callback'
@@ -49,26 +90,14 @@
 			.done(function(data){
 				var html = '';
 				for(var i=0;i<data.result.length;i++){
-					html += '<li><a href="#">'+data.result[i][0]+'</a></li>';
+					html += '<li class="layer-li"><a href="#">'+data.result[i][0]+'</a></li>';
 				}
 				this.addHtml(html);
+				cache.addData(this.getValue(),data);
 				this.showLayer();
-				// var $li = $('.layer-ul li');
-				// $li.each(function(index,val){
-				// 	var $liInner = $(val)
-				// 	// console.log($liInner)
-				// 	for (var i=0; i<$liInner.length;i++) {
-				// 		// console.log($liInner[i].innerText)
-				// 		$liInner[i].on('click',function(){
-				// 			var inVal=$liInner[i].innerText;
-				// 			console.log(inVal)
-				// 		}.bind(this))
-				// 	}
-				// })
-				// $li.on('click',function(){
-				// 	console.log($li[])
-				// })
-
+			}.bind(this))
+			.always(function(){
+				this.jqXHR = null;
 			}.bind(this))
 		},
 		hideLayer:function(){
@@ -85,7 +114,8 @@
 	}
 	Search.DEFAULTS = {
 		autocomplete:true,
-		url:'https://suggest.taobao.com/sug?q='
+		url:'https://suggest.taobao.com/sug?q=',
+		delay:200
 	}
 	$.fn.extend({
 		search:function(options){

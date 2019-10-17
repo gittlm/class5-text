@@ -36,12 +36,12 @@
 		})
 	}
 	navDropDown();
-	function handleSearch(){
-		$('.search').search();
-	}
-	handleSearch();
-	// function handleMain(){
-	// 	$('.main-box').main();
+	// function handleSearch(){
+	// 	$('.search').search();
 	// }
-	// handleMain();
+	// handleSearch();
+	function handleMain(){
+		$('.main-box').main();
+	}
+	handleMain();
 })(jQuery);
