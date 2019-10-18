@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目水平对齐方式.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1000px;
+			margin: 50px auto;
+			border: 1px solid #000;
+			display: flex;
+			flex-flow: row wrap;
+
+
+			/*justify-content: flex-start;*/
+			/*justify-content: flex-end;*/
+			/*justify-content: center;*/
+			/*justify-content: space-between;*/
+			justify-content: space-around;
+		}
+		.box div{
+			height: 50px;
+			
+		}
+		.son1{
+			width: 100px;
+			background-color: gray;
+		}
+		.son2{
+			width: 200px;
+			background-color: red;
+		}
+		.son3{
+			width: 300px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="son1">001</div>
+		<div class="son2">002</div>
+		<div class="son3">003</div>
+	</div>
+</body>
+</html>

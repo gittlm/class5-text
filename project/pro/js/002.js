@@ -43,7 +43,6 @@
 		},
 		autocomplete:function(){
 			this.showLayer();
-			// this.$txt.on('input',$.proxy(this.getData,this));
 			this.$txt.on('input',function(){
 				if(this.options.delay){
 					clearTimeout(this.timerIn);
@@ -53,7 +52,6 @@
 				}else{
 					this.getData();
 				}
-				// clearTimeout(timerIn)
 			}.bind(this));
 			$(document).on('click',$.proxy(this.hideLayer,this));
 			this.$txt.on('focus',$.proxy(this.showLayer,this));
@@ -65,14 +63,14 @@
 				var $li = $(this);
 				console.log($li.text())
 				_this.$txt.val($li.text());
-				// _this.$elem.submit();
+				_this.$elem.submit();
 			})
 		},
 		getData:function(){
 			var inputVal = this.getValue();
 			if(inputVal == ''){
 				this.addHtml('');
-				// this.hideLayer();
+				this.hideLayer();
 				return;
 			};
 			if(this.jqXHR){
@@ -104,11 +102,9 @@
 			this.$layer.hide();
 		},
 		showLayer:function(){
-			// if(!this.isLoaded) return;
 			this.$layer.show();
 		},
 		addHtml:function(html){
-			// this.isLoaded == !!html;
 			this.$layer.html(html);
 		}
 	}
