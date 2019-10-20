@@ -1,0 +1,19 @@
+.container{
+	width: 1300px;
+	margin: 0 auto;
+	border: none;
+}
+.link{
+	color: #424242 !important;
+}
+.link:hover{
+	color: red !important;
+}
+/*nav-blog*/
+	#nav-blog .navbar-nav li a{
+		background-color: transparent !important;
+	}
+	#nav-blog .navbar-nav li a:hover{
+		background-color: #ccc !important;
+		color: red;
+	}

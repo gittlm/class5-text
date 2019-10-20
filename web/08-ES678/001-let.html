@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-let.html</title>
+</head>
+<body>
+	<button class="btn">001</button>
+	<button class="btn">002</button>
+	<button class="btn">003</button>
+	<button class="btn">004</button>
+</body>
+<script>
+	// let a=0;
+	// console.log(window)
+	// function Let1(){
+	// 	console.log(a)
+	// }
+	// Let1();
+
+
+	// function Let1(){
+	// 	let a=0;
+	// 	console.log(a)
+	// }
+	// Let1();
+
+
+	// function Let1(){
+	// 	let a=0;
+	// }
+	// Let1();
+	// console.log(a)
+
+
+	var aBtns = document.querySelectorAll('.btn')
+
+
+	// for (var i = 0; i < aBtns.length; i++) {
+	// 	aBtns[i].index = i;
+	// 	aBtns[i].onclick = function(){
+	// 		console.log(this.index)
+	// 	}
+	// }//存i值
+
+
+
+	// for (var i = 0; i < aBtns.length; i++) {
+	// 	(function(i){
+	// 		aBtns[i].onclick = function(){
+	// 		console.log(i)
+	// 	}
+	// 	})(i);
+	// }//封闭空间
+
+	for (let i= 0; i<aBtns.length; i++) {
+		aBtns[i].onclick = function(){
+			console.log(i)
+		}
+	}//用let
+</script>
+</html>
