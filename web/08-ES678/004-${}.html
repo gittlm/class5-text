@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-${}.html</title>
+</head>
+<body>
+	<button>添加</button>
+	<div class="box"></div>
+</body>
+<script>
+	var str = ['aaa','bbb','ccc','ddd']
+	var oBtn = document.querySelector('button')
+	var oDiv = document.querySelector('div')
+	oBtn.onclick = function(){
+		var html = '<ul>';
+		for (var i = 0; i < str.length; i++) {
+			// html += '<li>'+str[i]+'</li>';
+			html += `<li>${str[i]}</li>`;
+		}
+		html +='</ul>';
+		oDiv.innerHTML = html;
+	}
+</script>
+</html>

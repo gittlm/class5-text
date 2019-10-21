@@ -1,0 +1,10 @@
+(function($){
+	$(document).scroll(function(){
+		if($(document).scrollTop()>300){
+			$('.nav2').slideDown();
+		}
+		if($(document).scrollTop()<300){
+			$('.nav2').slideUp();
+		}
+	})
+})(jQuery);
