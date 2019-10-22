@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-set对象的遍历方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let data = [12,34,56]
+	const s = new Set(data);
+	for(let key of s.keys()){
+		console.log(key)
+	}
+	for(let value of s.values()){
+		console.log(value)
+	}
+	for(let entry of s.entries()){
+		console.log(entry)
+	}
+	s.forEach(function(value,key){
+		console.log('value=',value,'key=',key)
+	})
+</script>
+</html>

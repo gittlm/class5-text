@@ -9,6 +9,7 @@
 			padding: 0;
 		}
 		body{
+			height: 100vh;
 			display: flex;
 			flex-direction: column;
 		}
@@ -31,7 +32,15 @@
 			flex:0 0 10vh;
 		}
 		section{
-			flex:1 0 auto;
+			width: 100vw;
+			display: flex;
+			flex-grow: 1;
+		}
+		nav,aside{
+			flex:0 0 10vw;
+		}
+		main{
+			flex: 1 0 auto;
 		}
 	</style>
 </head>

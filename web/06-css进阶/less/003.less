@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*@_为任意匹配*/
+.trangle(@_,@w,@c){
+	width: 0px;
+	height: 0px;
+	border-style:solid;
+}
+.trangle(top,@w,@c){
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+}
+.trangle(right,@w,@c){
+	border-width: @w;
+	border-color: transparent @c transparent transparent;
+}
+.trangle(bottom,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+}
+.trangle(left,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent transparent @c;
+}
+.box{
+	.trangle(top,300px,#f0f)
+}

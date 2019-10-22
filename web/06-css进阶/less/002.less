@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+@w:100px;
+@h:100px;
+@r:red;
+@b:blue;
+@p:pink;
+.border-r(@d:20px){
+	-o-border-radius:@d;
+	-webkit-border-radius:@d;
+	-ms-border-radius:@d;
+	-moz-border-radius:@d;
+	border-radius: @d;
+}
+.box{
+	width: 500px;
+	height:500px;
+	border: 1px solid #000;
+	.son1{
+		width: @w;
+		height: @h;
+		background-color: @r;
+		margin-bottom: 10px;
+		.border-r(50px)
+	}
+	.son2{
+		.son1;
+		.border-r();
+	}
+	.son3{
+		.son2;
+		background-color: @b;
+		.border-r(35px)
+	}
+}

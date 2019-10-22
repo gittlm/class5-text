@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-Map对象的操作方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj = {}
+	let obj1={id:'0001'}
+	let obj2={id:'0002'}
+	m = new Map();
+	m.set(obj1,'hi')
+	m.set(obj2,'hello')
+	console.log(m.set('name','leo'))
+	console.log(m.set('age','18'))
+	console.log(m.delete('name'))
+	console.log(m)
+	console.log(m.has("name"))
+	// m.clear()
+	// console.log(m)
+
+
+	for(let key of m.keys()){
+		console.log(key)
+	}
+	for(let value of m.values()){
+		console.log(value)
+	}
+	for(let entry of m.entries()){
+		console.log(entry)
+	}
+	m.forEach(function(value,key){
+		console.log('value=',value,'key=',key)
+	})
+</script>
+</html>

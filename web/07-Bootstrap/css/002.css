@@ -5,6 +5,7 @@
 }
 .link{
 	color: #424242 !important;
+	cursor: pointer;
 }
 .link:hover{
 	color: red !important;
@@ -90,13 +91,17 @@
 		margin-top: 10px;
 		margin-bottom: 30px;
 	}
-	.text-inner .text-left button{
-		border:none;
+	.text-inner .text-left .button1{
+		margin-top: 20px;
+		margin-left: -10px;
+		height: 30px;
+		width: 120px;
+		list-style: none;
 		font-size: 14px !important;
 	}
-	.text-inner .text-left button span{
+	.text-inner .text-left .button1 span{
 		font-size: 14px !important;
-		margin-top: 10px;
+		margin-right: 5px;
 		margin-left: -5px;
 	}
 	.pagination{

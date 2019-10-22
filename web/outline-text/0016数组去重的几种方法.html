@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0016数组去重.html</title>
+	<script>
+		var arr = [9,6,8,3,2,1,9,8,7,3,2,1]
+
+
+		// var arr1 = arr.sort(function(n1,n2){
+		// 	return n1-n2;
+		// })
+		// function arr2(arr1){
+		// 	var result = [];
+		// 	var obj = {};
+		// 	for(var i=0;i<arr1.length;i++){
+		// 		obj[arr1[i]] = '';
+		// 	}
+		// 	for(var key in obj){
+		// 		result.push(key*1);
+		// 	}
+		// 	return result;
+		// }
+		// console.log(arr2(arr1));
+
+
+		let arr1=arr.sort(function(n1,n2){
+			return n1-n2;
+		})
+		const arr2=new Set(arr1)
+		const arr3 = [...arr2]
+		console.log(arr3)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*@_为任意匹配*/
+.box {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 300px;
+  border-color: #ff00ff transparent transparent transparent;
+}

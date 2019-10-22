@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-symbol.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s1=Symbol('tom')
+	let s2=Symbol('tom')
+	console.log(s1)
+	console.log(s2)
+	console.log(s1 == s2)
+	let obj={
+		'name':'tom'
+	}
+
+	obj[s1]='0001'//不能用.只能用[]
+	obj[s2]='0002'//不能用.只能用[]
+	console.log(obj)
+
+	let key=Reflect.ownKeys(obj)
+	for(let i=0;i<key.length;i++){
+		console.log(obj[key[i]])
+	}
+</script>
+</html>

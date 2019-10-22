@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-用函数深copy.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj1={
+		name:'tom',
+		sex:'main',
+		friends:{'name':'leo','age':20},
+		pets:['dog','cat']
+	}
+
+	function getDataType(data){
+		if(data instanceof Array){
+			return 'array';
+		}else if(data instanceof Object){
+			return 'object';
+		}
+	}	
+	function deepCopy(data){
+		const type=getDataType(data);
+		let result
+		if(type == 'array'){
+			result = [];
+		}else if(type == 'object'){
+			result = {};
+		}else{
+			return data;
+		}
+		for(let key in data){
+			if(getDataType(data[key]) == 'array' || getDataType(data[key]) == 'object'){
+				result[key] = deepCopy(data[key])
+			}else{
+				result[key] = data[key]
+			}
+		}
+		return result;
+	}
+
+	let obj2=deepCopy(obj1)
+	obj2.friends.name = 'petter';
+	obj2.pets.push('tiger')
+	console.log(obj1)
+	console.log(obj2)
+	console.log(obj2 == obj1)
+</script>
+</html>
