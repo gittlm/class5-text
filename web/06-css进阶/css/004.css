@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*嵌套*/
+ul {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #000;
+  margin: 50px auto;
+}
+ul li {
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+  list-style: none;
+  border-bottom: 1px solid #424242;
+}
+ul li span {
+  float: left;
+  line-height: 50px;
+  margin-left: 20px;
+}
+ul li a {
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: blue;
+  float: right;
+  line-height: 50px;
+}
+ul li:hover {
+  background-color: red;
+}
+/*运算*/
+.box1 {
+  /* font-size: 20px;*/
+  /*.calc-fs(20px)*/
+  font-size: 40px;
+  width: 300px;
+  height: 100px;
+  background-color: red;
+}
+/*避免编译
+.box2{
+	font-size: ~'calc(20px+20px)';
+}*/
+/*！important*/
+.box3 {
+  /* font-size: 20px;*/
+  /*.calc-fs(20px)*/
+  font-size: 40px !important;
+  width: 300px !important;
+  height: 100px !important;
+  background-color: red !important;
+}
+/*混合参数做为属性和设置计算后的属性值*/
+.box4 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}

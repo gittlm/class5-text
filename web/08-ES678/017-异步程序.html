@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-异步程序.html</title>
+</head>
+<body>
+
+</body>
+<script  src="js/jquery-1.12.4.js"></script>
+<script>
+	//ajax
+	$.get('https://api.github.com/users/gittlm',function(data){
+		console.log(data.avatar_url)
+		$.get(data.avatar_url,function(data){
+			console.log(data)
+		})
+	})
+</script>
+</html>

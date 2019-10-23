@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-箭头函数的this指向.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var id = 33;
+	function Show(id){
+		this.id = id ;
+		setTimeout(function(){
+			console.log(this)//widnow
+			console.log(this.id)//33
+		},500)
+	}
+	var show = new Show(11)//33
+	// Show(11)//11
+
+
+	var ip = 33;
+	function Show2(ip){
+		this.ip = ip ;
+		setTimeout(() =>{
+			console.log(this)//Show2
+			console.log(this.ip)//11
+		},500)
+	}
+
+	var show2 = new Show2(11)
+</script>
+</html>

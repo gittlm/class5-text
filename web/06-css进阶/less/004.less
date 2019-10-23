@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*嵌套*/
+ul{
+	width: 500px;
+	height: 300px;
+	border: 1px solid #000;
+	margin: 50px auto;
+	li{
+		width: 100%;
+		height: 50px;
+		background-color: #ccc;
+		list-style: none;
+		border-bottom: 1px solid #424242;
+		span{
+			float: left;
+			line-height: 50px;
+			margin-left: 20px;
+		}
+		a{	
+			width: 100px;
+			text-align: center;
+			text-decoration: none;
+			color: blue;
+			float: right;
+			line-height: 50px;
+		}
+		&:hover{
+			background-color: red;
+		}
+	}
+}
+/*运算*/
+.calc-fs(@fs){
+	font-size: @fs+20px;
+}
+.box1{
+	/* font-size: 20px;*/
+	/*.calc-fs(20px)*/
+	font-size: (20px+20);
+	width: 300px;
+	height: 100px;
+	background-color: red;
+}
+/*避免编译
+.box2{
+	font-size: ~'calc(20px+20px)';
+}*/
+
+/*！important*/
+.box3{
+	.box1 !important;
+}
+/*混合参数做为属性和设置计算后的属性值*/
+.set(@attr,@val){
+	@{attr}:unit(@val,px);
+}
+.box4{
+	.set(width,200);
+	.set(height,200);
+	background-color:blue;
+}
