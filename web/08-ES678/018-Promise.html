@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-Promise.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const promise = new Promise(function(resolve,reject){
+		// console.log('before timer')
+		setTimeout(function(){
+			// resolve('timer resolve...')
+			reject('timer reject...')
+		},0)
+	})
+	// console.log('after timer...')
+	const p1 =  promise
+	.then(function(data){
+		console.log('p1',data)
+	})
+	.catch(data =>{
+		console.log(data)
+	})
+	.finally(function(){
+		console.log('all')
+	})
+	
+	console.log(p1)
+
+
+
+	// const p2 = p1.then(function(data){
+	// 	console.log('p2',data)
+	// })
+	// .catch(data =>{
+	// 	console.log(data)
+	// })
+	// // console.log(p2)
+	// console.log(p2 == p1)
+</script>
+</html>

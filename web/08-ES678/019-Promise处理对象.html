@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-Promise处理对象.html</title>
+</head>
+<body>
+	
+</body>
+<script  src="js/jquery-1.12.4.js"></script>
+<script>
+	//处理DOM
+	function getImgPromise(url){
+		return new Promise(function(resolve,reject){
+			var img = new Image()
+			
+			img.onload = function(){
+				resolve('load success')
+			}
+			img.onerror = function(){
+				reject('load rejcet')
+			}
+			img.src = url
+		})
+	}
+	getImgPromise('../img/other/dou tu/007.jpg')
+	.then(data =>{
+		console.log(data)
+	})
+	.catch(err =>{
+		console.log(err)
+	})
+	//处理ajax
+	function getDataPromise(url){
+		return new Promise((resolve,reject)=>{
+			$.ajax({
+				url:url,
+				success:function(){
+					resolve('get data success')
+				},
+				error:function(){
+					reject('fail')
+				}
+			}) 
+		})
+	}
+	getDataPromise('https://api.github.com/users/AIcolonel')
+	.then(data =>{
+		console.log(data)
+	})
+	.catch(err =>{
+		console.log(err)
+	})
+</script>
+</html>

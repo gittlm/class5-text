@@ -10,11 +10,30 @@
 <script  src="js/jquery-1.12.4.js"></script>
 <script>
 	//ajax
-	$.get('https://api.github.com/users/gittlm',function(data){
-		console.log(data.avatar_url)
-		$.get(data.avatar_url,function(data){
+	$.get('https://api.github.com/users/AIcolonel',function(data){
+		console.log(data)
+		$.get(data.followers_url,function(data){
 			console.log(data)
+			$.get(data[0].followers_url,function(data){
+				console.log(data)
+			})
 		})
 	})
+	console.log('after ajax')
+	//定时器
+	setTimeout(function(){
+		console.log('settimeout...')
+	},0)
+	console.log('atfer timer')
+	//DOM事件
+	var img = new Image();
+	img.onload = function(){
+		console.log('img onload...')
+	}
+	img.onerror = function(){
+		console.log('img error...')
+	}
+	img.src='../img/other/dou tu/005.jpg'
+	console.log('after img...')
 </script>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-Promise静态方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//1-1.
+	console.log(Promise.resolve())
+	//1-2.
+	const p1 = new Promise(function(resolve,reject){
+		setTimeout(function(){
+			resolve('p1 resolve...')
+		},0)
+	})
+	const p2 = Promise.resolve(p1)
+	console.log(p1)
+	console.log(p2)
+	console.log('1-2',p1 ==p2)
+	//1-3.
+	var obj = {
+		then:function(){
+			console.log('1-3 obj...')
+		}
+	}
+	Promise.resolve(obj)
+	//1-4.
+	console.log(Promise.resolve({'name':'tom'}))
+	console.log(Promise.resolve('aaa'))
+	console.log(Promise.resolve([11,22,33,44]))
+
+
+	//2-1
+	const p3 = Promise.reject('p2-1 get error')
+	p3.catch(err =>{
+		console.log(err)
+	})
+
+	//3-1
+	function getImgPromise(url){
+		return new Promise(function(resolve,reject){
+			var img = new Image()
+			
+			img.onload = function(){
+				resolve('load' +url+ 'success')
+			}
+			img.onerror = function(){
+				reject('load' +url+ 'rejcet')
+			}
+			img.src = url
+		})
+	}
+	var imgs = ['../img/other/dou tu/002.jpg','../img/other/dou tu/003.jpg','../img/other/dou tu/004.jpg','../img/other/dou tu/005.jpg'].map((src) =>{
+		return getImgPromise(src)
+	})
+	const promise = Promise.resolve(imgs)
+	promise.then(data =>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+
+
+
+	//4-1
+	function getTimerData(delay){
+		return new Promise((resolve,reject) =>{
+			setTimeout(() =>{
+				resolve('get timer success')
+			},delay)
+		})
+	}
+	const t1 = getTimerData(200)
+	const t2 = getTimerData(500)
+	const t3 = getTimerData(1000)
+	// const t4 = getTimerData()
+	const promise4 = Promise.race([t1,t2,t3])
+	promise4.then(data =>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+</script>
+</html>
