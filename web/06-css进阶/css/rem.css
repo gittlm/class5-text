@@ -1,0 +1,39 @@
+  
+/*
+	开发网页适配流程
+	1.制定好设计稿,以iphone6为例
+	2.设计稿中给定的单位都是以像素为单位width=150px font-size=16px
+	3.根据计算出的根元素字体大小把像素换算成rem
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*iPhone6/7/8
+1rem = 37.5px
+4rem = 150px
+0.426667rem = 16px
+*/
+/*
+
+img {
+  float: left;
+  width: 4rem;
+}
+p {
+  font-size: 0.426667rem;
+}*/
+
+
+/*iPhone5
+1rem = 32px 
+4.6875rem = 150px
+0.5rem = 16px
+*/
+img {
+  float: left;
+  width: 4.6875rem;
+}
+p {
+  font-size: 0.5rem;
+}

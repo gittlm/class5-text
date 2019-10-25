@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-媒体查询.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			width: 300px;
+			font-size: 40px;
+			color: blue;
+		}
+		@media screen and (max-width: 300px){
+			body{
+				background-color:#ffff19;
+			}
+		}
+		@media screen and (min-width: 300px) and (max-width: 600px){
+			body{
+				background-color:#ffe019;
+			}
+		}
+		@media screen and (min-width: 600px) and (max-width: 900px){
+			body{
+				background-color:#fdbf19;
+			}
+		}
+		@media screen and (min-width: 900px) and (max-width: 1200px){
+			body{
+				background-color:#fc8a19;
+			}
+		}
+		@media screen and (min-width: 1200px){
+			body{
+				background-color:#fc6519;
+			}
+		}
+	</style>
+</head>
+<body>
+	<p>我是测试的文字内容</p>
+</body>
+</html>

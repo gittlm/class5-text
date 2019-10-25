@@ -48,7 +48,7 @@
 				resolve('load' +url+ 'success')
 			}
 			img.onerror = function(){
-				reject('load' +url+ 'rejcet')
+				reject('load  ' +url+ '  rejcet')
 			}
 			img.src = url
 		})
@@ -56,7 +56,7 @@
 	var imgs = ['../img/other/dou tu/002.jpg','../img/other/dou tu/003.jpg','../img/other/dou tu/004.jpg','../img/other/dou tu/005.jpg'].map((src) =>{
 		return getImgPromise(src)
 	})
-	const promise = Promise.resolve(imgs)
+	const promise = Promise.all(imgs)
 	promise.then(data =>{
 		console.log(data)
 	})
@@ -66,19 +66,23 @@
 
 
 
-	//4-1
+	//4-1-Promise.race()
 	function getTimerData(delay){
 		return new Promise((resolve,reject) =>{
 			setTimeout(() =>{
-				resolve('get timer success')
+				resolve('get 4-1 success')
 			},delay)
 		})
 	}
 	const t1 = getTimerData(200)
 	const t2 = getTimerData(500)
 	const t3 = getTimerData(1000)
-	// const t4 = getTimerData()
-	const promise4 = Promise.race([t1,t2,t3])
+	const t4 = new Promise((resolve,reject) =>{
+		setTimeout(() =>{
+				reject('get 4-1 fail')
+			},100)
+	})
+	const promise4 = Promise.race([t1,t2,t3,t4])
 	promise4.then(data =>{
 		console.log(data)
 	})

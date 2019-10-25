@@ -1,0 +1,8 @@
+p{
+	font-size: 40px;
+	color: blue;
+}
+body{
+	background-color: green;
+	/*打印机上没有背景颜色，设置了也不会起作用*/
+}

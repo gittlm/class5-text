@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-generator.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * generator(x){
+		console.log('nub1 x=',x)//5
+		const y = yield (x+10);//  5+10
+		console.log('nub2 y=',y)//10
+		const z = yield (y+20)//  10+20
+		console.log('nub3 z=',z)//20
+		return x+y+z;//5+10+20=35
+	}
+	const g = generator(5)
+
+
+	const data1 = g.next()
+	console.log(data1)
+	const data2 = g.next(10)
+	console.log(data2)
+	const data3 = g.next(20)
+	console.log(data3)
+
+
+
+
+	// console.log(g)
+	// console.log(generator())
+	// console.log(g.next())
+	// console.log(g.next())
+	// console.log(g.next())
+	// console.log(generator().next())
+	// console.log(generator().next())
+
+	function * gen(){
+		yield 1;
+		yield 2;
+		yield 3;
+		yield 4;
+		yield 5;
+	}
+	const b=gen()
+	// console.log(b.next())
+	// console.log(b.next())
+	// console.log(b.next())
+	// console.log(b.next())
+	// console.log(b.next())
+
+	for(v of b){
+		console.log(v)
+	}
+</script>
+</html>

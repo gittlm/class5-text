@@ -2,21 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>弹性布局.html</title>
+	<title>015-窗口属性.html</title>
 	<style>
 		*{
 			margin: 0;
 			padding: 0;
 		}
 		.box{
-			width: 800px;
+			width: 600px;
 			margin: 50px auto;
 			border: 1px solid #000;
 			display: flex;
+			/*排列方向*/
+			/*flex-direction: row;*/
+			/*flex-direction: row-reverse;*/
+			/*flex-direction: column;*/
+			/*flex-direction: column-reverse;*/
+			/*是否换行*/
+			/*flex-wrap: nowrap;*/
+			/*flex-wrap: wrap;*/
+			/*flex-wrap: wrap-reverse;*/
+			/*组合命令*/
+			flex-flow: row-reverse wrap;
 		}
 		.box div{
 			/*float: left;*/
 			height: 50px;
+			
 		}
 		.son1{
 			width: 100px;
@@ -34,9 +46,9 @@
 </head>
 <body>
 	<div class="box">
-		<div class="son1"></div>
-		<div class="son2"></div>
-		<div class="son3"></div>
+		<div class="son1">001</div>
+		<div class="son2">002</div>
+		<div class="son3">003</div>
 	</div>
 </body>
 </html>

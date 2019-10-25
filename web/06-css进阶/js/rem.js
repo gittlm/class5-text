@@ -1,6 +1,7 @@
 ;(function(win,doc){
 	var oRoot = doc.getElementsByTagName('html')[0]
 	console.log(oRoot)
+	console.log(oRoot)
 	function refresh(){
 		var width=doc.body.clientWidth || doc.documentElement.clientWidth;
 		var oFontSize = width/10;
