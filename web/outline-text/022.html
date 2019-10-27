@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// let fn=x=>x*2
+	// console.log(fn(4))
+
+	// function getDataPromise(url){
+	// 	return new Promise((resolve,reject)=>{
+	// 		$.ajax({
+	// 			url:url,
+	// 			success:function(){
+	// 				resolve('get data success')
+	// 			},
+	// 			error:function(){
+	// 				reject('error')
+	// 			}
+	// 		}) 
+	// 	})
+	// }
+	// getDataPromise('http://127.0.0.1:3000')
+	// .then(data =>{
+	// 	console.log(data)
+	// })
+	// .catch(err =>{
+	// 	console.log(err)
+	// })
+
+
+
+	// function * generator(){
+	// 	yield 'aaa';
+	// 	yield 'bbb';
+	// 	yield 'ccc';
+	// 	yield 'ddd';
+	// 	return 'hello';
+	// }
+	// const g = generator()
+	// const data1=g.next()
+	// const data2=g.next()
+	// const data3=g.next()
+	// const data4=g.next()
+	// console.log(data4)
+
+
+	function * gen(a){
+		let b =yield (a+5);
+		let c =yield (b+10);
+		let d =yield (c+10);
+		return (d+100);
+	}
+	let g=gen(5);
+	g.next();
+	g.next();
+	g.next();
+	var result = g.next(5)
+</script>
+</html>
