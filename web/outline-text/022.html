@@ -8,45 +8,20 @@
 	
 </body>
 <script>
-	// let fn=x=>x*2
-	// console.log(fn(4))
-
-	// function getDataPromise(url){
-	// 	return new Promise((resolve,reject)=>{
-	// 		$.ajax({
-	// 			url:url,
-	// 			success:function(){
-	// 				resolve('get data success')
-	// 			},
-	// 			error:function(){
-	// 				reject('error')
-	// 			}
-	// 		}) 
-	// 	})
-	// }
-	// getDataPromise('http://127.0.0.1:3000')
-	// .then(data =>{
-	// 	console.log(data)
-	// })
-	// .catch(err =>{
-	// 	console.log(err)
-	// })
-
-
-
 	// function * generator(){
 	// 	yield 'aaa';
 	// 	yield 'bbb';
 	// 	yield 'ccc';
 	// 	yield 'ddd';
-	// 	return 'hello';
+	// 	return 'hello world';
 	// }
 	// const g = generator()
 	// const data1=g.next()
 	// const data2=g.next()
 	// const data3=g.next()
 	// const data4=g.next()
-	// console.log(data4)
+	// const data5=g.next()
+	// console.log(data5.value)
 
 
 	function * gen(a){
@@ -55,10 +30,12 @@
 		let d =yield (c+10);
 		return (d+100);
 	}
-	let g=gen(5);
+	let g =gen(5);
 	g.next();
 	g.next();
 	g.next();
 	var result = g.next(5)
+	console.log(result.value)
 </script>
+
 </html>

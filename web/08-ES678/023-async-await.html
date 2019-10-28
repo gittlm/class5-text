@@ -16,6 +16,34 @@
 	// 	console.log(data)
 	// })
 
+	//遇到await会等待后面的语句执行完毕,然后再去执行下面的语句
+	// const promsie = new Promise((resolve,reject)=>{
+	// 	setTimeout(()=>{
+	// 		// resolve('get promise ok');
+	// 		reject('get promise err');
+	// 	},100)
+	// })
+	// async function fn(){
+	// 	try{
+	// 		const data1 = await promsie;
+	// 		console.log('data1::',data1)
+	// 		console.log('alawys do someting ...')
+	// 	}
+	// 	catch(err){
+	// 		console.log(err)
+	// 	}
+	// 	return 'ok'
+	// }
+	// const p1 = fn()
+	// p1.then(data=>{
+	// 	console.log('data::',data)
+	// })
+
+
+
+
+
+	//处理ajax
 	function getDataPromise(url){
 		return new Promise((resolve,reject)=>{
 			$.ajax({
@@ -24,27 +52,35 @@
 				success:function(data){
 					resolve(data)
 				},
-				error:function(){
-					reject('fail')
+				error:function(jqXHR,statusMsg){
+					reject(statusMsg)
 				}
 			}) 
 		})
 	}
-	// async function fn(username){
-	// 	await getDataPromise('data/'+username+'.json')
+	//获取连锁data信息
+	async function getData(url){
+		const no1 = await getDataPromise('data/'+url+'.json')
+		const no2 = await getDataPromise('data/'+no1.order+'.json')
+		return no2;
+	}
+	getData('a')
+	.then(data =>{
+		console.log(data)
+	})
+
+
+
+	//获取github信息
+	// async function getGitHubData(url){
+	// 	const data1 = await getDataPromise(url);
+	// 	const data2 = await getDataPromise(data1.followers_url)
+	// 	const data3 = await getDataPromise(data2[0].followers_url)
+	// 	console.log(data3)
 	// }
-	// fn('a')
-	// .then(data=>{
+	// getGitHubData('https://api.github.com/users/AIcolonel')
+	// .then(data =>{
 	// 	console.log(data)
 	// })
-
-
-	
-	async function getGitHubData(url){
-		const data1 = await getDataPromise(url);
-		const data2 = await getDataPromise(data1.followers_url)
-		console.log(data2)
-	}
-	getGitHubData('https://api.github.com/users/AIcolonel')
 </script>
 </html>

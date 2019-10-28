@@ -5,17 +5,27 @@
 	<title>027-数组的对象.html</title>
 </head>
 <body>
-	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
 </body>
 <script>
+    const doms = document.getElementsByTagName('div')
+
 	let obj = {
-		name:'tom',
-		age:18,
+		0:'tom',
+		1:18,
 		length:2
 	}
 	console.log(obj)
 	console.log(Array.from(obj))
-
+	console.log(doms)
+	console.log(Array.from(doms))
 
 	let arr = [11,13,69,84,3,22,51]
 	// Array.prototype.find(n=>(n>50))

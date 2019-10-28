@@ -7,4 +7,51 @@
 <body>
 	
 </body>
+<script>
+	const { 
+		keys,
+		entries,
+		values,
+		getOwnPropertyDescriptors,
+		assign,
+		is
+	} 
+	= Object
+	const obj = {
+		name:'tom',
+		age:18,
+		sex:'male'
+	}
+	Object.defineProperty(obj,'legs',{
+		value:2,
+		enumerable:true
+	})
+	console.log(Object.keys(obj))
+	console.log(keys)
+	console.log('obj::',obj)
+	console.log(keys(obj))
+	console.log(entries(obj))
+	console.log(values(obj))
+	console.log(getOwnPropertyDescriptors(obj))
+	const DEFAULT = {
+		js:false,
+		timer:500
+	}
+	const options = {
+		js:true
+	}
+	console.log('DEFAULT::',DEFAULT)
+	console.log('options::',options)
+	console.log(assign({},DEFAULT,options))
+	console.log(assign([11,22,33,99],[44,55,66,88]))//[44, 55, 66, 99]
+	//{0:11,1:22,2:33,3:99} {0:44,1:55,2:66}
+	console.log("1 == '1'",1 == '1')//true
+	console.log("1 === '1'",1 === '1')//false
+	console.log("is(1,'1')",is(1,'1'))
+	console.log("+0 == -0",+0 == -0)
+	console.log("+0 === -0",+0 === -0)
+	console.log("is(+0,-0)",is(+0,-0))
+	console.log("NaN == NaN",NaN == NaN)
+	console.log(is(NaN,NaN))
+</script>
 </html>

@@ -7,8 +7,87 @@
 <body>
 	
 </body>
-<script  src="js/jquery-1.12.4.js"></script>
 <script>
+
+	//基于原型的构造函数
+	// function Person(name,age){
+	// 	this.name = name 
+	// 	this.age = age 
+	// }
+	// Person.prototype.sayName = function(){
+	// 	console.log('I am '+this.name)
+	// }//动态添加的，可以在新生成后直接调用
+	// Person.prototype.sayAge = function(){
+	// 	console.log('I am '+this.age+' years old')
+	// }//动态添加的，可以在新生成后直接调用
+	// Person.sayHello = function(){
+	// 	console.log('hello everybody')
+	// }//静态添加，只能本身调用，新生成的不能用
+	// const p1 = new Person('tom',18)
+	// p1.sayName()
+	// p1.sayAge()
+	// Person.sayHello()
+	// function Student(name,age,major){
+	// 	Person.call(this,name,age)//用call继承原型上的属性
+	// 	this.major = major
+	// }
+	// Student.prototype = Object.create(Person.prototype)
+	// Student.prototype.sayMajor = function(){
+	// 	console.log('I am from '+this.major)
+	// }
+	// Student.sayHello = Person.sayHello
+	// const s1 = new Student('leo',20,'computer')
+	// s1.sayName()
+	// s1.sayAge()
+	// s1.sayMajor()
+	// Student.sayHello()
+
+
+
+
+
+
+
+
+
+	//用class定义函数
+
+	class Person{
+		constructor(name,age){
+			this.name = name
+			this.age = age
+		}
+		sayName(){
+			console.log('I am '+this.name)
+		}
+		sayAge(){
+			console.log('I am '+this.age+' years old')
+		}
+		static sayHello(){
+			console.log('hello everybody')
+		}
+	}
 	
+	const p1 = new Person('tom',18)
+	console.log('p1:::',p1)
+	p1.sayName()
+	p1.sayAge()
+	Person.sayHello()
+	
+	class Student extends Person{
+		constructor(name,age,major){
+			super(name,age)
+			this.major = major
+		}
+		sayMajor(){
+			console.log('I am from '+this.major)
+		}
+	}
+	const s1 = new Student('leo',20,'computer')
+	console.log('s1::',s1)
+	s1.sayName()
+	s1.sayAge()
+	s1.sayMajor()
+	Student.sayHello()
 </script>
 </html>

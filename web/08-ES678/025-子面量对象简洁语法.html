@@ -8,15 +8,61 @@
 	
 </body>
 <script>
+	//一共五种创建对象的方法
+	//1.
+	// const obj = {
+	// 	username:'tom',
+	// 	age:18
+	// }
+
+	//2.
+	// const username = 'tom'
+	// const age = 18
+	// const obj = {
+	// 	username:username,
+	// 	age:age,
+	// 	sayHi:function(){
+	// 		console.log('hi...')
+	// 	}
+	// }	
+
+	//3.
+	// const username = 'tom'
+	// const age = 18
+	// const obj = {
+	// 	username,
+	// 	age,
+	// 	sayHi:function(){
+	// 		console.log('hi...')
+	// 	}
+	// }
+
+	//4.
+	// const username = 'tom'
+	// const age = 18
+	// const obj = {
+	// 	username,
+	// 	age,
+	// 	sayHi(){
+	// 		console.log('hi...')
+	// 	}
+	// }
+
+
+	//5.
 	const username = 'tom'
 	const age = 18
 	const obj = {
 		username,
 		age,
-		sayHi:function(){
+		sayHi:()=>{
 			console.log('hi...')
 		}
-	}		
+	}
+
+
+
+
 	console.log(obj)
 	obj.sayHi()
 </script>
