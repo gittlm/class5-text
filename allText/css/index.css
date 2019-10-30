@@ -7,8 +7,11 @@
 	.content{
 		position: relative;
 		width: 1200px;
+		height: 900px;
 		margin-left: auto;
 		margin-right: auto;
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
 	}
 /*大纲分类*/	
 	.father{
@@ -18,7 +21,7 @@
 		margin-left: -150px;
 		width: 300px;
 		height: 100px;
-		background-color: gray;
+		background-color: #ccc;
 	}
 	.content .son1-ul{
 		position: absolute;
@@ -44,22 +47,25 @@
 /*要点分类*/	
 	.text-son2{
 		position: absolute;
-		top: 210px;
+		top: 200px;
 		left: 0px;
 		width: 100%;
 		display: none;
 		overflow: hidden;
+		padding: 10px 10px 0px 10px;
+		box-sizing: border-box;
 	}
 	.son2{
 		float: left;
 		width: 80px;
-		height: 40px;
-		margin-left: 80px;
+		height: 50px;
+		margin-left: 25px;
 	}
 	.text-son2 .son2-btn{
 		width: 80px;
 		height: 40px;
 		background-color: #ccc;
+		border-radius: 10px;
 	}
 /*详细分类*/	
 	.text-son3{
@@ -77,13 +83,11 @@
 	}
 	.text-son3 .son3{
 		float: left;
-		width: 400px;
+		margin-left: 50px;
 	}
 	.text-son3 .son3-btn{
 		width: 80px;
 		height: 40px;
-		margin-left: 160px;
-		text-align: center;
 	}
 /*内容分类*/	
 	.text-son4{
@@ -95,10 +99,12 @@
 		background-color: #ccc;
 	}
 	.text-son4 div{
-		float: left;
-		padding: 10px;
-		width: 400px;
-		height: 300px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding: 20px;
+		width: 1200px;
+		height: 600px;
 		word-wrap: break-word;
 		display: none;
 		box-sizing: border-box;
@@ -107,7 +113,7 @@
 		font-size: 18px;
 		margin-top: 10px;
 	}
-	.text-son4 .son3-1{
+/*	.text-son4 .son3-1{
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -124,4 +130,4 @@
 		top: 0px;
 		left: 800px;
 		background-color: green;
-	}
+	}*/
