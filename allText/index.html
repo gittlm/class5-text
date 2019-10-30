@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index.html</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="content">
+		<input type="button" value="allText" class="father">
+		<ul class="son1-ul">
+			<li class="son1"><input type="button" value="HTML" class="son1-btn HTML"></li>
+			<li class="son1"><input type="button" value="CSS" class="son1-btn CSS"></li>
+			<li class="son1"><input type="button" value="GIT" class="son1-btn GIT"></li>
+			<li class="son1"><input type="button" value="JS" class="son1-btn JS"></li>
+			<li class="son1"><input type="button" value="JQuery" class="son1-btn JQuery"></li>
+			<li class="son1"><input type="button" value="BootStrap" class="son1-btn BootStrap"></li>
+			<li class="son1"><input type="button" value="ES678" class="son1-btn ES678"></li>
+			<li class="son1"><input type="button" value="WLine" class="son1-btn WLine"></li>
+			<li class="son1"><input type="button" value="NodeJs" class="son1-btn NodeJs"></li>
+			<li class="son1"><input type="button" value="MongoDB" class="son1-btn MongoDB"></li>
+		</ul>
+		<div class="text-son2">
+			<ul>
+				<li class="JQ son2">
+					<input type="button" value="基本使用" class="son2-btn no1">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="核心函数" class="son2-btn no2">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="筛选元素" class="son2-btn no3">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="操作属性" class="son2-btn no4">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="事件" class="son2-btn no5">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="动画" class="son2-btn no6">
+				</li>
+				<li class="JQ son2">
+					<input type="button" value="操作DOM" class="son2-btn no7">
+				</li>
+			</ul>
+		</div>
+		<div class="text-son3">
+			<ul>
+				<li class="son3">
+					<input type="button" value="引入" class="son3-btn no1">
+				</li>
+				<li class="son3">
+					<input type="button" value="基本使用" class="son3-btn no2">
+				</li>
+				<li class="son3">
+					<input type="button" value="$冲突解决" class="son3-btn no3">
+				</li>
+			</ul>
+		</div>
+		<div class="text-son4">
+			<div class="son3-1">
+				<p>
+					方法一:将jQuery下载到本地,通过script标签引入到要使用的页面,如:src="js/jquery.js"
+				</p>
+				<p>
+					方法二:通过script标签引入CDN的资源如src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+				</p>
+				<p>
+					线上判断处理（两个都写在script里面）
+					src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+			        window.jQuery || document.write('<\script src="js/jquery.js"><\/script>');
+				</p>
+			</div>
+			<div class="son3-2">
+				<p>
+					方法一：
+				    jQuery(document).ready(function(){
+				       jq代码1... 
+				    });
+				</p>
+				<p>
+					方法二：
+					$(document).ready(function(){
+				       jq代码1... 
+				    });
+				</p>
+				<p>
+					方法三：
+					$(function(){
+				       jq代码1... 
+				    });
+				</p>
+			</div>
+			<div class="son3-3">
+				<p>
+					方法一：在使用jQuery前释放jQuery的$使用权,用jQuery来代替$
+				</p>
+				<p>
+					    jQuery.noConflict();
+					    jQuery(function(){});
+				</p>
+				<p>
+					方法二：在使用jQuery前释放jQuery的$使用权的同时自定义自己的符号,用自定义符号来代替$
+				</p>
+				<p>	
+					    var kz = jQuery.noConflict();
+					    kz(function(){});
+				</p>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/index.js"></script>
+</html>

@@ -1,0 +1,122 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.content{
+	position: relative;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.father{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	height: 100px;
+	background-color: gray;
+}
+.content .son1-ul{
+	position: absolute;
+	top: 130px;
+	left: 0px;
+	width: 1200px;
+	height: 50px;
+	display: none;
+}
+.content .son1-ul .son1{
+	float: left;
+	margin-left: 20px;
+	width: 100px;
+	height: 50px;
+}
+.content .son1-ul .son1:first-child{
+	margin-left: 10px;
+}
+.son1-btn{
+	width: 100px;
+	height: 50px;
+}
+.text-son2{
+	position: absolute;
+	top: 210px;
+	left: 0px;
+	width: 100%;
+	display: none;
+	overflow: hidden;
+}
+.son2{
+	float: left;
+	width: 80px;
+	height: 40px;
+	margin-left: 80px;
+}
+.text-son2 .son2-btn{
+	width: 80px;
+	height: 40px;
+	background-color: #ccc;
+}
+.text-son3{
+	position: absolute;
+	top: 280px;
+	left: 0px;
+	width: 1200px;
+	height: 50px;
+	display: none;
+	overflow: hidden;
+}
+.text-son3 ul{
+	width: 100%;
+	height: 100%;
+}
+.text-son3 .son3{
+	float: left;
+	width: 400px;
+}
+.text-son3 .son3-btn{
+	width: 80px;
+	height: 40px;
+	margin-left: 160px;
+	text-align: center;
+}
+.text-son4{
+	position: absolute;
+	top: 350px;
+	left: 0px;
+	width: 1200px;
+	height: 0px;
+	background-color: #ccc;
+}
+.text-son4 div{
+	float: left;
+	padding: 10px;
+	width: 400px;
+	height: 300px;
+	word-wrap: break-word;
+	display: none;
+	box-sizing: border-box;
+}
+.text-son4 div p{
+	font-size: 18px;
+	margin-top: 10px;
+}
+.text-son4 .son3-1{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: red;
+}
+.text-son4 .son3-2{
+	position: absolute;
+	top: 0px;
+	left: 400px;
+	background-color: blue;	
+}
+.text-son4 .son3-3{
+	position: absolute;
+	top: 0px;
+	left: 800px;
+	background-color: green;
+}
