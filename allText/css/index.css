@@ -70,7 +70,7 @@
 /*详细分类*/	
 	.text-son3{
 		position: absolute;
-		top: 280px;
+		top: 320px;
 		left: 0px;
 		width: 1200px;
 		height: 50px;
@@ -92,7 +92,7 @@
 /*内容分类*/	
 	.text-son4{
 		position: absolute;
-		top: 350px;
+		top: 390px;
 		left: 0px;
 		width: 1200px;
 		height: 0px;
@@ -108,26 +108,9 @@
 		word-wrap: break-word;
 		display: none;
 		box-sizing: border-box;
+		background-color: #ccc;
 	}
 	.text-son4 div p{
 		font-size: 18px;
 		margin-top: 10px;
 	}
-/*	.text-son4 .son3-1{
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		background-color: red;
-	}
-	.text-son4 .son3-2{
-		position: absolute;
-		top: 0px;
-		left: 400px;
-		background-color: blue;	
-	}
-	.text-son4 .son3-3{
-		position: absolute;
-		top: 0px;
-		left: 800px;
-		background-color: green;
-	}*/

@@ -38,3 +38,43 @@ emitter1.once('test01',()=>{
 
 emitter1.emit('test01')
 emitter1.emit('test01')//多次调用会全部执行监听多次
+
+//监听的参数设置（不用传event参数）
+const emitter2 = new MyEmitter();
+emitter2.on('test02',(arg1,arg2)=>{
+	console.log(arg1,arg2)
+	console.log('test02...')
+})
+emitter2.emit('test02','aaa','bbb')
+const arr = [11,22]//数组的话用扩展运算传参数
+emitter2.emit('test02',...arr)
+
+
+
+
+//移除监听事件
+const emitter3 = new MyEmitter();
+const fn1 = ()=>{
+	console.log('test03----01...')
+}
+const fn2 = ()=>{
+	console.log('test03----02...')
+}
+emitter3.on('test03',fn1)
+emitter3.on('test03',fn2)
+emitter3.off('test03',fn1)//第一种
+// emitter3.removeListener('test03',fn2)//第二种，
+// 两种没有任何区别,都只能移除有名函数
+emitter3.emit('test03')
+
+
+//自动触发监听事件
+const emitter4 = new MyEmitter();
+emitter4.on('newListener',(eventname,fn)=>{
+	console.log('newlistener...')
+	console.log(eventname)
+	console.log(fn)
+})
+emitter4.on('show',()=>{
+	console.log('show...')
+})
