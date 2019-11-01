@@ -187,6 +187,12 @@
 				<li class="son2-jquery son2">
 					<input type="button" value="操作DOM" class="son2-btn no7">
 				</li>
+				<li class="son2-jquery son2">
+					<input type="button" value="操作ajax" class="son2-btn no8">
+				</li>
+				<li class="son2-jquery son2">
+					<input type="button" value="插件" class="son2-btn no9">
+				</li>
 			</ul>
 		</div>
 		<div class="text-son2 text-son2-bootstrap">
@@ -323,19 +329,19 @@
 		<div class="text-son3 text-son3-5-jquery">
 			<ul>
 				<li class="son3-5-jquery son3">
-					<input type="button" value="选择器&查找" class="son3-btn no1">
+					<input type="button" value="绑定&移除" class="son3-btn no1">
 				</li>
 				<li class="son3-5-jquery son3">
-					<input type="button" value="基本过滤器" class="son3-btn no2">
+					<input type="button" value="冒泡&行为" class="son3-btn no2">
 				</li>	
 				<li class="son3-5-jquery son3">
-					<input type="button" value="内容过滤器" class="son3-btn no3">
+					<input type="button" value="自动触发" class="son3-btn no3">
 				</li>	
 				<li class="son3-5-jquery son3">
-					<input type="button" value="过滤方法" class="son3-btn no4">
+					<input type="button" value="自定义事件" class="son3-btn no4">
 				</li>	
 				<li class="son3-5-jquery son3">
-					<input type="button" value="可见性过滤" class="son3-btn no5">
+					<input type="button" value="事件委托" class="son3-btn no5">
 				</li>
 			</ul>
 		</div>
@@ -343,19 +349,22 @@
 		<div class="text-son3 text-son3-6-jquery">
 			<ul>
 				<li class="son3-6-jquery son3">
-					<input type="button" value="选择器&查找" class="son3-btn no1">
+					<input type="button" value="显示&隐藏" class="son3-btn no1">
 				</li>
 				<li class="son3-6-jquery son3">
-					<input type="button" value="基本过滤器" class="son3-btn no2">
+					<input type="button" value="卷入&卷出" class="son3-btn no2">
 				</li>	
 				<li class="son3-6-jquery son3">
-					<input type="button" value="内容过滤器" class="son3-btn no3">
+					<input type="button" value="淡入&淡出" class="son3-btn no3">
 				</li>	
 				<li class="son3-6-jquery son3">
-					<input type="button" value="过滤方法" class="son3-btn no4">
+					<input type="button" value="自定义动画" class="son3-btn no4">
 				</li>	
 				<li class="son3-6-jquery son3">
-					<input type="button" value="可见性过滤" class="son3-btn no5">
+					<input type="button" value="动画方法" class="son3-btn no5">
+				</li>
+				<li class="son3-6-jquery son3">
+					<input type="button" value="动画速度" class="son3-btn no6">
 				</li>
 			</ul>
 		</div>
@@ -363,20 +372,45 @@
 		<div class="text-son3 text-son3-7-jquery">
 			<ul>
 				<li class="son3-7-jquery son3">
-					<input type="button" value="选择器&查找" class="son3-btn no1">
+					<input type="button" value="添加节点" class="son3-btn no1">
 				</li>
 				<li class="son3-7-jquery son3">
-					<input type="button" value="基本过滤器" class="son3-btn no2">
+					<input type="button" value="删除节点" class="son3-btn no2">
 				</li>	
 				<li class="son3-7-jquery son3">
-					<input type="button" value="内容过滤器" class="son3-btn no3">
+					<input type="button" value="替换节点" class="son3-btn no3">
 				</li>	
 				<li class="son3-7-jquery son3">
-					<input type="button" value="过滤方法" class="son3-btn no4">
+					<input type="button" value="复制节点" class="son3-btn no4">
 				</li>	
-				<li class="son3-7-jquery son3">
-					<input type="button" value="可见性过滤" class="son3-btn no5">
+			</ul>
+		</div>
+		<!-- 详细分类-jquery-操作ajax	 -->
+		<div class="text-son3 text-son3-8-jquery">
+			<ul>
+				<li class="son3-8-jquery son3">
+					<input type="button" value="ajax接口" class="son3-btn no1">
 				</li>
+				<li class="son3-8-jquery son3">
+					<input type="button" value="接口例子" class="son3-btn no2">
+				</li>	
+				<li class="son3-8-jquery son3">
+					<input type="button" value="接口封装" class="son3-btn no3">
+				</li>	
+				<li class="son3-8-jquery son3">
+					<input type="button" value="jqXHR对象" class="son3-btn no4">
+				</li>	
+			</ul>
+		</div>
+		<!-- 详细分类-jquery-插件	 -->
+		<div class="text-son3 text-son3-9-jquery">
+			<ul>
+				<li class="son3-9-jquery son3">
+					<input type="button" value="扩展插件" class="son3-btn no1">
+				</li>
+				<li class="son3-9-jquery son3">
+					<input type="button" value="现成插件" class="son3-btn no2">
+				</li>		
 			</ul>
 		</div>
 <!-- 内容分类	 -->
@@ -687,8 +721,349 @@
 			</div>
 		</div>
 		<!-- 详细分类-jquery-事件	 -->
+		<div class="text-son4 text-son4-5-jquery">
+			<div class="son4-5-1 son4">
+				<p>
+					事件的绑定：
+					<br>方法一：jQuery对象.事件名(function(){});如:$('.btn').click(function(){})
+					<br>方法二：jQuery对象.on('事件名',function(){});
+								绑定一个可以多次执行的事件处理函数,如:
+								$('.btn').on('click',function(){})
+					<br>jQuery对象.hover(鼠标移入时执行函数,鼠标移出时执行函数)
+				</p>
+				<p>
+					注意点：方法一部分事件jQuery没有实现,方法二中可以写js中所有的事件.
+					无论是方法一还是方法二,绑定的事件都会不会覆盖
+				</p>
+				<p>
+					事件移除：
+					<br>jQuery对象.off() 移除所有的事件
+					<br>jQuery对象.off('事件名') 移除所有事件名对应的事件
+					<br>jQuery对象.off('事件名',函数名) 移除事件名对应的函数名的相关事件
+				</p>
+			</div>
+			<div class="son4-5-2 son4">
+				<p>
+					阻止事件冒泡：
+					<br>方法一  return false
+					<br>方法二  event.stopPropagation()
+				</p>
+				<p>
+					阻止默认行为：
+					<br>方法一  return false
+					<br>方法二  event.preventDefault()
+				</p>
+			</div>
+			<div class="son4-5-3 son4">
+				<p>
+					事件自动触发
+				</p>
+				<p>
+					jQuery对象.trigger('事件名') 不阻止事件冒泡和默认行为的事件触发
+				</p>
+				<p>
+					jQuery对象.triggerHandler('事件名') 阻止事件冒泡和默认行为的事件触发
+				</p>
+				<p>
+					注意：a标签用trigger不阻止事件冒泡,但是会阻止默认行为,如果需要发生默认行为需要触发a标签的子元素
+				</p>
+			</div>
+			<div class="son4-5-4 son4">
+				<p>
+					获取
+					<br>jQuery对象.css("样式名称"）
+				</p>
+				<p>
+					设置
+					<br>jQuery对象.css("样式名称", "值");
+					<br>jQuery对象.css("样式名称", "值").css("样式名称", "值");
+					<br>jQuery对象.css({"样式名称1":"值1","样式名称2":"值2"});
+				</p>
+				<p>
+					判断类
+					<br>jQuery对象.hasClass(class名称)
+				</p>
+			</div>
+			<div class="son4-5-5 son4">
+				<p>
+					自定义事件
+				</p>
+				<p>
+					用jQuery对象.on('自定义事件名',function(envent,参数){})绑定一个自定义事件
+				</p>
+				<p>
+					用jQuery对象.trigger('自定义事件名',参数)来触发自定义的事件 
+				</p>
+			</div>
+			<div class="son4-5-6 son4">
+				<p>
+					事件的委托
+				</p>
+				<p>
+					方式一:$('父元素选择器').delegate('子元素选择器','事件名', 回调函数)
+				</p>
+				<p>
+					方式二:$('父元素选择器').on('事件名','子元素选择器', 回调函数)
+				</p>
+				<p>
+					注意点：
+					<br>回调函数中的this是触发事件的DOM元素,及具体的某个子DOM元素
+					<br>页面中动态增加的元素需要通过事件委托的方式来添加事件
+				</p>
+			</div>
+		</div>
 		<!-- 详细分类-jquery-动画	 -->
-		<!-- 详细分类-jquery-操作DOM	 -->	
+		<div class="text-son4 text-son4-6-jquery">
+			<div class="son4-6-1 son4">
+				<p>
+					显示/隐藏和切换
+				</p>
+				<p>
+					显示：jQuery对象.show(时长,回调) 
+				</p>
+				<p>
+					隐藏：jQuery对象.hide(时长,回调)
+				</p>
+				<p>
+					切换：jQuery对象.toggle(时长,回调)
+				</p>
+			</div>
+			<div class="son4-6-2 son4">
+				<p>
+					卷入/卷出和切换
+				</p>
+				<p>
+					卷入：jQuery对象.slideDown(时长,回调) 
+				</p>
+				<p>
+					卷出：jQuery对象.slideUp(时长,回调)
+				</p>
+				<p>
+					切换：jQuery对象.slideToggle(时长,回调)
+				</p>
+			</div>
+			<div class="son4-6-3 son4">
+				<p>
+					淡入/淡出和切换
+				</p>
+				<p>
+					淡入： jQuery对象.fadeIn(时长,回调) 
+				</p>
+				<p>
+					淡出：jQuery对象.fadeOut(时长,回调) 
+				</p>
+				<p>
+					淡入到值：jQuery对象.fadeTo(时长,淡入到值,回调)
+				</p>
+				<p>
+					切换： jQuery对象.fadeToggle(时长,回调) 
+				</p>
+			</div>
+			<div class="son4-6-4 son4">
+				<p>
+					自定义动画
+				</p>
+				<p>
+					jQuery对象.animate(需要动画的属性对象,时长,回调)
+				</p>
+				<p>
+					注意：需要动画的属性对象可以使用累加累减动画
+					<br>多个属性写在一起可以执行同步动画
+				</p>
+				<p>
+					列队动画
+					<br>多个动画链式调用,后面的动画会等待前面的动画执行完毕
+					<br>在动画方法的回调中再执行动画,回调中的动画会等待前面的动画执行完毕
+					<br>多个动画按调用的顺序执行
+				</p>
+			</div>
+			<div class="son4-6-5 son4">
+				<p>
+					动画方法
+				</p>
+				<p>
+					停止动画：
+					<br>jQuery对象.stop(是否清空未执行完的列队动画,是否跳到正在执行动画的最后状态);
+					<br>注意：如果不传参数,停止当前正在执行的动画,然后把后续的动画执行完毕
+					<br>第一个参数默认是false,表示不清空,如果是true,后续动画不执行
+					<br>第二个参数默认是false,表示停止在当前状态,如果是ture,则跳到正在执行动画的最后状态
+				</p>
+				<p>
+					延迟动画：
+					<br>jQuery对象.delay(时长);
+					<br>注意点:延迟动画只对后面的动画起作用
+				</p>
+			</div>
+			<div class="son4-6-6 son4">
+				<p>
+					动画的速度
+				</p>
+				<p>
+					以上动画在回调前面可以指定速度,默认是'swing',可用参数"linear"
+				</p>
+			</div>
+		</div>
+		<!-- 详细分类-jquery-操作DOM	 -->
+		<div class="text-son4 text-son4-7-jquery">
+			<div class="son4-7-1 son4">
+				<p>
+					内部插入：
+					<br>将子节点插入到父节点内部后面
+					<br>1.父节点jQuery对象.append(子节点jQuery对象)
+					<br>2.子节点jQuery对象.appendTo(父节点jQuery对象)
+				</p>
+				<p>
+					内部插入：
+					<br>将子节点插入到父节点内部前面
+					<br>1.父节点jQuery对象.prepend(子节点jQuery对象)
+					<br>2.子节点jQuery对象.prependTo(父节点jQuery对象)
+				</p>
+				<p>
+					外部插入:
+					<br>1.jQuery对象1.after(jQuery对象2) 
+					<br>jQuery对象1中的节点后面插入jQuery对象2中的节点
+					<br>2.jQuery对象1.before(jQuery对象2) 
+					<br>jQuery对象1中的节点前面插入jQuery对象2中的节点
+				</p>
+			</div>
+			<div class="son4-7-2 son4">
+				<p>
+					删除节点
+				</p>
+				<p>
+					Query对象.remove() :删除jQuery对象中的节点同时删除事件 
+				</p>
+				<p>
+					jQuery对象.empty() :清空jQuery对象中节点的内容
+				</p>
+				<p>
+					jQuery对象.detach() :删除jQuery对象中的节点但保留事件
+				</p>
+			</div>
+			<div class="son4-7-3 son4">
+				<p>
+					替换节点
+				</p>
+				<p>
+					1.jQuery对象1.replaceWith(jQuery对象2|HTML代码),用jQuery对象2中的节点替换jQuery对象1中的节点
+				</p>
+				<p>
+					2.jQuery对象1.replaceAll('选择器'),用jQuery对象1中节点替换掉所有选中的节点
+				</p>
+			</div>
+			<div class="son4-7-4 son4">
+				<p>
+					复制节点
+				</p>
+				<p>
+					jQuery对象.clone(false|true) 复制一个节点,默认是false不会复制事件,true会复制事件
+				</p>
+			</div>
+		</div>
+		<!-- 详细分类-jquery-操作ajax	 -->	
+		<div class="text-son4 text-son4-8-jquery">
+			<div class="son4-8-1 son4">
+				<p>
+					<br>$.ajax({
+					<br>    url:'./data.json', //请求的地址
+					<br>    type:'GET',//指定请求的方法,默认是GET
+					<br>    data:{name:'Tom',age:18},//发送到服务器的数据，字符串键值对或者对象
+					<br>    dataType:'json',//返回数据的类型,可以是xml json script text html,默认是text
+					<br>    success:function(返回数据,状态信息,jqXHR对象){},//请求成功后的回调函数
+					<br>    error:function(jqXHR对象,状态信息){},//请求失败后的回调函数
+					<br>    complete:function(jqXHR对象,状态信息){},//请求完成后的回调函数
+					<br>    timeout:3000, //设置请求超时的时间,单位为毫秒
+					<br>	statusCode:{304:function(){},503:function(){}.....}//设置不同状态码的回调函数
+					<br>    headers:{test:'test'}//设置请求头
+					<br>})
+				</p>
+			</div>
+			<div class="son4-8-2 son4">
+				<p>
+					<br>$.ajax({
+					<br>	url:"http://127.0.0.1:3001",
+					<br>	dataType:"jsonp",
+					<br>	jsonp:"callback",
+					<br>	success:function(data,statusMsg,jqXHR){
+					<br>		console.log(data);
+					<br>		console.log(statusMsg)
+					<br>		console.log(jqXHR)
+					<br>	}
+					<br>});
+				</p>
+			</div>
+			<div class="son4-8-3 son4">
+				<p>
+					$.get(url[,参数][,回调函数][,返回数据类型])//发送GET请求 
+				</p>
+				<p>
+					$.post(url[,参数][,回调函数][,返回数据类型]) //发送POST请求
+				</p>
+				<p>
+					$.getJSON(url[,回调函数]) //获取JSON数据
+				</p>
+			</div>
+			<div class="son4-8-4 son4">
+				<p>
+					jqXHR对象是浏览器原生XHR对象的一个超集
+				</p>
+				<p>
+					$.ajax()方法返回jqXHR对象,可以通过调用jqXHR对象上的方法来实现连缀调用
+				</p>
+				<p>	
+					jqXHR对象 .done(回调函数) 请求成功时执行,回调函数的参数依次为 返回数据,状态信息,jqXHR对象
+					<br>jqXHR对象 .fail(回调函数) 请求失败时执行,回调函数的参数依次为 jqXHR对象,状态信息
+					<br>jqXHR对象 .always(回调函数) 无论成功还是失败都执行,如果成功,回调函数的参数和done的一样,如果失败，回调函数的参数和fail的一样
+					<br>jqXHR对象.abort() 终止请求
+				</p>
+			</div>
+		</div>
+		<!-- 详细分类-jquery-操作ajax	 -->	
+		<div class="text-son4 text-son4-9-jquery">
+			<div class="son4-9-1 son4">
+				<p>
+					扩展自己的插件
+					<br>  原理:在jQuery对象的原型对象上增加方法
+					<br>    
+					<br>   
+					<br> 1...   
+					<br>$.fn.setColor = function(options){
+					<br>......var DEFAULTS = {color:'red'}
+					<br>......var options = $.extend({},DEFAULTS,options);
+					<br>......return this.each(function(){
+					<br>............this.style.color = options.color;
+					<br>......});
+					<br>}
+					<br>
+					<br>
+					<br>
+					<br> 2...   $.fn.extend({
+					<br>			setColor:function(options){
+					<br>				var DEFAULTS = {color:'red'}
+					<br>				var options = $.extend({},DEFAULTS,options);
+					<br>				return this.each(function(){
+					<br>    				this.style.color = options.color;
+					<br> 					this.style.color = options.color;	
+					<br>				});			
+					<br> 			});							
+					<br> 		})
+				</p>
+			</div>
+			<div class="son4-9-2 son4">
+				<p>
+					使用已有的插件
+				</p>
+				<p>
+					电子书插件 turnjs(http://www.turnjs.com/)
+				</p>
+				<p>
+					表单验证插件 jQuery validation(https://jqueryvalidation.org/)
+				</p>
+				<p>
+					全屏加载插件 FullPage (https://alvarotrigo.com/fullPage/)
+				</p>
+			</div>
+		</div>
 	</div>
 	
 

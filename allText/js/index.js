@@ -50,6 +50,8 @@
 		const $elem25 = $('.son2-jquery .no5')
 		const $elem26 = $('.son2-jquery .no6')
 		const $elem27 = $('.son2-jquery .no7')
+		const $elem28 = $('.son2-jquery .no8')
+		const $elem29 = $('.son2-jquery .no9')
 		function son21($elem,num){
 			$elem.on('click',function(){
 				$('.text-son2-jquery .son2-btn').css('background','#ccc')
@@ -66,6 +68,8 @@
 		son21($elem25,'5');
 		son21($elem26,'6');
 		son21($elem27,'7');
+		son21($elem28,'8');
+		son21($elem29,'9');
 	}
 	son2();
 
@@ -157,5 +161,114 @@
 		son3($elem346,'6')
 	}
 	son34();
+
+	function son35(){
+		const $elem351 = $('.text-son3-5-jquery .no1')
+		const $elem352 = $('.text-son3-5-jquery .no2')
+		const $elem353 = $('.text-son3-5-jquery .no3')
+		const $elem354 = $('.text-son3-5-jquery .no4')
+		const $elem355 = $('.text-son3-5-jquery .no5')
+		const $elem356 = $('.text-son3-5-jquery .no6')
+		function son3($elem,num){
+			$elem.on('click',function(){
+				$('.text-son3-5-jquery .son3-btn').css('background','#ccc')
+				$('.text-son4').css('borderTop','1px solid #ccc');
+				$('.son4').hide();
+				$('.son4-5-'+num+'').slideDown();
+				$elem.css('background','gray')
+			})
+		}
+		son3($elem351,'1')
+		son3($elem352,'2')
+		son3($elem353,'3')
+		son3($elem354,'4')
+		son3($elem355,'5')
+		son3($elem356,'6')
+	}
+	son35();
+
+	function son36(){
+		const $elem361 = $('.text-son3-6-jquery .no1')
+		const $elem362 = $('.text-son3-6-jquery .no2')
+		const $elem363 = $('.text-son3-6-jquery .no3')
+		const $elem364 = $('.text-son3-6-jquery .no4')
+		const $elem365 = $('.text-son3-6-jquery .no5')
+		const $elem366 = $('.text-son3-6-jquery .no6')
+		function son3($elem,num){
+			$elem.on('click',function(){
+				$('.text-son3-6-jquery .son3-btn').css('background','#ccc')
+				$('.text-son4').css('borderTop','1px solid #ccc');
+				$('.son4').hide();
+				$('.son4-6-'+num+'').slideDown();
+				$elem.css('background','gray')
+			})
+		}
+		son3($elem361,'1')
+		son3($elem362,'2')
+		son3($elem363,'3')
+		son3($elem364,'4')
+		son3($elem365,'5')
+		son3($elem366,'6')
+	}
+	son36();
+
+	function son37(){
+		const $elem371 = $('.text-son3-7-jquery .no1')
+		const $elem372 = $('.text-son3-7-jquery .no2')
+		const $elem373 = $('.text-son3-7-jquery .no3')
+		const $elem374 = $('.text-son3-7-jquery .no4')
+		function son3($elem,num){
+			$elem.on('click',function(){
+				$('.text-son3-7-jquery .son3-btn').css('background','#ccc')
+				$('.text-son4').css('borderTop','1px solid #ccc');
+				$('.son4').hide();
+				$('.son4-7-'+num+'').slideDown();
+				$elem.css('background','gray')
+			})
+		}
+		son3($elem371,'1')
+		son3($elem372,'2')
+		son3($elem373,'3')
+		son3($elem374,'4')
+	}
+	son37();
+
+	function son38(){
+		const $elem381 = $('.text-son3-8-jquery .no1')
+		const $elem382 = $('.text-son3-8-jquery .no2')
+		const $elem383 = $('.text-son3-8-jquery .no3')
+		const $elem384 = $('.text-son3-8-jquery .no4')
+		function son3($elem,num){
+			$elem.on('click',function(){
+				$('.text-son3-8-jquery .son3-btn').css('background','#ccc')
+				$('.text-son4').css('borderTop','1px solid #ccc');
+				$('.son4').hide();
+				$('.son4-8-'+num+'').slideDown();
+				$elem.css('background','gray')
+			})
+		}
+		son3($elem381,'1')
+		son3($elem382,'2')
+		son3($elem383,'3')
+		son3($elem384,'4')
+	}
+	son38();
+
+	function son39(){
+		const $elem391 = $('.text-son3-9-jquery .no1')
+		const $elem392 = $('.text-son3-9-jquery .no2')
+		function son3($elem,num){
+			$elem.on('click',function(){
+				$('.text-son3-9-jquery .son3-btn').css('background','#ccc')
+				$('.text-son4').css('borderTop','1px solid #ccc');
+				$('.son4').hide();
+				$('.son4-9-'+num+'').slideDown();
+				$elem.css('background','gray')
+			})
+		}
+		son3($elem391,'1')
+		son3($elem392,'2')
+	}
+	son39();
 
 })(jQuery);
