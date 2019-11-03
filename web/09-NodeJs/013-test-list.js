@@ -3,7 +3,7 @@ const http = require('http')
 const server = http.createServer((req,res)=>{
 
 
-	// res.write('hello my name is tanglimin')
+	res.write('hello my name is tanglimin')
 	res.end('end')
 })
 server.listen(3000,'127.0.0.1',()=>{
