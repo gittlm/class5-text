@@ -1,0 +1,17 @@
+{
+  "name": "013-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "013-test-list.js",
+  "dependencies": {
+    "jquery": "^1.12.4",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
