@@ -42,7 +42,7 @@
 	son();
 	
 /*要点分类*/
-	function son2(){
+	function son205(){
 		const $elem21 = $('.son2-jquery .no1')
 		const $elem22 = $('.son2-jquery .no2')
 		const $elem23 = $('.son2-jquery .no3')
@@ -71,7 +71,35 @@
 		son21($elem28,'8');
 		son21($elem29,'9');
 	}
-	son2();
+	son205();
+	// function son2010(){
+	// 	const $elem21 = $('.son2-mongodb .no1')
+	// 	const $elem22 = $('.son2-mongodb .no2')
+	// 	const $elem23 = $('.son2-mongodb .no3')
+	// 	const $elem24 = $('.son2-mongodb .no4')
+	// 	const $elem25 = $('.son2-mongodb .no5')
+	// 	const $elem26 = $('.son2-mongodb .no6')
+	// 	const $elem27 = $('.son2-mongodb .no7')
+	// 	const $elem28 = $('.son2-mongodb .no8')
+	// 	function son210($elem,num){
+	// 		$elem.on('click',function(){
+	// 			$('.text-son2-mongodb .son2-btn').css('background','#ccc')
+	// 			$('.text-son2-mongodb').css('borderTop','1px solid #ccc')
+	// 			$('.text-son3').hide();
+	// 			$('.text-son3-'+num+'-mongodb').slideDown();
+	// 			$elem.css('background','gray')
+	// 		})
+	// 	}
+	// 	son210($elem21,'1');
+	// 	son210($elem22,'2');
+	// 	son210($elem23,'3');
+	// 	son210($elem24,'4');
+	// 	son210($elem25,'5');
+	// 	son210($elem26,'6');
+	// 	son210($elem27,'7');
+	// 	son210($elem28,'8');
+	// }
+	// son2010();
 
 /*详细分类*/
 	function son31(){
