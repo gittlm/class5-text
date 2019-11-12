@@ -1,0 +1,15 @@
+> db.husband.insert({"_id" : "zs", "name" : "张三"})
+WriteResult({ "nInserted" : 1 })
+
+> db.wife.insert({"_id" : "zfr", "name" : "张夫人", "h_id" : "zs"})
+WriteResult({ "nInserted" : 1 })
+
+> db.husband.find()
+{ "_id" : "zs", "name" : "张三" }
+> db.wife.find()
+{ "_id" : "zfr", "name" : "张夫人", "h_id" : "zs" }
+
+
+> let h_id=db.husband.findOne({name:"张三"})._id
+> db.wife.find({h_id:h_id})
+{ "_id" : "zfr", "name" : "张夫人", "h_id" : "zs" }

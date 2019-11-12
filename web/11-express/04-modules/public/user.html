@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Text Response</h1>
+	<button id="get">get</button>
+	<button id="post">post</button>
+	<button id="put">put</button>
+	<button id="delete">delete</button>
+</body>
+<script src="./jquery-1.12.4.min.js"></script>
+<script>
+	$('#get').on('click',function(){
+		$.ajax({
+			url:'/user',
+			type:'get',
+			success:function(){
+				console.log('get user data...')
+			}
+		})
+	})
+	$('#post').on('click',function(){
+		$.ajax({
+			url:'/user',
+			type:'post',
+			success:function(){
+				console.log('post user data...')
+			}
+		})
+	})
+	$('#put').on('click',function(){
+		$.ajax({
+			url:'/user',
+			type:'put',
+			success:function(){
+				console.log('put user data...')
+			}
+		})
+	})
+	$('#delete').on('click',function(){
+		$.ajax({
+			url:'/user',
+			type:'delete',
+			success:function(){
+				console.log('delete user data...')
+			}
+		})
+	})
+</script>
+</html>
