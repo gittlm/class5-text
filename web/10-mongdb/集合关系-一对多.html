@@ -1,0 +1,42 @@
+> db.father.insert({"_id" : "zbb", "name" : "张爸爸"})
+WriteResult({ "nInserted" : 1 })
+
+> db.son.insert({"_id" : "zld", "name" : "张老大", "f_id" : "zbb"})
+WriteResult({ "nInserted" : 1 })
+> db.son.insert({"_id" : "zle", "name" : "张老二", "f_id" : "zbb"})
+WriteResult({ "nInserted" : 1 })
+> db.son.insert({"_id" : "zls", "name" : "张老三", "f_id" : "zbb"})
+WriteResult({ "nInserted" : 1 })
+
+> db.father.find()
+{ "_id" : "zbb", "name" : "张爸爸" }
+
+> db.son.find()
+{ "_id" : "zld", "name" : "张老大", "f_id" : "zbb" }
+{ "_id" : "zle", "name" : "张老二", "f_id" : "zbb" }
+{ "_id" : "zls", "name" : "张老三", "f_id" : "zbb" }
+
+> let f_id=db.father.findOne({name:"张爸爸"})._id
+> db.son.find({f_id:f_id})
+{ "_id" : "zld", "name" : "张老大", "f_id" : "zbb" }
+{ "_id" : "zle", "name" : "张老二", "f_id" : "zbb" }
+{ "_id" : "zls", "name" : "张老三", "f_id" : "zbb" }
+
+
+
+
+
+
+> db.fathers.insert({_id:"lbb",name:"李爸爸",children:[{_id:"lld",name:"李老大"},{_id:"lle",name:"李老二"}]})
+WriteResult({ "nInserted" : 1 })
+> db.fathers.findOne({name:"李爸爸"}).children
+
+        {
+                "_id" : "lld",
+                "name" : "李老大"
+        },
+        {
+                "_id" : "lle",
+                "name" : "李老二"
+        }
+]

@@ -13,3 +13,11 @@ WriteResult({ "nInserted" : 1 })
 > let h_id=db.husband.findOne({name:"张三"})._id
 > db.wife.find({h_id:h_id})
 { "_id" : "zfr", "name" : "张夫人", "h_id" : "zs" }
+
+
+
+
+
+> db.husband.insert({"_id" : "ls", "name" : "李四",wife:{_id:"lfw",name:"李夫人"}})
+> db.husband.findOne({name:"李四"}).wife
+{ "_id" : "lfw", "name" : "李夫人" }
