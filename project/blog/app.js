@@ -1,11 +1,22 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const swig = require('swig')
 const app = express()
+
+
+
 //请求静态页面
 app.use(express.static('public'))
 //直接请求静态文件下的index.html
+
+
+//处理中间件的post请求
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
 
 //连接数据库
@@ -51,6 +62,10 @@ app.set('view engine', 'html')
 
 //配置路由
 app.use('/',require('./routers/index.js'))
+app.use('/user',require('./routers/user.js'))
+
+
+
 
 
 app.listen(3000, () => console.log('server is running in http://127.0.0.1:3000!'))

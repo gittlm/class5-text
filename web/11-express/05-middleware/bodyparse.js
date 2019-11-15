@@ -3,6 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
+
+//处理中间件的post请求
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
