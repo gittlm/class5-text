@@ -43,8 +43,12 @@
       <!--进入用户中心-->     
         <div class="col-md-4 hidden-xs hidden-sm">
           <div class="user-panel" id='user-info' style="display: none;">
-            欢迎<span>Tom</span>
-            <a class="link" href="/home">进入个人中心</a>
+            欢迎<span>tom</span>
+            {% if userInfo.isAdmin %}
+              <a class="link" href="/home">进入管理中心</a>
+            {% else %}
+              <a class="link" href="/home">进入个人中心</a>
+            {% endif %}
             <a class="link" href="javascript:;" id='logout'>退出</a>
             <div class="form-group">
               <div class="col-sm-12">
