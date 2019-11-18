@@ -40,15 +40,19 @@
         <div class="col-md-8">
           {% block main %}{% endblock %}
         </div> 
-      <!--进入用户中心-->     
+      
+
         <div class="col-md-4 hidden-xs hidden-sm">
-          <div class="user-panel" id='user-info' style="display: none;">
-            欢迎<span>tom</span>
-            {% if userInfo.isAdmin %}
-              <a class="link" href="/home">进入管理中心</a>
-            {% else %}
+      <!--进入用户中心--> 
+          {% if userInfo._id %}
+          <!-- {{ console.log(userInfo) }} -->
+          <div class="user-panel" id='user-info'>
+            欢迎<span>{{ userInfo.username }}</span>
+            <!-- {% if userInfo.isAdmin %} -->
+              <!-- <a class="link" href="/home">进入管理中心</a> -->
+            <!-- {% else %} -->
               <a class="link" href="/home">进入个人中心</a>
-            {% endif %}
+            <!-- {% endif %} -->
             <a class="link" href="javascript:;" id='logout'>退出</a>
             <div class="form-group">
               <div class="col-sm-12">
@@ -56,7 +60,8 @@
               </div>
             </div>              
           </div>
-       <!-- 注册 -->
+      <!-- 注册 -->
+          {% else %}
           <div class="form-horizontal user-panel" id='register' style="display: none;">
             <div class="form-group">
               <label class="col-sm-4 control-label">用户名</label>
@@ -114,6 +119,7 @@
               </div>
             </div>            
           </div>
+          {% endif %}
         <!--广告 -->
           <div class="ad">
             <a href="#" class="thumbnail">

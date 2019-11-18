@@ -31,15 +31,15 @@
 		var errMsg = '';
 		if(!usernameReg.test(username)){
 			errMsg = '用户名请以字母开头,字母和数字长度6-10位'
-		}else{
+		}else{//验证用户名通过
 			errMsg = ''
 			if(!passwordReg.test(password)){
 				errMsg = '密码请以字母开头,字母和数字长度6-8位'
-			}else{
+			}else{//验证密码通过
 				errMsg = ''
 				if(password !== repassword){
 					errMsg = '您输入的密码不一致，请重新输入'
-				}else{
+				}else{//验证重复密码通过
 					errMsg = ''
 				}
 			}
@@ -71,35 +71,31 @@
 			})
 		}
 	})
-<<<<<<< HEAD
 //3.点击登录发送请求
-=======
 //3.点击登录
 	//点击注册发送请求
->>>>>>> 24456446e3ccfd37a3e897d7d537d0cf7cc77ef7
-	
 	$('#sub-login').on('click',function(){
 		//获取用户数据
 		var username = $('#login').find("[name='username']").val()
 		var password = $('#login').find("[name='password']").val()
 		//设置用户名以字母开头，字母和数字长度6-10位
-		// var usernameReg = /^[a-z][a-z0-9]{5,9}$/i
+		var usernameReg = /^[a-z][a-z0-9]{5,9}$/i
 		//设置密码以字母开头，字母和数字长度6-8位
-		// var passwordReg = /^[a-z][a-z0-9]{5,7}$/i
+		var passwordReg = /^[a-z][a-z0-9]{5,7}$/i
 		// console.log(usernameReg.test(username))
 		// console.log(passwordReg.test(username))
 		//验证用户名是否合法
 		var errMsg = '';
-		// if(!usernameReg.test(username)){
-		// 	errMsg = '用户名请以字母开头,字母和数字长度6-10位'
-		// }else{
-		// 	errMsg = ''
-		// 	if(!passwordReg.test(password)){
-		// 		errMsg = '密码请以字母开头,字母和数字长度6-8位'
-		// 	}else{
-		// 		errMsg = ''
-		// 	}
-		// }
+		if(!usernameReg.test(username)){
+			errMsg = '用户名请以字母开头,字母和数字长度6-10位'
+		}else{//验证用户名通过
+			errMsg = ''
+			if(!passwordReg.test(password)){
+				errMsg = '密码请以字母开头,字母和数字长度6-8位'
+			}else{//验证密码通过
+				errMsg = ''
+			}
+		}
 		//如果错误信息存在就显示信息，不存在就发送请求到后台
 		if(errMsg){
 			$('#login').find('.err').html(errMsg)
@@ -114,9 +110,15 @@
 				}
 			})
 			.done(function(data){
-				$('#user-info').show();
-				$('#login').hide();
-
+				if(data.code == 0){
+					// $('#user-info').find('span').html(username);
+					// $('#user-info').show();
+					// $('#login').hide();
+					window.location.reload()//刷新页面
+				}else{
+					$('#login').find('.err').html(data.message)
+				}
+				
 			})
 			.fail(function(err){
 				$('#login').find('.err').html('登录失败,请稍后再试')

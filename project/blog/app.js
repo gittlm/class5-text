@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const swig = require('swig')
+const Cookies = require('cookies')
 const app = express()
 
 
@@ -12,13 +13,13 @@ app.use(express.static('public'))
 //直接请求静态文件下的index.html
 
 
-//处理中间件的post请求
+/*---------处理中间件的post请求--------*/
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
+/*-------------------配置数据库-------------------*/
 //连接数据库
 mongoose.connect('mongodb://localhost/blog', { useUnifiedTopology: true,useNewUrlParser: true })
 const db = mongoose.connection
@@ -32,7 +33,7 @@ db.once('open', function() {
   	console.log('connect mongodb success !!!')
 })  	
 
-
+/*----------------------配置模板引擎--------------------*/
 //1.
 //开发阶段设置不走缓存
 swig.setDefaults({
@@ -59,8 +60,19 @@ app.set('view engine', 'html')
 // })
 
 
+/*-------------------配置cookies保存用户状态信息----------------------*/
+app.use((req,res,next)=>{
+	req.cookies = new Cookies(req,res)
+	let userInfo = {}
+	if(req.cookies.get('userInfo')){
+		userInfo = JSON.parse(req.cookies.get('userInfo'))
+	}
+	req.userInfo = userInfo
 
-//配置路由
+	next();
+})
+
+/*-------------------配置路由---------------*/
 app.use('/',require('./routers/index.js'))
 app.use('/user',require('./routers/user.js'))
 
