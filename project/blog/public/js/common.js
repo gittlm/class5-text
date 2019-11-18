@@ -59,6 +59,7 @@
 			})
 			.done(function(data){//注册成功
 				if(data.code == 0){
+					//返回登录页面
 					$login.trigger('click')
 					$('#login').find(".err").html('注册成功，请登录')
 				}else{
@@ -70,13 +71,12 @@
 			})
 		}
 	})
-//3.点击登录
-	//点击注册发送请求
-	/*
+//3.点击登录发送请求
+	
 	$('#sub-login').on('click',function(){
 		//获取用户数据
-		var username = $('#register').find("[name='username']").val()
-		var password = $('#register').find("[name='password']").val()
+		var username = $('#login').find("[name='username']").val()
+		var password = $('#login').find("[name='password']").val()
 		//设置用户名以字母开头，字母和数字长度6-10位
 		var usernameReg = /^[a-z][a-z0-9]{5,9}$/i
 		//设置密码以字母开头，字母和数字长度6-8位
@@ -116,6 +116,6 @@
 			})
 		}
 	})
-	*/
+	
 
 })(jQuery);
