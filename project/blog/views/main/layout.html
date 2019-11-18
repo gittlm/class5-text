@@ -45,14 +45,13 @@
         <div class="col-md-4 hidden-xs hidden-sm">
       <!--进入用户中心--> 
           {% if userInfo._id %}
-          <!-- {{ console.log(userInfo) }} -->
           <div class="user-panel" id='user-info'>
             欢迎<span>{{ userInfo.username }}</span>
-            <!-- {% if userInfo.isAdmin %} -->
-              <!-- <a class="link" href="/home">进入管理中心</a> -->
-            <!-- {% else %} -->
+            {% if userInfo.isAdmin %}
+              <a class="link" href="/admin">进入管理中心</a>
+            {% else %}
               <a class="link" href="/home">进入个人中心</a>
-            <!-- {% endif %} -->
+            {% endif %}
             <a class="link" href="javascript:;" id='logout'>退出</a>
             <div class="form-group">
               <div class="col-sm-12">

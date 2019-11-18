@@ -73,7 +73,7 @@
 	})
 //3.点击登录发送请求
 //3.点击登录
-	//点击注册发送请求
+	//点击登录发送请求
 	$('#sub-login').on('click',function(){
 		//获取用户数据
 		var username = $('#login').find("[name='username']").val()
@@ -82,8 +82,6 @@
 		var usernameReg = /^[a-z][a-z0-9]{5,9}$/i
 		//设置密码以字母开头，字母和数字长度6-8位
 		var passwordReg = /^[a-z][a-z0-9]{5,7}$/i
-		// console.log(usernameReg.test(username))
-		// console.log(passwordReg.test(username))
 		//验证用户名是否合法
 		var errMsg = '';
 		if(!usernameReg.test(username)){
@@ -126,5 +124,40 @@
 		}
 	})
 	
+//4.点击退出，退出登录
+	$('#logout').on('click',function(){
+		$.ajax({
+			url:'/user/logout',
+			type:'get'
+		})
+		.done(function(data){
+			if(data.code == 0){
+				//返回首页
+				window.location.href = '/'
+				// window.location.reload()
+			}
+		})
+		.fail(function(err){
+			$('#user-info').find('.err').html('请求失败，请稍后再试')
+		})
+	})
 
+
+//5.点击退出，退出登录
+	// $('#logout').on('click',function(){
+	// 	$.ajax({
+	// 		url:'/user/logout',
+	// 		type:'get'
+	// 	})
+	// 	.done(function(data){
+	// 		if(data.code == 0){
+	// 			//返回首页
+	// 			window.location.href = '/'
+	// 			// window.location.reload()
+	// 		}
+	// 	})
+	// 	.fail(function(err){
+	// 		$('#user-info').find('.err').html('请求失败，请稍后再试')
+	// 	})
+	// })	
 })(jQuery);

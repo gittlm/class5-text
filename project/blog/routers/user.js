@@ -22,6 +22,7 @@ router.post('/register', (req, res) => {
 			userModel.insertMany({
 				username:username,
 				password:hmac(password)
+				// isAdmin:true
 			})
 			.then(result =>{
 				res.json({
@@ -57,8 +58,10 @@ router.post('/login', (req, res) => {
 	.then(user=>{
 		if(user){//用户名存在
 			//返回数据
-			//配置cookies信息
-			req.cookies.set('userInfo',JSON.stringify(user))
+			//配置cookies信息，同时设置过期时间
+			// req.cookies.set('userInfo',JSON.stringify(user),{maxAge:1000*60*60*24})
+			//用session+cookies设置过期时间
+			req.session.userInfo = user
 			res.json({
 				code:0,
 				message:'登录成功',
@@ -79,4 +82,15 @@ router.post('/login', (req, res) => {
 	})
 })
 
+//处理退出
+router.get('/logout',(req,res)=>{
+	//清除cookies信息
+	// req.cookies.set('userInfo',null)
+	//清除session信息
+	req.session.destroy()
+	res.json({
+		code:0,
+		message:'退出成功'
+	})
+})
 module.exports = router
