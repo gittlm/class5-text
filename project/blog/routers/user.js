@@ -21,7 +21,8 @@ router.post('/register', (req, res) => {
 		}else{//没有同名，可以注册
 			userModel.insertMany({
 				username:username,
-				password:hmac(password)
+				password:hmac(password),
+				isAdmin:false
 				// isAdmin:true
 			})
 			.then(result =>{

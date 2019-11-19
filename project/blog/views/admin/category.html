@@ -1,0 +1,36 @@
+{% extends './layout.html' %}
+{% block title %}
+用户管理中心
+{% endblock %}
+{% block header %}
+用户中心
+{% endblock %}
+{% block content %}
+分类列表
+{% endblock %}
+{% block list %}
+<a href="/category/add" class="btn btn-primary">新增分类</a>
+<div class="table-responsive">
+  	<table class="table table-striped">
+		<thead>
+			<tr>
+			  <th>序号</th>
+			  <th>类名</th>
+			  <th>介绍</th>
+			  <th>管理分类</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			  <td>1</td>
+			  <td>css</td>
+			  <td>css使用</td>
+			  <td>
+			  	<a href="#">修改</a>
+			  	<a href="#">删除</a>
+			  </td>
+			</tr>
+		</tbody>
+	</table>
+</div>		
+{% endblock %}
