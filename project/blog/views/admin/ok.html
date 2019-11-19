@@ -1,0 +1,15 @@
+{% extends './layout.html' %}
+{% block title %}
+用户管理中心
+{% endblock %}
+{% block header %}
+用户中心
+{% endblock %}
+{% block content %}
+新增成功
+{% endblock %}
+{% block list %}
+<div class="alert alert-success" role="alert">{{ message }}</div>
+<a href="javascript:window.history.back()" class="btn btn-primary">继续新增</a>
+<a href="/category" class="btn btn-primary">返回列表</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends './layout.html' %}
+{% block title %}
+用户管理中心
+{% endblock %}
+{% block header %}
+用户中心
+{% endblock %}
+{% block content %}
+新增失败
+{% endblock %}
+{% block list %}
+<div class="alert alert-danger" role="alert">{{ message }}</div>
+<a href="javascript:window.history.back()" class="btn btn-primary">点击返回</a>
+{% endblock %}
