@@ -29,7 +29,7 @@
           {% else %}
             <td>否</td>
           {% endif %}  
-          <td><a href="#">删除</a></td>
+          <td><a href="/admin/delete/{{ user._id.toString() }}" class="del">删除</a></td>
         </tr>
       {% endfor %}
     </tbody>

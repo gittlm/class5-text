@@ -86,4 +86,22 @@ router.get('/users', (req, res) => {
 	})
 })
 
+//删除用户
+router.get('/delete/:id',(req,res)=>{
+	const id = req.params.id
+	UserModel.deleteOne({_id:id})
+	.then(user=>{
+		res.render('admin/ok',{
+			userInfo:req.userInfo,
+			message:'删除用户成功',
+			url:'/admin/users'
+		})
+	})	
+	.catch(err=>{//修改失败
+		res.render('admin/fail',{
+			userInfo:req.userInfo,
+			message:'删除用户失败,请稍后再试'
+		})
+	})	
+})
 module.exports = router

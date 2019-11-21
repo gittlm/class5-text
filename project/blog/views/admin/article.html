@@ -1,0 +1,83 @@
+{% extends './layout.html' %}
+{% block title %}
+用户管理中心
+{% endblock %}
+{% block header %}
+用户中心
+{% endblock %}
+{% block content %}
+文章列表
+{% endblock %}
+{% block list %}
+<a href="/article/add" class="btn btn-primary">新建文章</a>
+<div class="table-responsive content">
+	<table class="table table-striped">
+  		<thead>
+  			<tr>
+  			  <th>标题</th>
+  			  <th>作者</th>
+  			  <th>分类</th>
+          <th>时间</th>
+          <th>点击量</th>
+          <th>操作</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			{% for article in articles %}
+  			<tr>
+  			  <td>{{article.title}}</td>
+  			  <td>{{article.user}}</td>
+          <td>{{article.category.name}}</td>
+          <td>{{article.createdAt}}</td>
+          <td>{{article.click}}</td>
+  			  <td>
+            <a href="/article/detail/{{ article._id.toString() }}">详情</a>
+  			  	<a href="/article/edit/{{ article._id.toString() }}">修改</a>
+  			  	<a href="/article/delete/{{ article._id.toString() }}" class="del">删除</a>
+  			  </td>
+  			</tr>
+  			{% endfor %}
+  		</tbody>
+	</table>
+</div>		
+
+{% include './pagination.html' %}
+
+<!-- <nav aria-label="Page navigation">
+  <ul class="pagination">
+    {% if page == 1 %}
+    <li class="disabled">
+      <a href="/article?page={{ page - 1 }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% else %}
+     <li>
+      <a href="/article?page={{ page - 1 }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+    {% for i in list %}
+      {% if i == page %}
+        <li class="active"><a href="/article?page={{ i }}">{{ i }}</a></li>
+      {% else %}
+        <li><a href="/article?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page == pages %}
+    <li class="disabled">
+      <a href="/article?page={{ page + 1 }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% else %}
+    <li>
+      <a href="/article?page={{ page + 1 }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav> -->
+{% endblock %}

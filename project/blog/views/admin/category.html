@@ -11,28 +11,28 @@
 {% block list %}
 <a href="/category/add" class="btn btn-primary">新增分类</a>
 <div class="table-responsive content">
-  	<table class="table table-striped">
-		<thead>
-			<tr>
-			  <th>序号</th>
-			  <th>类名</th>
-			  <th>介绍</th>
-			  <th>管理分类</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for category in categories %}
-			<tr>
-			  <td>{{category.order}}</td>
-			  <td>{{category.name}}</td>
-			  <td>{{category.des}}</td>
-			  <td>
-			  	<a href="/category/edit">修改</a>
-			  	<a href="/category/delete">删除</a>
-			  </td>
-			</tr>
-			{% endfor %}
-		</tbody>
+	<table class="table table-striped">
+  		<thead>
+  			<tr>
+  			  <th>序号</th>
+  			  <th>类名</th>
+  			  <th>介绍</th>
+  			  <th>管理分类</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			{% for category in categories %}
+  			<tr>
+  			  <td>{{category.order}}</td>
+  			  <td>{{category.name}}</td>
+  			  <td>{{category.des}}</td>
+  			  <td>
+  			  	<a href="/category/edit/{{ category._id.toString() }}">修改</a>
+  			  	<a href="/category/delete/{{ category._id.toString() }}" class="del">删除</a>
+  			  </td>
+  			</tr>
+  			{% endfor %}
+  		</tbody>
 	</table>
 </div>		
 

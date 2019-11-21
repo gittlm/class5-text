@@ -13,14 +13,14 @@ router.use((req,res,next)=>{
 })
 
 //显示后台分类页面
-router.get('/', (req, res) => {
+router.get('/', (req,res) => {
 	//直接引用util/pagination.js模板
 	let options = {
 		limit:5,
 		page:req.query.page/1,
 		model:CategoryModel,
 		query:{},
-		projection:'-_id -__v',
+		projection:'-__v',
 		sort:{order:1}
 	}
 	pagination(options)
@@ -40,16 +40,22 @@ router.get('/', (req, res) => {
 })
 
 //显示后台新增页面
-router.get('/add', (req, res) => {
+router.get('/add', (req,res) => {
 	res.render('admin/category-add',{
 		userInfo:req.userInfo
 	})
 })
 
 //处理后台新增页面
-router.post('/add', (req, res) => {
+router.post('/add', (req,res) => {
 	//获取参数
-	const { name,order,des } = req.body
+	let { name,order,des } = req.body
+	if(!order){
+		order = 0
+	}
+	if(!des){
+		des = name
+	}
 	//查找数据库同名验证
 	CategoryModel.findOne({name:name})
 	.then(category=>{
@@ -63,14 +69,19 @@ router.post('/add', (req, res) => {
 			.then(result=>{//新增分类成功
 				res.render('admin/ok',{
 					userInfo:req.userInfo,
-					message:'新增分类成功'
+					message:'新增分类成功',
+					url:'/category'
 				})
 			})
 			.catch(err=>{//新增分类失败
-				res.render('admin/fail',{
-					userInfo:req.userInfo,
-					message:'新增分类失败,请稍后再试'
-				})
+				if(!name){
+					res.render('admin/fail',{
+						userInfo:req.userInfo,
+						message:'分类名称为空，请重新输入',
+						url:'/category'
+					})
+				}
+				
 			})
 		}
 	})
@@ -82,8 +93,8 @@ router.post('/add', (req, res) => {
 	})
 })
 
-//显示后台修改页面
-router.get('/edit', (req, res) => {
+//显示修改页面
+router.get('/edit/:id', (req,res) => {
 	const id = req.params.id
 	CategoryModel.findById(id)
 	.then(category=>{
@@ -95,56 +106,101 @@ router.get('/edit', (req, res) => {
 	.catch(err=>{
 		res.render('admin/fail',{
 			userInfo:req.userInfo,
-			message:'请求失败,请稍后再试'
+			message:'请求失败,请稍后再试',
+			category
 		})
 	})
 })
 
-//处理后台修改页面
-router.post('/edit', (req, res) => {
+//处理修改页面
+router.post('/edit', (req,res) => {
 	//获取参数
-	const { name,order,des } = req.body
+	let { name,order,des,id } = req.body
+	if(!order){
+		order = 0
+	}
+	if(!des){
+		des = name
+	}
 	//查找数据库
-	CategoryModel.findOne({name:name})
+	CategoryModel.findById(id)
 	.then(category=>{//查找数据库同名验证
 		if(category.name == name && category.order == order){//数据未改变，
-			res.render('admin/fail',{
+			res.render('admin/fail',{//对比有没有更改
 				userInfo:req.userInfo,
-				message:'名称未修改，请修改后再提交'
+				message:'名称未修改，请修改后再提交',
+				category
 			})
 		}else{//可以改变数据
-			CategoryModel.findOne({name:name,_id:{$ne:id}},(req,res)=>{
-				if(category){
+			// if(name){
+			CategoryModel.findOne({name:name,_id:{$ne:id}})
+			.then(category=>{
+				if(category){//查询数据库里有同名存在 
 					res.render('admin/fail',{
 						userInfo:req.userInfo,
-						message:'名称已存在，请更换名称'
+						message:'名称已存在，请更换名称',
+						category
 					})
-				}else{
+				}else{//查询数据库里无同名存在 ，可以修改
 					CategoryModel.updateOne({_id:id},{name,order,des})
-					.then(result=>{//新增分类成功
+					.then(result=>{//修改成功
+						// if(result.name){//有名称且不重复，修改成功
 						res.render('admin/ok',{
 							userInfo:req.userInfo,
-							message:'新增分类成功',
-							url:'/category'
+							message:'修改成功',
+							url:'/category',
+							category
 						})
+						// }
 					})
-					.catch(err=>{//新增分类失败
+					.catch(err=>{//修改失败
 						res.render('admin/fail',{
 							userInfo:req.userInfo,
-							message:'新增分类失败,请稍后再试'
+							message:'修改失败，请稍后再试',
+							category
 						})
 					})
 				}
-			})
-			
-		}
-	})
+			})	
+			.catch(err=>{//修改失败
+				res.render('admin/fail',{
+					userInfo:req.userInfo,
+					message:'数据库查找失败,请稍后再试',
+					category
+				})
+			})	
+			// }else{
+			// 	return;
+			// }
+		}	
+	})		
 	.catch(err=>{
 		res.render('admin/fail',{
 			userInfo:req.userInfo,
-			message:'操作失败,请稍后再试'
+			message:'数据库操作修改失败,请稍后再试',
+			category
 		})
 	})
+})
+
+//删除分类
+router.get('/delete/:id',(req,res)=>{
+	//找到相应的id
+	const id = req.params.id
+	CategoryModel.deleteOne({_id:id})
+	.then(category=>{
+		res.render('admin/ok',{
+			userInfo:req.userInfo,
+			message:'删除分类成功',
+			url:'/category'
+		})
+	})	
+	.catch(err=>{//修改失败
+		res.render('admin/fail',{
+			userInfo:req.userInfo,
+			message:'数据库查找失败,请稍后再试'
+		})
+	})	
 })
 
 module.exports = router

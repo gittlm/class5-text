@@ -7,8 +7,7 @@ const mongoose = require('mongoose')
 	  		required:[true,"必须输入分类名称"]
 	  	},
 	  	order:{
-	  		type:Number,
-	  		default:0
+	  		type:Number
 	  	},
 	  	des:{
 	  		type:String
