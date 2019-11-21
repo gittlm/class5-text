@@ -1,29 +1,31 @@
 {% extends './layout.html' %}
 {% block head %}
-<link rel="stylesheet" href="css/detail.css">
+<link rel="stylesheet" href="/css/detail.css">
 {% endblock %}
 {% block main %}
   <div class="panel panel-default custom-panel detail-panel">
-    {% for article in articles %}
-    <div class="panel-heading">
-      <h3 class="panel-title">{{article.title}}</h3>
-      <p class="sub-title">
-        <span class="text-muted">{{article.category.name}}</span>
-        <span class="text-muted">{{article.createdAt}}</span>
-        <span class="text-muted"><em>{{article.click}}</em>人已阅读</span>
-      </p>
-    </div>
-    <div class="panel-body">
-      <div class="well">
-        <strong>简介:</strong>{{article.intro}}
-      </div>
-      <p>
-        {{article.content}}
-      </p>
-    </div>
-    {% endfor %}
+   
+        <div class="panel-heading">
+          <h3 class="panel-title">{{article.title}}</h3>
+          <p class="sub-title">
+             {% for category in categories %}
+                <span class="text-muted">{{article.category.name}}</span>
+              {% endfor %}
+            <span class="text-muted">{{article.createdTime}}</span>
+            <span class="text-muted"><em>{{article.click}}</em>人已阅读</span>
+          </p>
+        </div>
+        <div class="panel-body">
+          <div class="well">
+            <strong>简介:</strong>{{article.intro}}
+          </div>
+          <p>
+            {{article.content}}
+          </p>
+        </div>
+    
   </div>                                     
 {% endblock %}
 {% block footer %}        
-<script src="js/list.js"></script>
+<script src="/js/list.js"></script>
 {% endblock %}

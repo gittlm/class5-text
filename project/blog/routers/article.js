@@ -29,7 +29,8 @@ router.get('/', (req,res) => {
 		model:ArticleModel,
 		query:{},
 		projection:'-__v',
-		sort:{_id:1}
+		sort:{_id:1},
+		populates:[{path:"user",select:"username"},{path:"category",select:"name"}]
 	}
 	pagination(options)
 	.then(result=>{
@@ -109,18 +110,12 @@ router.get('/edit/:id', (req,res) => {
 	const id = req.params.id
 	CategoryModel.find({})
 	.then(categories=>{
-		ArticleModel.find({_id:id})
-		.then(articles=>{
+		ArticleModel.findById(id)
+		.then(article=>{
 			res.render('admin/article-edit',{
 				userInfo:req.userInfo,
 				categories,
-				articles
-			})
-		})
-		.catch(err=>{
-			res.render('admin/fail',{
-				userInfo:req.userInfo,
-				message:'文章修改失败,请稍后再试'
+				article
 			})
 		})
 	})
@@ -138,7 +133,7 @@ router.post('/edit', (req,res) => {
 	let { category,title,intro,content,id } = req.body
 	//查找数据库
 	ArticleModel.updateOne({_id:id},{category,title,intro,content})
-	.then(result=>{//修改成功
+	.then(data=>{//修改成功
 		res.render('admin/ok',{
 			userInfo:req.userInfo,
 			message:'文章更新成功',
@@ -176,23 +171,24 @@ router.get('/delete/:id',(req,res)=>{
 
 //显示文章详情页面
 router.get('/detail/:id', (req,res) => {
-	// let { category,title,intro,content,id } = req.body
 	const id = req.params.id
-	ArticleModel.find({_id:id})
-	.then(articles=>{
-		res.render('main/detail',{
-			userInfo:req.userInfo,
-			articles,
-			category
+	CategoryModel.find({})
+	.then(categories=>{
+		ArticleModel.findById(id)
+		.then(article=>{
+			res.render('main/detail',{
+				userInfo:req.userInfo,
+				categories,
+				article
+			})
 		})
 	})
-	// .catch(err=>{
-	// 	res.render('admin/fail',{
-	// 		userInfo:req.userInfo,
-	// 		message:'文章操作失败'
-	// 	})
-	// })
-
+	.catch(err=>{
+		res.render('admin/fail',{
+			userInfo:req.userInfo,
+			message:'文章修改失败,请稍后再试'
+		})
+	})
 })
 
 module.exports = router

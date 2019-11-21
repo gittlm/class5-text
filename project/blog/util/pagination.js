@@ -9,6 +9,7 @@
 		projection:数据的显示与否
 		sort:排序的条件
 		url:路径
+		populates:关联查询
 	}
 	*/
 async function pagination(options){
@@ -22,7 +23,7 @@ async function pagination(options){
 		第page页：        跳过skip(page-1)*limit
 	*/
 	// const limit = 3
-	let { limit,page,model,query,projection,sort,url } = options
+	let { limit,page,model,query,projection,sort,populates,url } = options
 	// let page = req.query.page/1
 	//如果page不是数字
 	if(isNaN(page)){
@@ -50,7 +51,15 @@ async function pagination(options){
 	}
 	let skip = (page-1)*limit
 
-	const docs = await model.find(query,projection).sort(sort).skip(skip).limit(limit)
+	const results = model.find(query,projection)
+
+	if(populates){
+		populates.forEach(function(populate){
+			return results.populate(populate)
+		})
+	}
+
+	const docs = await results.sort(sort).skip(skip).limit(limit)
 	return {
 		docs:docs,
 		page:page,

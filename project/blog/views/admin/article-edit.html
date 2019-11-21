@@ -16,9 +16,9 @@
         <select class="form-control">
           {% for category in categories %}
             {% if category._id.toString() == article.category %}
-              <option selected value="{{  category._id.toString() }}">{{ category.name }}</option>
+              <option selected value="{{category._id.toString()}}">{{ category.name }}</option>
             {% else %}
-              <option value="{{  category._id.toString() }}">{{ category.name }}</option>
+              <option value="{{category._id.toString()}}">{{ category.name }}</option>
             {% endif %}  
           {%endfor%}
         </select>
