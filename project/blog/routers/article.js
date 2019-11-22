@@ -23,16 +23,31 @@ router.use((req,res,next)=>{
 //显示文章列表页面
 router.get('/', (req,res) => {
 	//直接引用util/pagination.js模板
-	let options = {
-		limit:5,
-		page:req.query.page/1,
-		model:ArticleModel,
-		query:{},
-		projection:'-__v',
-		sort:{_id:1},
-		populates:[{path:"user",select:"username"},{path:"category",select:"name"}]
-	}
-	pagination(options)
+	// let options = {
+	// 	limit:5,
+	// 	page:req.query.page/1,
+	// 	model:ArticleModel,
+	// 	query:{},
+	// 	projection:'-__v',
+	// 	sort:{_id:1},
+	// 	populates:[{path:"user",select:"username"},{path:"category",select:"name"}]
+	// }
+	// pagination(options)
+	// .then(result=>{
+	// 	res.render('admin/article',{
+	// 		userInfo:req.userInfo,
+	// 		articles:result.docs,
+	// 		page:result.page,
+	// 		list:result.list,
+	// 		pages:result.pages,
+	// 		url:'/article'
+	// 	})
+	// })
+	// .catch(err=>{
+	// 	console.log(err)
+	// })
+
+	ArticleModel.getPaginationData(req)
 	.then(result=>{
 		res.render('admin/article',{
 			userInfo:req.userInfo,
@@ -42,10 +57,7 @@ router.get('/', (req,res) => {
 			pages:result.pages,
 			url:'/article'
 		})
-	})
-	.catch(err=>{
-		console.log(err)
-	})
+	})	
 })
 
 //显示文章列表新增页面
@@ -187,6 +199,27 @@ router.get('/detail/:id', (req,res) => {
 		res.render('admin/fail',{
 			userInfo:req.userInfo,
 			message:'文章修改失败,请稍后再试'
+		})
+	})
+})
+
+//显示列表详情页面
+router.get('/list/:id', (req,res) => {
+	const id = req.params.id
+	CategoryModel.find({_id:id},'name')
+	.then(category=>{
+		ArticleModel.find({title:category.name})
+		.then(articles=>{
+			res.render('main/list',{
+				userInfo:req.userInfo,
+				articles
+			})
+		})
+	})
+	.catch(err=>{
+		res.render('admin/fail',{
+			userInfo:req.userInfo,
+			message:'获取列表失败'
 		})
 	})
 })

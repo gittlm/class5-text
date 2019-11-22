@@ -141,6 +141,12 @@
 	// 		$('#user-info').find('.err').html('请求失败，请稍后再试')
 	// 	})
 	// })
+	//
 
-	
+
+	//5.首页分页逻辑
+	var $articlePage = $('#article-page')
+	$articlePage.pagination({
+		url:'/articles'
+	})
 })(jQuery);

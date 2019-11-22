@@ -27,7 +27,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">首页<span class="sr-only">(current)</span></a></li>
           {% for category in categories %}
-            <li><a href="/list/{{ category._id }}">{{ category.name }}</a></li>
+            <li><a href="/article/list/{{ category._id.toString() }}">{{ category.name }}</a></li>
           {% endfor %}
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -153,14 +153,14 @@
             </div>
             <div class="panel-body">
               <ul class="list-group">
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-                <li class="list-group-item"><a href="detail.html" class="link text-ellipsis" target="_blank">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>                                                 
+                {% for clickArticle in clickArticles %}
+                  <li class="list-group-item">
+                    <a href="/article/detail/{{ clickArticle._id.toString() }}" class="link text-ellipsis">[{{clickArticle.click}}] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ clickArticle.title }}
+                    </a>
+                    <!-- target="_blank"在a标签里是点击在新页面打开，这里不需要用 -->
+                  </li>
+               {% endfor %}
+
               </ul>     
             </div>
           </div>
@@ -176,13 +176,11 @@
       </div>
     </div>
   </div>
-  <footer>
-    Blog Design by <a href="#">Kuazhu</a> <a href="#">豫ICP备11002373号-1</a>.
-  </footer>
 
 
 <script src="/lib/jquery/jquery-1.12.4.min.js"></script> 
 <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/js/pagination.js"></script>
 <script src="/js/common.js"></script>
 <script src="/js/logout.js"></script>
 {% block footer %}{% endblock %}
