@@ -181,45 +181,40 @@ router.get('/delete/:id',(req,res)=>{
 	})	
 })
 
-//显示文章详情页面
-router.get('/detail/:id', (req,res) => {
-	const id = req.params.id
-	CategoryModel.find({})
-	.then(categories=>{
-		ArticleModel.findById(id)
-		.then(article=>{
-			res.render('main/detail',{
-				userInfo:req.userInfo,
-				categories,
-				article
-			})
-		})
-	})
-	.catch(err=>{
-		res.render('admin/fail',{
-			userInfo:req.userInfo,
-			message:'文章修改失败,请稍后再试'
-		})
-	})
-})
+// //显示文章详情页面
+// router.get('/detail/:id', (req,res) => {
+// 	const id = req.params.id
+// 	CategoryModel.find({})
+// 	.then(categories=>{
+// 		ArticleModel.findById(id)
+// 		.then(article=>{
+// 			res.render('main/detail',{
+// 				userInfo:req.userInfo,
+// 				categories,
+// 				article
+// 			})
+// 		})
+// 	})
+// 	.catch(err=>{
+// 		res.render('admin/fail',{
+// 			userInfo:req.userInfo,
+// 			message:'文章修改失败,请稍后再试'
+// 		})
+// 	})
+// })
 
 //显示列表详情页面
 router.get('/list/:id', (req,res) => {
 	const id = req.params.id
 	CategoryModel.find({_id:id},'name')
-	.then(category=>{
-		ArticleModel.find({title:category.name})
+	.then(categories=>{
+		ArticleModel.find({title:categories.name})
 		.then(articles=>{
 			res.render('main/list',{
 				userInfo:req.userInfo,
-				articles
+				articles,
+				categories
 			})
-		})
-	})
-	.catch(err=>{
-		res.render('admin/fail',{
-			userInfo:req.userInfo,
-			message:'获取列表失败'
 		})
 	})
 })

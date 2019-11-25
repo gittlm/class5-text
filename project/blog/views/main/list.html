@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="css/list.css">
 {% endblock %}
 {% block main %}
-  {% for article in articles %}
+  <!-- {% for article in articles %}
     <div class="panel panel-default content-item">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -24,7 +24,7 @@
         <span class="panel-footer-text text-muted"><em>{{ article.click }}</em>已阅读</span>
       </div>
     </div>
-  {% endfor %}
+  {% endfor %} -->
 
   <!-- <nav aria-label="Page navigation" id="page">
     <ul class="pagination">
@@ -46,10 +46,10 @@
     </ul>
   </nav>  -->   
   <!-- 用分页器，不用下面代码了 -->
-  <nav aria-label="Page navigation" id="article-page">
+ <!--  <nav aria-label="Page navigation" id="article-page">
     {% include './pagination.html' %}
-  </nav>
-
+  </nav> -->
+{% include './article-list.html' %}
 
 {% endblock %}
 

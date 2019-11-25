@@ -6,21 +6,21 @@
   <div class="panel panel-default custom-panel detail-panel">
    
         <div class="panel-heading">
-          <h3 class="panel-title">{{article.title}}</h3>
+          <h3 class="panel-title">{{articleData.title}}</h3>
           <p class="sub-title">
              {% for category in categories %}
-                <span class="text-muted">{{article.category.name}}</span>
+                <span class="text-muted">{{articleData.category.name}}</span>
               {% endfor %}
-            <span class="text-muted">{{article.createdTime}}</span>
-            <span class="text-muted"><em>{{article.click}}</em>人已阅读</span>
+            <span class="text-muted">{{articleData.createdTime}}</span>
+            <span class="text-muted"><em>{{articleData.click}}</em>人已阅读</span>
           </p>
         </div>
         <div class="panel-body">
           <div class="well">
-            <strong>简介:</strong>{{article.intro}}
+            <strong>简介:</strong>{{articleData.intro}}
           </div>
           <p>
-            {{article.content}}
+            {{articleData.content | safe}}
           </p>
         </div>
     

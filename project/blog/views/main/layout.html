@@ -155,7 +155,7 @@
               <ul class="list-group">
                 {% for clickArticle in clickArticles %}
                   <li class="list-group-item">
-                    <a href="/article/detail/{{ clickArticle._id.toString() }}" class="link text-ellipsis">[{{clickArticle.click}}] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ clickArticle.title }}
+                    <a href="/detail/{{ clickArticle._id.toString() }}" class="link text-ellipsis">[{{clickArticle.click}}]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ clickArticle.title }}
                     </a>
                     <!-- target="_blank"在a标签里是点击在新页面打开，这里不需要用 -->
                   </li>
