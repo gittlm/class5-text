@@ -1,0 +1,12 @@
+body{
+	background-color: pink;
+}
+p{
+	width: 512px;
+	height: 512px;
+	background-image: url('../image/bird.jpg');
+	line-height: 512px;
+	font-size: 80px;
+	text-align: center;
+	color: #fff;
+}

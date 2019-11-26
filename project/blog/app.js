@@ -24,6 +24,9 @@ app.use(bodyParser.json())
 /*-------------------配置数据库-------------------*/
 //连接数据库
 mongoose.connect('mongodb://localhost/blog', { useUnifiedTopology: true,useNewUrlParser: true })
+//消除使用findAndUpdate的警告
+mongoose.set('useFindAndModify', false);
+
 const db = mongoose.connection
 //连接失败
 db.on('error',(err)=>{

@@ -7,12 +7,12 @@ async function getcommondata(){
 	//获取列表首页名称
 	const getCategoriesDataPromiste = CategoryModel.find({},'name').sort({order:1})
 	//获取点击排行文章信息
-	const getClickArticlesDataPromiste = ArticleModel.find({},'title click').sort({click:-1}).limit(10)
+	const getClickArticlesDataPromise = ArticleModel.find({},'title click').sort({click:-1}).limit(10)
 
 
 
 	const categories = await getCategoriesDataPromiste
-	const clickArticles = await getClickArticlesDataPromiste
+	const clickArticles = await getClickArticlesDataPromise
 
 	return {
 		categories,
@@ -76,31 +76,44 @@ router.get('/list/:id', (req, res) => {
 })
 //获取详情页具体信息
 async function getArticleData(req){
-	const getcommondata = getcommondata()
-	const commonData = await getcommondata
+	const id = req.params.id
+	//获取详情页面具体文章
+	const getCommonDataPromise = getcommondata()
+	const getArticleDataPromise = ArticleModel.findOneAndUpdate({_id:id},{$inc:{click:1}},{new:true})
+	.populate({path:'user',select:'username'})
+	.populate({path:'category',select:'name'})
+
+
+	//为了保证点击排行榜点击量数据和详情点击量一致,
+	//必须先获取详情文章信息再获取点击排行信息
+	const articleData = await getArticleDataPromise
+	const commonData = await getCommonDataPromise
+
+
 	const { categories,clickArticles } = commonData
 	return {
 		categories,
-		clickArticles
+		clickArticles,
+		articleData
 	}
 }
 
 //显示detail页面
 router.get('/detail/:id', (req,res) => {
-	getArticleData()
+	getArticleData(req)
 	.then(data=>{
-		const { categories,clickArticles } = commonData
+		const { categories,clickArticles,articleData } = data
 		res.render('main/detail',{
 			userInfo:req.userInfo,
 			categories,
-			clickArticles
+			clickArticles,
+			articleData
+			//分类ID回传
+			// currentCategoryId:articleData.category._id.toString()
 		})
 	})
 	.catch(err=>{
-		res.render('admin/fail',{
-			userInfo:req.userInfo,
-			message:'文章修改失败,请稍后再试'
-		})
+		console.log(err)
 	})
 })
 
