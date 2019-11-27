@@ -10,7 +10,6 @@ async function getcommondata(){
 	const getClickArticlesDataPromise = ArticleModel.find({},'title click').sort({click:-1}).limit(10)
 
 
-
 	const categories = await getCategoriesDataPromiste
 	const clickArticles = await getClickArticlesDataPromise
 
@@ -69,7 +68,8 @@ router.get('/list/:id', (req, res) => {
 				list:result.list,
 				pages:result.pages,
 				//分类ID回传
-				currentCategoryId:id
+				currentCategoryId:id,
+				url:'/list'
 			})
 		})
 	})
@@ -107,23 +107,22 @@ router.get('/detail/:id', (req,res) => {
 			userInfo:req.userInfo,
 			categories,
 			clickArticles,
-			articleData
+			articleData,
 			//分类ID回传
-			// currentCategoryId:articleData.category._id.toString()
+			currentCategoryId:articleData.category
 		})
-	})
-	.catch(err=>{
-		console.log(err)
 	})
 })
 
 
 //处理文章首页分页ajax请求
 router.get('/articles',(req,res)=>{
-
-
-
-	ArticleModel.getPaginationData(req)
+	const id = req.query.id
+	let query = {}
+	if(id){
+		query.category = id
+	}
+	ArticleModel.getPaginationData(req,query)
 	.then(result=>{
 		res.json({
 			code:0,

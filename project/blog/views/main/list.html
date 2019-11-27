@@ -2,57 +2,12 @@
 {% block head %}
 <link rel="stylesheet" href="css/list.css">
 {% endblock %}
-{% block main %}
-  <!-- {% for article in articles %}
-    <div class="panel panel-default content-item">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          <a href="/detail" class="link" target="_blank">{{ article.title }}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        {{ article.intro }}
-      </div>
-      <div class="panel-footer">
-        <span class="glyphicon glyphicon-user"></span>
-        <span class="panel-footer-text text-muted">{{ article.user.username }}</span>
-        <span class="glyphicon glyphicon-th-list"></span>
-        <span class="panel-footer-text text-muted">{{ article.category.name }}</span>
-        <span class="glyphicon glyphicon-time"></span>
-        <span class="panel-footer-text text-muted">{{ article.createdTime }}</span>
-        <span class="glyphicon glyphicon-eye-open"></span>
-        <span class="panel-footer-text text-muted"><em>{{ article.click }}</em>已阅读</span>
-      </div>
-    </div>
-  {% endfor %} -->
 
-  <!-- <nav aria-label="Page navigation" id="page">
-    <ul class="pagination">
-      <li>
-        <a href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li>
-        <a href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>  -->   
-  <!-- 用分页器，不用下面代码了 -->
- <!--  <nav aria-label="Page navigation" id="article-page">
-    {% include './pagination.html' %}
-  </nav> -->
-{% include './article-list.html' %}
+{% block main %}
+
+  {% include './article-list.html' %}
 
 {% endblock %}
-
 
 {% block footer %}        
 <script src="js/list.js"></script>

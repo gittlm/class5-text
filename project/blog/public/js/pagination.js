@@ -20,14 +20,21 @@
 				if(page == currentPage){//点击的是当前页码
 					return false;
 				}
+				//由于列表页面只要当前对应分类下的文章
+				//所以要获取对应分类的ID
+				var url = options.url+'?page='+page
+				var id = $elem.data('id')
+				if(id){
+					url = url + '&id=' + id
+				}
 				//3.发送ajax请求
 				$.ajax({
-					url:options.url+'?page='+page,
+					url:url,
 					type:'get',
 					dataType:'json'
 				})
-				.done(result=>{
-					console.log(result)
+				.done(function(result){
+					$elem.trigger('get-data',result.data)
 				})
 				.fail(err=>{
 					console.log(err)

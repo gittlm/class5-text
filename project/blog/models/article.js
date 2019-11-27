@@ -40,7 +40,7 @@ const pagination = require('../util/pagination.js')
 
 	ArticleSchema.statics.getPaginationData = function(req,query={}){
 		let options = {
-			limit:5,
+			limit:4,
 			page:req.query.page/1,
 			model:ArticleModel,
 			query:query,
