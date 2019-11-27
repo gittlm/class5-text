@@ -1,5 +1,6 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')//自动生成HTML
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');//自动清理无用文件
 
 module.exports = {
 	// "production" 开发环境； "development"生产环境； "none"不指定
@@ -13,9 +14,8 @@ module.exports = {
   	// entry:{index:'./src/index.js'},
   	//多入口
   	entry:{
-  		index:'./src/index.js',
-  		admin:'.src/admin.js',
-  		main:'./src/main.js'
+  		index:'./src/index/index.js',
+  		common:'./src/common/common.js'
   	},
   
 
@@ -55,10 +55,17 @@ module.exports = {
  	},
   plugins:[
       new htmlWebpackPlugin({
-          template:'./src/view/index.css',//模板文件
+          template:'./src/view/index.html',//模板文件
           filename:'index.html',//输出的文件名
-          inject:'head',//脚本写在那个标签里,默认是true(在body结束后)
+          // inject:'head',//脚本写在那个标签里,默认是true(在body结束后)
           hash:true//给生成的js/css文件添加一个唯一的hash
-      })
-  ]
+          // chunks:['index']//指定引入的文件，别的不会引入
+      }),
+      //自动清理无用文件
+      new CleanWebpackPlugin()
+  ],
+  devServer:{
+    contentBase: './dist',//内容的目录
+    port:9000//服务运行的端口
+  }
 };

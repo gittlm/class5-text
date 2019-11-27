@@ -13,8 +13,8 @@ module.exports = {
   	//多入口
   	entry:{
   		index:'./src/index.js',
-  		admin:'.src/admin.js',
-  		main:'./src/main.js'
+  		about:'./src/about.js',
+  		contact:'./src/contact.js'
   	},
   
 
@@ -28,7 +28,9 @@ module.exports = {
     	//对于单个入口,出口可以是一个静态文件
   		// filename: 'bundle.js'
   		//对于多个入口,也只指定一个输出配置
-  		filename: '[name]-[hash].bundle.js'
+  		// filename: '[name]-bundle.js'
+      // filename: '[name]-[hash]-bundle.js'
+      filename: '[name]-[chunkhash]-bundle.js'
   	},
    	module: {
 	   	rules: [

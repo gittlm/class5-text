@@ -1,0 +1,9 @@
+p{
+	font-size: 60px;
+	color: #0f0;
+	width: 500px;
+	height: 500px;
+	line-height: 500px;
+	text-align: center;
+	background-image: url('../../image/bird.jpg');
+}
