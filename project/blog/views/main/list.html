@@ -1,14 +1,10 @@
 {% extends './layout.html' %}
-{% block head %}
-<link rel="stylesheet" href="css/list.css">
+{% block title %}
+  我的博客
 {% endblock %}
 
-{% block main %}
-
-  {% include './article-list.html' %}
+{% block content %}
+    {% include './article-list.html' %}                             
 
 {% endblock %}
 
-{% block footer %}        
-<script src="js/list.js"></script>
-{% endblock %}
