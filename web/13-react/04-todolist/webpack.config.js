@@ -49,7 +49,17 @@ module.exports = {
   	         	}
   	         }
   	       ]
-  	     }
+  	     },
+         {//配置babel
+            test:/\.js$/,
+              exclude: /(node_modules)/,
+              use: {
+                  loader: 'babel-loader',
+                  options: {
+                      presets: ['env', 'react']
+                  }
+              }               
+          }
 	   	]
  	},
   plugins:[

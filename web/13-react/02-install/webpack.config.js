@@ -50,7 +50,7 @@ module.exports = {
   	         }
   	       ]
   	     },
-         {
+         {//配置babel
             test:/\.js$/,
               exclude: /(node_modules)/,
               use: {
