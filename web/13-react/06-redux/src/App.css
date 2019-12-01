@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.App{
+	width: 600px;
+	margin: 50px auto;
+}
+.App input{
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 20px;
+	outline: none;
+	box-sizing: border-box;
+}
+.App .btn{
+	height: 40px;
+	width: 100px;
+	outline: none;
+	border: none;
+}
+.list{
+	width: 600px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	list-style: none;
+	
+}
+.list li{
+	margin-top: 10px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	border-left: 2px solid red;
+	box-sizing: border-box;
+}
+.list li:hover{
+	background-color: #ccc;
+}
