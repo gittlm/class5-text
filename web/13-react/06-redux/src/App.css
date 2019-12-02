@@ -21,17 +21,16 @@
 	border: none;
 }
 .list{
+	list-style: none;
+}
+.list li{
 	width: 600px;
 	height: 40px;
 	line-height: 40px;
 	font-size: 20px;
-	list-style: none;
-	
-}
-.list li{
 	margin-top: 10px;
 	padding-left: 10px;
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	border-left: 2px solid red;
 	box-sizing: border-box;
 }

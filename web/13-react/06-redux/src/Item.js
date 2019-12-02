@@ -5,10 +5,11 @@ class Item extends Component{
 		super(props)
 	}
 	render(){
+		const { handleDel,task }=this.props
 		return(
-			<li>hello react</li>
+			<li onClick={handleDel}>{task}</li>
 		)
-		
 	}
 }
+
 export default Item
