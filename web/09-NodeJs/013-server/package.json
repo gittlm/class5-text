@@ -4,7 +4,7 @@
   "description": "",
   "main": "013-test-list.js",
   "dependencies": {
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "swig": "^1.4.2"
   },
   "devDependencies": {},
